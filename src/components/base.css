@@ -1,0 +1,10 @@
+.content {
+  padding: 20px; 
+
+}
+a {
+  color: inherit; 
+}
+a:hover {
+  color: white; 
+}
