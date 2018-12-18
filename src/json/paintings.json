@@ -1,6 +1,7 @@
 [
     {
         "src": "/img/KOS.jpg", 
+        "srcset": "/img/KOS_355.jpg 355w,  /img/KOS_481.jpg 481w, /img/KOS_584.jpg 584w, /img/KOS_687.jpg 687w, /img/KOS_770.jpg 770w, /img/KOS_861.jpg 861w, /img/KOS_955.jpg 955w, /img/KOS_1033.jpg 1033w, /img/KOS_1112.jpg 1112w, /img/KOS_1192.jpg 1192w, /img/KOS_1200.jpg 1200w",
         "thumbnail": "/img/KOS-thumb.jpg",
         "thumbnailWidth": 300,
         "thumbnailHeight": 300,
@@ -68,130 +69,5 @@
         "additionalPhotos": [
             "head-on-a-plate-1.jpg"
         ]
-    },
-    {
-      "src": "/img/KOS.jpg", 
-      "thumbnail": "/img/KOS-thumb.jpg",
-      "thumbnailWidth": 300,
-      "thumbnailHeight": 300,
-      "width": 3752,
-      "height": 3752,
-      "id": "knowledge-of-self",
-      "caption": "K.O.S.- Knowledge of Self. Self Portrait. Oil on Canvas, Mirror. 36in x 36in. 2018.", 
-      "name": "K.O.S.- Knowledge of Self", 
-      "medium": "Oil on Canvas, Mirror",
-      "year": 2018, 
-      "size": "36in x 36in",
-      "additionalPhotos": [
-          "KOS-1.jpg",
-          "KOS-2.jpg"
-      ]
-  },
-  {
-      "src": "/img/inside-the-lappa-with-grace.jpg", 
-      "thumbnail": "/img/inside-the-lappa-with-grace-thumb.jpg",
-      "thumbnailWidth": 300,
-      "thumbnailHeight": 300,
-      "width": 3730,
-      "height": 3730,
-      "id": "inside-the-lappa",
-      "caption": "Inside the Lappa with Grace, Portrait of Grace Mbola. Oil on Canvas, Mirror. 40in x 40in. 2018.",
-      "name": "Inside the Lappa with Grace- Portrait of Grace Mbola", 
-      "medium": "Oil on Canvas, Mirror",
-      "year": 2018, 
-      "size": "40in x 40in",
-      "additionalPhotos": [
-          "inside-the-lappa-with-grace-1.jpg",
-          "inside-the-lappa-with-grace-2.jpg"
-      ]
-  },
-  {
-      "src": "/img/diluting-dreams.jpg", 
-      "thumbnail": "/img/diluting-dreams-thumb.jpg",
-      "thumbnailWidth": 300,
-      "thumbnailHeight": 300,
-      "width": 3762,
-      "height": 3762,
-      "id": "diluting-dreams",
-      "caption": "Diluting Dreams- Portrait of Allesene Ntwali. Oil on Canvas, Mirror. 40in x 40in. 2017.",
-      "name": "Diluting Dreams- Portrait of Allesene Ntwali", 
-      "medium": "Oil on Canvas, Mirror",
-      "year": 2017, 
-      "size": "40in x 40in",
-      "additionalPhotos": [
-          "diluting-dreams-1.jpg",
-          "diluting-dreams-2.jpg"
-      ]
-  },
-  {
-      "src": "/img/head-on-a-plate.jpg", 
-      "thumbnail": "/img/head-on-a-plate-thumb.jpg",
-      "thumbnailWidth": 300,
-      "thumbnailHeight": 300,
-      "width": 4000,
-      "height": 3200,
-      "id": "head-on-a-plate",
-      "caption": "Head on a Plate. Wood, Automotive Paint. 2016.",
-      "name": "Head on a Plate", 
-      "medium": "Wood, Automotive Paint",
-      "year": 2016,
-      "additionalPhotos": [
-          "head-on-a-plate-1.jpg"
-      ]
-  },
-  {
-    "src": "/img/KOS.jpg", 
-    "thumbnail": "/img/KOS-thumb.jpg",
-    "thumbnailWidth": 300,
-    "thumbnailHeight": 300,
-    "width": 3752,
-    "height": 3752,
-    "id": "knowledge-of-self",
-    "caption": "K.O.S.- Knowledge of Self. Self Portrait. Oil on Canvas, Mirror. 36in x 36in. 2018.", 
-    "name": "K.O.S.- Knowledge of Self", 
-    "medium": "Oil on Canvas, Mirror",
-    "year": 2018, 
-    "size": "36in x 36in",
-    "additionalPhotos": [
-        "KOS-1.jpg",
-        "KOS-2.jpg"
-    ]
-},
-{
-    "src": "/img/inside-the-lappa-with-grace.jpg", 
-    "thumbnail": "/img/inside-the-lappa-with-grace-thumb.jpg",
-    "thumbnailWidth": 300,
-    "thumbnailHeight": 300,
-    "width": 3730,
-    "height": 3730,
-    "id": "inside-the-lappa",
-    "caption": "Inside the Lappa with Grace, Portrait of Grace Mbola. Oil on Canvas, Mirror. 40in x 40in. 2018.",
-    "name": "Inside the Lappa with Grace- Portrait of Grace Mbola", 
-    "medium": "Oil on Canvas, Mirror",
-    "year": 2018, 
-    "size": "40in x 40in",
-    "additionalPhotos": [
-        "inside-the-lappa-with-grace-1.jpg",
-        "inside-the-lappa-with-grace-2.jpg"
-    ]
-},
-{
-    "src": "/img/diluting-dreams.jpg", 
-    "thumbnail": "/img/diluting-dreams-thumb.jpg",
-    "thumbnailWidth": 300,
-    "thumbnailHeight": 300,
-    "width": 3762,
-    "height": 3762,
-    "id": "diluting-dreams",
-    "caption": "Diluting Dreams- Portrait of Allesene Ntwali. Oil on Canvas, Mirror. 40in x 40in. 2017.",
-    "name": "Diluting Dreams- Portrait of Allesene Ntwali", 
-    "medium": "Oil on Canvas, Mirror",
-    "year": 2017, 
-    "size": "40in x 40in",
-    "additionalPhotos": [
-        "diluting-dreams-1.jpg",
-        "diluting-dreams-2.jpg"
-    ]
-}
-
+    }
 ]

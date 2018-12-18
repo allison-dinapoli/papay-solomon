@@ -14,7 +14,7 @@ export default class Base extends React.Component {
   }
   render() {
     var navbar = 
-      <Navbar inverse collapseOnSelect>
+      <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to='/'>Papay Solomon</Link>
