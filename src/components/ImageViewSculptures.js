@@ -1,11 +1,11 @@
 import React from 'react'; 
 import { Container, Row, Col } from 'react-bootstrap';
 import ReactImageMagnify from 'react-image-magnify';
-import images from '../json/paintings.json'; 
+import images from '../json/sculptures.json'; 
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
 
-class ImageView extends React.Component {
+class ImageViewSculptures extends React.Component {
   
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class ImageView extends React.Component {
   }
  
   backToGallery = () => {
-    this.props.history.push("/paintings/");  
+    this.props.history.push("/sculptures/");  
   }
 
   nextPhoto = () => {
@@ -41,7 +41,7 @@ class ImageView extends React.Component {
 
   nextPhotoId = () => {
     var nextPhoto = this.nextPhotoPos();
-    let nextRoute = `/paintings/${images[nextPhoto].id}`;
+    let nextRoute = `/sculptures/${images[nextPhoto].id}`;
     return nextRoute;
   }
 
@@ -56,7 +56,7 @@ class ImageView extends React.Component {
   
   previousPhotoId = () => {
     var nextPhoto = this.previousPhotoPos(); 
-    return "/paintings/" + images[nextPhoto].id; 
+    return "/sculptures/" + images[nextPhoto].id; 
   }
 
   previousPhoto = () => {
@@ -139,4 +139,4 @@ class ImageView extends React.Component {
   }
 }
 
-export default withRouter(ImageView);
+export default withRouter(ImageViewSculptures);

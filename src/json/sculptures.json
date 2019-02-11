@@ -1,0 +1,19 @@
+[
+    {
+        "src": "/img/head-on-a-plate.jpg", 
+        "thumbnail": "/img/head-on-a-plate-thumb.jpg",
+        "thumbnailWidth": 300,
+        "thumbnailHeight": 300,
+        "width": 4000,
+        "height": 3200,
+        "id": "head-on-a-plate",
+        "caption": "Head on a Plate. Wood, Automotive Paint. 2016.",
+        "name": "Head on a Plate", 
+        "medium": "Wood, Automotive Paint",
+        "year": 2016,
+        "additionalPhotos": [
+            "head-on-a-plate-1.jpg"
+        ], 
+        "category": "sculpture"
+    }
+]
