@@ -1,0 +1,29 @@
+@font-face
+{
+font-family: GeoSansLight;
+src: url('../fonts/GeosansLight.ttf'),
+url('../fonts/GeosansLight.eot');
+}
+
+.content {
+  padding: 20px; 
+
+}
+a {
+  color: inherit; 
+  font-family: GeoSansLight !important; 
+}
+h1, h2, h3, div {
+  font-family: GeoSansLight !important; 
+}
+
+.quietLink {
+  color: inherit; 
+}
+.quietLink:hover {
+  color: inherit;
+}
+
+.heading {
+  padding: 15px; 
+}
