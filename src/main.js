@@ -35,6 +35,7 @@ const Main = () => (
                 <Route path='/about' component={HomePage}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>
+                <Route component={HomePage} />
             </Switch>
         </main>
     </div>
