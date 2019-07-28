@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Base from './components/base';
 import ImageView from './components/ImageView';
 import Gallery from './components/gallery';

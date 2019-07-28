@@ -20,17 +20,17 @@ export default class Base extends React.Component {
     var navbar = 
       <Navbar collapseOnSelect={true} expand={false}>
         <Navbar.Brand>
-          <Link to='/'><img src="/img/icons/PapaySolomon_Logo-01.png" height="32px"/></Link>
+          <Link to='/'><img src="/img/icons/PapaySolomon_Logo-01.png" height="32px" alt="Logo- Papay Solomon"/></Link>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse>
+        <Navbar.Collapse style={{textAlign: 'right', padding: '20px'}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
-          <NavDropdown title="Works">
-            <NavDropdown.Item eventKey="1.1">
+          <NavDropdown title="Works" style={{textAlign: 'right'}}>
+            <NavDropdown.Item eventKey="1.1" style={{textAlign: 'right'}}>
               <Link className={'nav-link'} to='/paintings'>Paintings</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item eventKey="1.2">
-              <Link  className={'nav-link'} to='/sculptures'>Sculptures</Link>
+            <NavDropdown.Item eventKey="1.2" style={{textAlign: 'right'}}>
+              <Link className={'nav-link'} to='/sculptures'>Sculptures</Link>
             </NavDropdown.Item>
             </NavDropdown>
             <Nav.Item eventKey={2}>

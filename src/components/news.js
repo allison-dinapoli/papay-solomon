@@ -28,7 +28,8 @@ export default class News extends React.Component {
           <Row>
             <Col xs={12} sm={12} md={10} lg={8} xl={8}>
               <div style={{padding:'56.25% 0 0 0', position: 'relative'}}>
-                <iframe src="https://player.vimeo.com/video/307643640" 
+                <iframe title="Video: ASU Senior Awarded for Life-like Portraits of African Refugees - 3TV/CBS 5 News"
+                        src="https://player.vimeo.com/video/307643640" 
                         style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
                         frameborder="0" 
                         webkitallowfullscreen 

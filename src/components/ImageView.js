@@ -74,10 +74,10 @@ class ImageView extends React.Component {
       <tbody>
         <tr>
           <td style={{textAlign:"left"}} width="10%">
-            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(window.location.href)} target="_blank"><img src="/img/icons/facebook.svg"/></a> 
-            <a href={"https://www.twitter.com/intent/tweet?url=" + encodeURI(window.location.href)} target="_blank"><img src="/img/icons/twitter.svg"/></a>
-            <a href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + encodeURI(window.location.href)} target="_blank"><img src="/img/icons/tumblr.svg"/></a>
-            <a href={"https://pinterest.com/pin/create/link/?url=" + encodeURI(window.location.href)} target="_blank"><img src="/img/icons/pinterest.svg"/></a>
+            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/facebook.svg" alt="facebook"/></a> 
+            <a href={"https://www.twitter.com/intent/tweet?url=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/twitter.svg" alt="twitter"/></a>
+            <a href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/tumblr.svg" alt="tumblr"/></a>
+            <a href={"https://pinterest.com/pin/create/link/?url=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/pinterest.svg" alt="pinterest"/></a>
           </td>
           <td style={{textAlign:"center"}} className="subheader" width="80%">{images[this.state.currentImageIndex].name}</td>
           <td style={{textAlign:"right"}} width="10%"><img src="/img/icons/baseline-close-24px.svg" width="40px" style={{cursor:"pointer"}} onClick={this.backToGallery} alt="back to gallery"/></td>

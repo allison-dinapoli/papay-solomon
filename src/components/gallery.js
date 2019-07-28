@@ -29,7 +29,7 @@ export default class Gallery extends React.Component {
     for (let i = startingIndex; i < startingIndex + this.picturesPerRow; i++) {
       if (i < images.length) {
         let image = images[i];
-        columns.push(<Col sm={4} style={{paddingLeft: "1vw", paddingRight: "1vw", paddingTop: "4vh", paddingBottom: "3vh"}}><img id={i} src={image['thumbnail']} style={{cursor: "pointer"}} onClick={this.openImage}></img></Col>);
+        columns.push(<Col sm={4} style={{paddingLeft: "1vw", paddingRight: "1vw", paddingTop: "4vh", paddingBottom: "3vh"}}><img id={i} src={image['thumbnail']} alt={image['name']} style={{cursor: "pointer"}} onClick={this.openImage}></img></Col>);
       }
     }
     return columns;
