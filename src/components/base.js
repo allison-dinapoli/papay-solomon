@@ -18,7 +18,7 @@ export default class Base extends React.Component {
   }
   render() {
     var navbar = 
-      <Navbar collapseOnSelect={true} expand={false}>
+      <Navbar scrolling dark fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed"}}>
         <Navbar.Brand>
           <Link to='/'><img src="/img/icons/PapaySolomon_Logo-01.png" height="32px" alt="Logo- Papay Solomon"/></Link>
         </Navbar.Brand>

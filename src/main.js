@@ -8,13 +8,11 @@ import Sculptures from './components/sculptures';
 import ImageViewSculptures from './components/ImageViewSculptures';
 import './components/base.css';
 import News from './components/news';
+import About from './components/about';
 
 
 const HomePage = () => (
-  <Base content={<div>
-    <h2> Welcome! </h2>
-    <h3> The home page is in progress. </h3>
-</div>} />
+  <Base content={<About />} />
 )
 
 const Main = () => (
