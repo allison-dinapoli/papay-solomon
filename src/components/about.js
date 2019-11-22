@@ -15,9 +15,9 @@ class About extends React.Component {
  
 
   render() {
-    var aboutHeaderText = "Lorem ipsum dolor amet flexitarian narwhal franzen scenester af. Hot chicken beard pour-over aesthetic sustainable quinoa freegan cray shaman iceland tattooed banh mi cliche tbh XOXO. IPhone pork belly letterpress farm-to-table banh mi meggings. Fashion axe slow-carb viral pabst live-edge, marfa raclette +1."
+    var aboutHeaderText = "Lorem ipsum dolor amet flexitarian narwhal franzen scenester af. Hot chicken beard pour-over aesthetic sustainable quinoa freegan cray shaman iceland tattooed banh mi cliche tbh. IPhone pork belly letterpress farm-to-table banh mi meggings. Fashion axe slow-carb viral pabst live-edge, marfa raclette +1."
 
-    var aboutText = `Lorem ipsum dolor amet flexitarian narwhal franzen scenester af. Hot chicken beard pour-over aesthetic sustainable quinoa freegan cray shaman iceland tattooed banh mi cliche tbh XOXO. IPhone pork belly letterpress farm-to-table banh mi meggings. Fashion axe slow-carb viral pabst live-edge, marfa raclette +1. Lyft street art green juice XOXO prism. Venmo pok pok vice, tousled drinking vinegar beard before they sold out mumblecore knausgaard pickled hexagon organic. Vegan crucifix church-key ethical, kale chips sustainable normcore edison bulb yr fingerstache ennui."
+    var aboutText = `Lorem ipsum dolor amet flexitarian narwhal franzen scenester af. Hot chicken beard pour-over aesthetic sustainable quinoa freegan cray shaman iceland tattooed banh mi cliche tbh. IPhone pork belly letterpress farm-to-table banh mi meggings. Fashion axe slow-carb viral pabst live-edge, marfa raclette +1. Lyft street art green juice XOXO prism. Venmo pok pok vice, tousled drinking vinegar beard before they sold out mumblecore knausgaard pickled hexagon organic. Vegan crucifix church-key ethical, kale chips sustainable normcore edison bulb yr fingerstache ennui."
        
     var headerText = "Neutra lomo deep v hoodie tattooed, plaid photo booth migas viral chicharrones cornhole authentic williamsburg pour-over. +1 fam taxidermy, crucifix health goth bespoke whatever quinoa edison bulb blog coloring book locavore kogi mustache freegan. Hell of authentic put a bird on it umami XOXO tofu glossier you probably haven't heard of them skateboard sartorial, roof party vegan poke lumbersexual four dollar toast. Pok pok drinking vinegar migas typewriter. Crucifix small batch ramps biodiesel hella tumeric tofu organic farm-to-table freegan chicharrones authentic asymmetrical pok pok subway tile. Meditation lyft readymade selvage prism vinyl tote bag gentrify fanny pack master cleanse pour-over. Ugh bushwick yuccie heirloom prism.
 
@@ -30,7 +30,7 @@ class About extends React.Component {
     `
     return (
         <span>
-            <div id="test"> <div id="backgroundimage">Hello</div> </div>
+            <div id="test"> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
                 <h1>ABOUT</h1>
                 <div id="aboutheader"> {aboutHeaderText} </div>

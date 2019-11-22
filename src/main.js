@@ -12,7 +12,7 @@ import About from './components/about';
 
 
 const HomePage = () => (
-  <Base content={<About />} />
+  <Base content={<About />} doNotIncludeContentClassName={true} useLightNavbar={true} />
 )
 
 const Main = () => (
