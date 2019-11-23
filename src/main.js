@@ -27,9 +27,9 @@ const Main = () => (
             <Switch>
                 <Route exact path='/' component={HomePage}/>
                 <Route path='/chapter1/:id' component={ImageViewChapter1}/>
-                <Route path='/chapter1' component={Gallery}/>
+                <Route path='/chapter1' component={ImageViewChapter1}/>
                 <Route path='/chapter2/:id' component={ImageViewChapter2}/>
-                <Route path='/chapter2' component={Sculptures}/>
+                <Route path='/chapter2' component={ImageViewChapter2}/>
                 <Route path='/about' component={HomePage}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>

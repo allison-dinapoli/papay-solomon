@@ -4,9 +4,26 @@
     max-height: 80vh;
 }
 
-
-
 #imagecontainer {
     width: 100vw; 
     height: 100vh;
+}
+
+#infodiv {
+    width: 100vw; 
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+.icon {
+    margin-right: 25px;
+}
+
+.quietLinkIcon {
+    text-decoration: none;
+}
+
+.quietLinkIcon:hover {
+    text-decoration: none;
+    color: inherit;
 }

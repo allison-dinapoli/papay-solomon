@@ -10,12 +10,17 @@ class ImageView extends React.Component {
     super(props);
     
     let currentImageIndex;
-    for (let index in this.props.images) {
-      if ( this.props.images[index].id === this.props.match.params.id ) {
-        currentImageIndex = Number(index);
+    
+    if (this.props.match.params.id == undefined) {
+      currentImageIndex = 0; 
+    } else {
+      for (let index in this.props.images) {
+        if ( this.props.images[index].id === this.props.match.params.id ) {
+          currentImageIndex = Number(index);
+        }
       }
     }
-
+ 
     this.state = {
       currentImageIndex: currentImageIndex,
       currentImageId: this.props.match.params.id,
@@ -24,9 +29,9 @@ class ImageView extends React.Component {
     }
   }
  
-  backToGallery = () => {
-    this.props.history.push(`/${this.props.pathName}`);  
-  }
+  //backToGallery = () => {
+  //  this.props.history.push(`/${this.props.pathName}`);  
+  //}
 
   nextPhoto = () => {
     var nextPhoto = this.nextPhotoPos();  
@@ -69,66 +74,78 @@ class ImageView extends React.Component {
   }
 
   openInfo = () => {
-    this.setState({openInfo:true})
+    this.setState({openInfo:true});
+  }
+
+  closeInfo = () => {
+    this.setState({openInfo:false});
   }
 
   openFullScreen = () => {
-
+    var elem = document.getElementById("viewingimage");
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
   }
 
   render() {
-    var infoButtton =  <span><img src="/img/icons/info.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openInfo}></img></span>; 
+    var infoButton =  <div id="infodiv"><img src="/img/icons/info.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openInfo}></img></div>; 
+    var image = <div><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
+   
     if (this.state.openInfo) {
+      infoButton = <div id="infodiv">
+          <img className="icon" src="/img/icons/info_dark.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.closeInfo}></img> 
+          <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openFullScreen}></img>
+          <a className="icon quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram.svg" alt="instagram"/></a>
+          <a className="icon quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/facebook.svg" alt="facebook"/></a>
+        </div> ;
 
+        image = <Col xs={10} sm={10} md={10} lg={10} xl={10}>      
+            <Container>
+              <Row>
+                <Col xs={12} sm={12} md={6} lg={6} xl={6}><div><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
+                <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                  <div style={{fontWeight: "bold"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                  <div>{this.props.images[this.state.currentImageIndex].size}</div> 
+                  <div>{this.props.images[this.state.currentImageIndex].medium}</div> 
+                  <div>{this.props.images[this.state.currentImageIndex].year}</div> 
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+              
+            
     }
 
     const pageContent =  <div>
-    <table width="100%" height="40px">
-      <tbody>
-        <tr>
-          <td style={{textAlign:"left"}} width="10%">
-            {infoButtton}
-          </td>
-          <td style={{textAlign:"center"}} className="subheader" width="80%">{this.props.images[this.state.currentImageIndex].name}</td>
-          <td style={{textAlign:"right"}} width="10%"><img src="/img/icons/baseline-close-24px.svg" width="40px" style={{cursor:"pointer"}} onClick={this.backToGallery} alt="back to gallery"/></td>
-        </tr>
-      </tbody>
-    </table> 
+      {infoButton}
 
-    <div style={{display: "flex", justifyContent: "center",  alignItems: "center", height: "100%"}}>
-      <Container style={{width: "100%"}}>
-        <Row>
-          <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-            <Link to={this.previousPhotoId()}>
-              <img src="/img/icons/baseline-arrow_back_ios-24px.svg" width="60px" style={{cursor:"pointer", top: "50%", position: "absolute", left:"50%", marginLeft:"-30px"}} onClick={this.previousPhoto} alt="previous"/>
-            </Link>
-          </Col>
-          <Col xs={10} sm={10} md={10} lg={10} xl={10}>
-            <div style={{height: "600px", textAlign: "center"}}>
-            <table style={{width: "100%"}}>
-              <tr>
-                <td style={{width: "50%", padding: "10px"}}>
-                  <img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> 
-              </td>
-              <td>
-                <span id="test" />
-              </td>
-              </tr>
-
-              </table>
-            </div>
-          </Col>
-          <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-            <Link to={this.nextPhotoId()}>
-              <img src="/img/icons/baseline-arrow_forward_ios-24px.svg" width="60px" style={{cursor:"pointer", position: "absolute", top: "50%", left: "50%", marginLeft: "-30px"}} alt="next" onClick={this.nextPhoto}/>
-            </Link>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+      <div style={{display: "flex", justifyContent: "center",  alignItems: "center", height: "100%"}}>
+        <Container style={{width: "100%"}}>
+          <Row>
+            <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+              <Link to={this.previousPhotoId()}>
+                <img src="/img/icons/left.svg" width="60px" style={{cursor:"pointer", top: "50%", position: "absolute", left:"50%", marginLeft:"-30px"}} onClick={this.previousPhoto} alt="previous"/>
+              </Link>
+            </Col>
+            {image}
+            <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+              <Link to={this.nextPhotoId()}>
+                <img src="/img/icons/right.svg" width="60px" style={{cursor:"pointer", position: "absolute", top: "50%", left: "50%", marginLeft: "-30px"}} alt="next" onClick={this.nextPhoto}/>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div> ; 
     return (
-      <Base content={pageContent} />
+      <Base content={pageContent} doNotIncludeFooter={true} />
     );
   }
 }

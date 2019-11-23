@@ -1,7 +1,6 @@
 [
     {
         "src": "/img/KOS.jpg", 
-        "srcset": "/img/KOS_355.jpg 355w,  /img/KOS_481.jpg 481w, /img/KOS_584.jpg 584w, /img/KOS_687.jpg 687w, /img/KOS_770.jpg 770w, /img/KOS_861.jpg 861w, /img/KOS_955.jpg 955w, /img/KOS_1033.jpg 1033w, /img/KOS_1112.jpg 1112w, /img/KOS_1192.jpg 1192w, /img/KOS_1200.jpg 1200w",
         "thumbnail": "/img/KOS-thumb.jpg",
         "thumbnailWidth": 300,
         "thumbnailHeight": 300,

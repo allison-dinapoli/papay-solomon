@@ -91,8 +91,22 @@ export default class Base extends React.Component {
       content = <div>{this.props.content}</div>
     }
 
+    var elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "5vh"}}>
+        {navbar}
+        {content}
+        <div style={{marginBottom: "30vh", position: "relative"}}></div>
+        <Footer/>
+      </div>;
+
+    if (this.props.doNotIncludeFooter) {
+      elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "5vh"}}>
+        {navbar}
+        {content}
+      </div>;
+    }
+
     return (
-      <div style={{position: "absolute", width: "100vw", overflowX: "hidden"}}>{navbar}{content}<div style={{paddingBottom: "30vh", position: "relative"}}></div><Footer/></div>
+      elementsToReturn
     );
   }
 };
