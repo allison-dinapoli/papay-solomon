@@ -1,9 +1,8 @@
 import React from 'react'; 
 import { Container, Row, Col } from 'react-bootstrap';
-import ReactImageMagnify from 'react-image-magnify';
-import images from '../json/paintings.json'; 
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
+import './ImageView.css';
 
 class ImageView extends React.Component {
   
@@ -11,8 +10,8 @@ class ImageView extends React.Component {
     super(props);
     
     let currentImageIndex;
-    for (let index in images) {
-      if ( images[index].id === this.props.match.params.id ) {
+    for (let index in this.props.images) {
+      if ( this.props.images[index].id === this.props.match.params.id ) {
         currentImageIndex = Number(index);
       }
     }
@@ -20,12 +19,13 @@ class ImageView extends React.Component {
     this.state = {
       currentImageIndex: currentImageIndex,
       currentImageId: this.props.match.params.id,
-      showImageZoom: false
+      showImageZoom: false, 
+      infoOpen: false
     }
   }
  
   backToGallery = () => {
-    this.props.history.push("/chapter1/");  
+    this.props.history.push(`/${this.props.pathName}`);  
   }
 
   nextPhoto = () => {
@@ -34,19 +34,19 @@ class ImageView extends React.Component {
   }
 
   nextPhotoPos = () => {
-    var numPhotos = images.length;
+    var numPhotos = this.props.images.length;
     var nextPhoto = (this.state.currentImageIndex + 1) % numPhotos;
     return nextPhoto; 
   }
 
   nextPhotoId = () => {
     var nextPhoto = this.nextPhotoPos();
-    let nextRoute = `/chapter1/${images[nextPhoto].id}`;
+    let nextRoute = `/${this.props.pathName}/${this.props.images[nextPhoto].id}`;
     return nextRoute;
   }
 
   previousPhotoPos() {
-    var numPhotos = images.length;
+    var numPhotos = this.props.images.length;
     var nextPhoto = (this.state.currentImageIndex - 1);
     if (nextPhoto < 0) {
       nextPhoto = numPhotos - 1; 
@@ -56,7 +56,7 @@ class ImageView extends React.Component {
   
   previousPhotoId = () => {
     var nextPhoto = this.previousPhotoPos(); 
-    return "/chapter1/" + images[nextPhoto].id; 
+    return `/${this.props.pathName}/${this.props.images[nextPhoto].id}`; 
   }
 
   previousPhoto = () => {
@@ -68,18 +68,28 @@ class ImageView extends React.Component {
     this.setState({showImageZoom:true});
   }
 
+  openInfo = () => {
+    this.setState({openInfo:true})
+  }
+
+  openFullScreen = () => {
+
+  }
+
   render() {
+    var infoButtton =  <span><img src="/img/icons/info.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openInfo}></img></span>; 
+    if (this.state.openInfo) {
+
+    }
+
     const pageContent =  <div>
     <table width="100%" height="40px">
       <tbody>
         <tr>
           <td style={{textAlign:"left"}} width="10%">
-            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/facebook.svg" alt="facebook"/></a> 
-            <a href={"https://www.twitter.com/intent/tweet?url=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/twitter.svg" alt="twitter"/></a>
-            <a href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/tumblr.svg" alt="tumblr"/></a>
-            <a href={"https://pinterest.com/pin/create/link/?url=" + encodeURI(window.location.href)} target="_blank" rel="noopener noreferrer"><img src="/img/icons/pinterest.svg" alt="pinterest"/></a>
+            {infoButtton}
           </td>
-          <td style={{textAlign:"center"}} className="subheader" width="80%">{images[this.state.currentImageIndex].name}</td>
+          <td style={{textAlign:"center"}} className="subheader" width="80%">{this.props.images[this.state.currentImageIndex].name}</td>
           <td style={{textAlign:"right"}} width="10%"><img src="/img/icons/baseline-close-24px.svg" width="40px" style={{cursor:"pointer"}} onClick={this.backToGallery} alt="back to gallery"/></td>
         </tr>
       </tbody>
@@ -98,23 +108,7 @@ class ImageView extends React.Component {
             <table style={{width: "100%"}}>
               <tr>
                 <td style={{width: "50%", padding: "10px"}}>
-              <ReactImageMagnify {...{
-                smallImage: {
-                  alt: images[this.state.currentImageIndex].name, 
-                  src: images[this.state.currentImageIndex].src,
-                  srcSet: images[this.state.currentImageIndex].srcset,
-                  isFluidWidth: true,
-                  sizes: '(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px'
-                }, 
-                largeImage: {
-                  alt: images[this.state.currentImageIndex].name, 
-                  src: images[this.state.currentImageIndex].src,
-                  width: images[this.state.currentImageIndex].width,
-                  height: images[this.state.currentImageIndex].height
-                }, 
-                enlargedImagePortalId: "test" 
-                
-              }} />
+                  <img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> 
               </td>
               <td>
                 <span id="test" />
@@ -137,6 +131,11 @@ class ImageView extends React.Component {
       <Base content={pageContent} />
     );
   }
+}
+
+ImageView.defaultProps = {
+    pathName: "chapter1", 
+    images: []
 }
 
 export default withRouter(ImageView);

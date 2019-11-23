@@ -15,7 +15,7 @@ export default class News extends React.Component {
 
   render(){
     const content = 
-      <div>
+      <div style={{paddingTop: "5vh"}}>
         <h2 className="heading">News</h2>  
 
         <ul>
@@ -23,37 +23,28 @@ export default class News extends React.Component {
         </ul>
 
         <br/>
-
-        <Container>
-          <Row>
-            <Col xs={12} sm={12} md={10} lg={8} xl={8}>
-              <div style={{padding:'56.25% 0 0 0', position: 'relative'}}>
-                <iframe title="Video: ASU Senior Awarded for Life-like Portraits of African Refugees - 3TV/CBS 5 News"
-                        src="https://player.vimeo.com/video/307643640" 
-                        style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
-                        frameborder="0" 
-                        webkitallowfullscreen 
-                        mozallowfullscreen 
-                        allowfullscreen>
-                </iframe>
-              </div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
-            </Col>
-          </Row>
-          <Row style={{marginTop: "20px"}}>
-            <Col xs={12} sm={12} md={10} lg={8} xl={8}>
-              <div style={{padding:'56.34% 0 0 0', position:'relative'}}>
-                <iframe src="https://player.vimeo.com/video/361556387" 
-                  style={{position: "absolute", top:0, left:0, width: '100%', height:'100%'}}
+        <div style={{padding:'40% 0 0 0', position: "relative", maxWidth: "50%", maxHeight: "50%"}}>
+          <iframe title="Video: ASU Senior Awarded for Life-like Portraits of African Refugees - 3TV/CBS 5 News"
+                  src="https://player.vimeo.com/video/307643640" 
+                  style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
                   frameborder="0" 
-                  allow="autoplay; fullscreen" 
+                  webkitallowfullscreen 
+                  mozallowfullscreen 
                   allowfullscreen>
-                </iframe>
-              </div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
-            </Col>
-          </Row>
-        </Container>
+          </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <div style={{paddingTop: "5vh"}}> </div>
+        <div style={{padding:'40% 0 0 0', position: "relative", maxHeight: "50%", maxWidth: "50%"}}>
+          <iframe src="https://player.vimeo.com/video/361556387" 
+            style={{position: "absolute", top:0, left:0, width: '100%', height:'100%'}}
+            frameborder="0" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
       </div>;
 
     return <Base content={content}></Base>

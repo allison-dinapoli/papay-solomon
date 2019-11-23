@@ -26,7 +26,7 @@ function Footer() {
           <table width="100%" style={{textAlign: "center"}}>
             <tr>
               <td width="40%"></td>
-              <td width="10%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram.svg" alt="instagram"/></a></td>
+              <td width="10%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram_dark.svg" alt="instagram"/></a></td>
               <td width="10%"><a className="quietLink" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/facebook.svg" alt="facebook"/></a></td>
               <td width="40%"></td>
             </tr>

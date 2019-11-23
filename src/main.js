@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Base from './components/base';
-import ImageView from './components/ImageView';
+import ImageViewChapter1 from './components/ImageViewChapter1';
 import Gallery from './components/gallery';
 import PDFViewer from './components/cv';
 import Sculptures from './components/sculptures';
-import ImageViewSculptures from './components/ImageViewSculptures';
+import ImageViewChapter2 from './components/ImageViewChapter2';
 import './components/base.css';
 import News from './components/news';
 import About from './components/about';
@@ -26,9 +26,9 @@ const Main = () => (
         <main>
             <Switch>
                 <Route exact path='/' component={HomePage}/>
-                <Route path='/chapter1/:id' component={ImageView}/>
+                <Route path='/chapter1/:id' component={ImageViewChapter1}/>
                 <Route path='/chapter1' component={Gallery}/>
-                <Route path='/chapter2/:id' component={ImageViewSculptures}/>
+                <Route path='/chapter2/:id' component={ImageViewChapter2}/>
                 <Route path='/chapter2' component={Sculptures}/>
                 <Route path='/about' component={HomePage}/>
                 <Route path='/news' component={News}/>

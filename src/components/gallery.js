@@ -20,7 +20,7 @@ export default class Gallery extends React.Component {
     //var domain = newLocation.split("/gallery")[0]; 
     //window.location.href = domain + "/gallery/" + this.state.images[currentImageIndex].id;
     //console.log(currentImageIndex.target.id);
-    this.props.history.push("/paintings/" + this.state.images[currentImageIndex.target.id].id);
+    this.props.history.push("/chapter1/" + this.state.images[currentImageIndex.target.id].id);
   }   
 
   getFourImagesStartingAtN = (n) => {
