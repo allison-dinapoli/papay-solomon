@@ -30,10 +30,10 @@ export default class Base extends React.Component {
           <Dropdown.Toggle as={Nav.Link}>Works</Dropdown.Toggle>
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/paintings'>Paintings</Link>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>Chapter 1</Link>
               </Dropdown.Item>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/sculptures'>Sculptures</Link>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter2'>Chapter2</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -63,10 +63,10 @@ export default class Base extends React.Component {
               <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >Works</Dropdown.Toggle>
               <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/paintings'>Paintings</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter1'>Chapter 1</Link>
                 </Dropdown.Item>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/sculptures'>Sculptures</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter2'>Chapter 2</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -90,10 +90,9 @@ export default class Base extends React.Component {
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
     }
-    console.dir(this.props.content)
 
     return (
-      <div>{navbar}{content}<Footer/></div>
+      <div style={{position: "absolute", width: "100vw", overflowX: "hidden"}}>{navbar}{content}<div style={{paddingBottom: "30vh", position: "relative"}}></div><Footer/></div>
     );
   }
 };

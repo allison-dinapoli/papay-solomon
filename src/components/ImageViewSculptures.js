@@ -25,7 +25,7 @@ class ImageViewSculptures extends React.Component {
   }
  
   backToGallery = () => {
-    this.props.history.push("/sculptures/");  
+    this.props.history.push("/chapter2/");  
   }
 
   nextPhoto = () => {
@@ -41,7 +41,7 @@ class ImageViewSculptures extends React.Component {
 
   nextPhotoId = () => {
     var nextPhoto = this.nextPhotoPos();
-    let nextRoute = `/sculptures/${images[nextPhoto].id}`;
+    let nextRoute = `/chapter2/${images[nextPhoto].id}`;
     return nextRoute;
   }
 
@@ -56,7 +56,7 @@ class ImageViewSculptures extends React.Component {
   
   previousPhotoId = () => {
     var nextPhoto = this.previousPhotoPos(); 
-    return "/sculptures/" + images[nextPhoto].id; 
+    return "/chapter2/" + images[nextPhoto].id; 
   }
 
   previousPhoto = () => {

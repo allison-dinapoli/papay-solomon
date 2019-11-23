@@ -26,10 +26,10 @@ const Main = () => (
         <main>
             <Switch>
                 <Route exact path='/' component={HomePage}/>
-                <Route path='/paintings/:id' component={ImageView}/>
-                <Route path='/paintings' component={Gallery}/>
-                <Route path='/sculptures/:id' component={ImageViewSculptures}/>
-                <Route path='/sculptures' component={Sculptures}/>
+                <Route path='/chapter1/:id' component={ImageView}/>
+                <Route path='/chapter1' component={Gallery}/>
+                <Route path='/chapter2/:id' component={ImageViewSculptures}/>
+                <Route path='/chapter2' component={Sculptures}/>
                 <Route path='/about' component={HomePage}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>

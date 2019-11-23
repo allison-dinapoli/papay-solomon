@@ -1,38 +1,39 @@
 import React from 'react';
 
 var style = {
-  backgroundColor: "#F8F8F8",
-  borderTop: "1px solid #E7E7E7",
   textAlign: "center",
   padding: "10px",
-  position: "fixed",
   left: "0",
   bottom: "0",
-  height: "62px",
-  width: "100%",
+  height: "30vh",
 }
 
 var phantom = {
-display: 'block',
+display: 'flex',
 padding: '10px',
 height: '62px',
 width: '100%',
 }
 
 function Footer() {
+  var dt = new Date();
+  var year = dt.getFullYear(); 
+  
   return (
-      <div>
-        <div style={phantom} />
+      <div style={{phantom}}>
         <div style={style}>
+          <div style={{fontSize: "0.9em", paddingBottom: "1vh"}}><a className="quietLink" href="mailto://papaysolomon@gmail.com"> papaysolomon@gmail.com </a></div>
           <table width="100%" style={{textAlign: "center"}}>
             <tr>
-              <td width="30%"></td>
-              <td width="20%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">Instagram</a></td>
-              <td width="20%"><a className="quietLink" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">Facebook</a></td>
-              <td width="30%"></td>
+              <td width="40%"></td>
+              <td width="10%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram.svg" alt="instagram"/></a></td>
+              <td width="10%"><a className="quietLink" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/facebook.svg" alt="facebook"/></a></td>
+              <td width="40%"></td>
             </tr>
           </table>
-          <a>All rights reserved Papay Solomon. Website by Alli DiNapoli.</a>
+          
+          <div style={{fontSize: "0.9em", paddingTop: "10vh" }}>All content © Papay Solomon {year}.</div> 
+          <div style={{fontSize: "0.9em" }}>Website by Alli DiNapoli.</div>
         </div>
       </div>
   )

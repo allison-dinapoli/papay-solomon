@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
+import Footer from './footer';
 import { Container, Row, Col } from 'react-bootstrap';
 import './about.css';
 import './base.css';
@@ -29,14 +30,14 @@ class About extends React.Component {
     
     `
     return (
-        <span>
+        <div>
             <div id="test"> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
                 <h1>ABOUT</h1>
                 <div id="aboutheader"> {aboutHeaderText} </div>
                 <div id="abouttext"> {aboutText} </div>
             </div>
-        </span>
+        </div>
         
     );
   }

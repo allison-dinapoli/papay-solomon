@@ -25,7 +25,7 @@ class ImageView extends React.Component {
   }
  
   backToGallery = () => {
-    this.props.history.push("/paintings/");  
+    this.props.history.push("/chapter1/");  
   }
 
   nextPhoto = () => {
@@ -41,7 +41,7 @@ class ImageView extends React.Component {
 
   nextPhotoId = () => {
     var nextPhoto = this.nextPhotoPos();
-    let nextRoute = `/paintings/${images[nextPhoto].id}`;
+    let nextRoute = `/chapter1/${images[nextPhoto].id}`;
     return nextRoute;
   }
 
@@ -56,7 +56,7 @@ class ImageView extends React.Component {
   
   previousPhotoId = () => {
     var nextPhoto = this.previousPhotoPos(); 
-    return "/paintings/" + images[nextPhoto].id; 
+    return "/chapter1/" + images[nextPhoto].id; 
   }
 
   previousPhoto = () => {
