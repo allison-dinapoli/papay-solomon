@@ -47,26 +47,29 @@
 }
 
 .infoviewingimage {
-    width: 30vw; 
     top: 50%; 
+    max-width: 80vw; 
+    max-height: 80vh; 
     align-self: left;
 }
 
 .imageviewingcontainer {
     align-self:center;
-    width: 80vw; 
+    max-width: 80vw; 
     margin-left: -15px;
 }
 
-.col-xl-6, .col-sm-12, .col-lg-6, .col-12, .col-md-6, .col-xs-12 {
+.col-xl-6, .col-sm-12, .col-lg-6, .col-12, .col-md-6, .col-xs-12, .container {
     padding-right: 0px!important; 
     padding-left: 0px!important; 
 }
 
 .infotext {
-    top: 50%;
+    top: 40%;
     height: 80vh;
-    position: absolute;
+    text-align: left;
+    position: relative;
+    margin-left: 15px; 
 }
 
 @media only screen and (orientation: portrait) {
@@ -78,6 +81,5 @@
     .infotext {
         top: 2%;
         height: 40vh;
-        position: relative;
     }
 }    

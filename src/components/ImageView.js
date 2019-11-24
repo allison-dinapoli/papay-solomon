@@ -106,7 +106,7 @@ class ImageView extends React.Component {
           <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
         </div> ;
 
-        image = <Container style={{width: "80vw"}}>
+        image = <Container style={{width: "80vw", justifyContent: "flex-start"}}>
               <Row style={{width: "80vw"}}>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6}>
