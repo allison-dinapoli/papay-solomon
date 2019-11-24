@@ -9,11 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-.content {
-  padding: 20px; 
-
-}
-
 .test {
   color: white!important;
   z-index: 100; 

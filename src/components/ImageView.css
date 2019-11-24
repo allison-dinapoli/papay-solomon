@@ -2,6 +2,7 @@
 #viewingimage {
     max-width: 80vw;
     max-height: 80vh;
+    position: relative; 
 }
 
 #imagecontainer {
@@ -11,12 +12,16 @@
 
 #infodiv {
     width: 100vw; 
-    margin-bottom: 5vh;
-    margin-top: 5vh;
+    margin-bottom: 2vh;
+    margin-top: 6vh;
+    margin-left: 4vw;
 }
 
 .icon {
     margin-right: 25px;
+    cursor: pointer; 
+    width: 4vh; 
+    min-width: 20px;
 }
 
 .quietLinkIcon {
@@ -27,3 +32,41 @@
     text-decoration: none;
     color: inherit;
 }
+
+.directionarrows {
+    cursor: pointer;
+    top: 50%;
+    position: relative;
+    width: 2vw;
+    min-width: 30px;
+}
+
+.directionarrowscontainer {
+    align-items: center;
+    width: 10vw;
+}
+
+.infoviewingimage {
+    width: 30vw; 
+    top: 50%; 
+    align-self: left;
+}
+
+.imageviewingcontainer {
+    align-self:center;
+    width: 80vw; 
+    margin-left: -15px;
+}
+
+.col-xl-6, .col-sm-12, .col-lg-6, .col-12, .col-md-6, .col-xs-12 {
+    padding-right: 0px!important; 
+    padding-left: 0px!important; 
+}
+
+@media only screen and (orientation: portrait) {
+    .infoviewingimage {
+        width: 80vw; 
+        align-self: center;
+        
+    }
+}    

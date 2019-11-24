@@ -95,21 +95,20 @@ class ImageView extends React.Component {
   }
 
   render() {
-    var infoButton =  <div id="infodiv"><img src="/img/icons/info.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openInfo}></img></div>; 
-    var image = <div><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
+    var infoButton =  <div id="infodiv"><img className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></div>; 
+    var image = <div className="viewingimagecontainer"><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
    
     if (this.state.openInfo) {
       infoButton = <div id="infodiv">
-          <img className="icon" src="/img/icons/info_dark.svg" alt="info" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.closeInfo}></img> 
-          <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" style={{cursor: "pointer", width: "2vw", minWidth: "20px"}} onClick={this.openFullScreen}></img>
-          <a className="icon quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram.svg" alt="instagram"/></a>
-          <a className="icon quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/facebook.svg" alt="facebook"/></a>
+          <img className="icon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
+          <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
+          <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
+          <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
         </div> ;
 
-        image = <Col xs={10} sm={10} md={10} lg={10} xl={10}>      
-            <Container>
+        image = <Container style={{width: "80vw"}}>
               <Row>
-                <Col xs={12} sm={12} md={6} lg={6} xl={6}><div><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
+                <Col xs={12} sm={12} md={6} lg={6} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6}>
                   <div style={{fontWeight: "bold"}}>{this.props.images[this.state.currentImageIndex].name}</div>
                   <div>{this.props.images[this.state.currentImageIndex].size}</div> 
@@ -118,7 +117,6 @@ class ImageView extends React.Component {
                 </Col>
               </Row>
             </Container>
-          </Col>
               
             
     }
@@ -126,22 +124,28 @@ class ImageView extends React.Component {
     const pageContent =  <div>
       {infoButton}
 
-      <div style={{display: "flex", justifyContent: "center",  alignItems: "center", height: "100%"}}>
-        <Container style={{width: "100%"}}>
-          <Row>
-            <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-              <Link to={this.previousPhotoId()}>
-                <img src="/img/icons/left.svg" width="60px" style={{cursor:"pointer", top: "50%", position: "absolute", left:"50%", marginLeft:"-30px"}} onClick={this.previousPhoto} alt="previous"/>
-              </Link>
-            </Col>
-            {image}
-            <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-              <Link to={this.nextPhotoId()}>
-                <img src="/img/icons/right.svg" width="60px" style={{cursor:"pointer", position: "absolute", top: "50%", left: "50%", marginLeft: "-30px"}} alt="next" onClick={this.nextPhoto}/>
-              </Link>
-            </Col>
-          </Row>
-        </Container>
+      <div style={{display: "flex", justifyContent: "center",  alignItems: "center", textAlign: "center", width: "100vw"}}>
+        <table style={{width: "100vw"}}>
+          <tbody> 
+            <tr>
+              <td style={{width: "10vw"}}> 
+                <div className="directionarrowscontainer">
+                  <Link to={this.previousPhotoId()}>
+                    <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
+                  </Link> 
+                </div>
+              </td> 
+              <td style={{width: "80vw"}}> {image} </td>
+              <td style={{width: "10vw"}}> 
+                <div className="directionarrowscontainer">
+                  <Link to={this.nextPhotoId()}>
+                    <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div> ; 
     return (
