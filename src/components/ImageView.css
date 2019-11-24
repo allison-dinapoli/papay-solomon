@@ -54,32 +54,81 @@
 }
 
 .imageviewingcontainer {
-    align-self:center;
+    align-self: center;
     max-width: 80vw; 
-    margin-left: -15px;
 }
 
-.col-xl-6, .col-sm-12, .col-lg-6, .col-12, .col-md-6, .col-xs-12, .container {
+.col-xl-6, .col-sm-12, .col-lg-12, .col-12, .col-md-12, .col-xs-12, .container {
     padding-right: 0px!important; 
     padding-left: 0px!important; 
 }
 
+
+.infoviewingimage {
+    max-width: 80vw; 
+    align-self: center;
+    
+}
 .infotext {
-    top: 40%;
-    height: 80vh;
-    text-align: left;
-    position: relative;
-    margin-left: 15px; 
+    top: 5%;
+    height: 40vh;
+    margin-left: 10vw; 
+    text-align: center;
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (min-width: 1200px) {
+    .infotext {
+        top: 40%;
+        height: 80vh;
+        text-align: left;
+        position: relative;
+        margin-left: 25vw; 
+        width: 30vh; 
+    }
+    
+}    
+
+@media only screen and (min-width: 1500px) {
     .infoviewingimage {
-        width: 80vw; 
+        max-width: 80vw; 
         align-self: center;
         
     }
     .infotext {
-        top: 2%;
-        height: 40vh;
+        top: 40%;
+        height: 80vh;
+        text-align: left;
+        position: relative;
+        margin-left: 15vw; 
     }
-}    
+} 
+
+@media only screen and (min-width: 1800px) {
+    .infoviewingimage {
+        max-width: 80vw; 
+        align-self: center;
+        
+    }
+    .infotext {
+        top: 40%;
+        height: 80vh;
+        text-align: left;
+        position: relative;
+        margin-left: 50px; 
+    }
+} 
+
+@media only screen and (min-width: 2400px) {
+    .infoviewingimage {
+        max-width: 80vw; 
+        align-self: center;
+        
+    }
+    .infotext {
+        top: 40%;
+        height: 80vh;
+        text-align: left;
+        position: relative;
+        margin-left: 0vw; 
+    }
+} 
