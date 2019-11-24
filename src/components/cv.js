@@ -20,7 +20,7 @@ class PDFViewer extends Component {
   render() {
     const { pageNumber, numPages } = this.state;
     const doc = <div style={{textAlign: "left"}}>
-      <h2 className="heading">CV</h2>
+      <h2 className="heading" style={{marginTop: "60px"}}>CV</h2>
         <Document
           file="CV.pdf"
           onLoadSuccess={this.onDocumentLoadSuccess}
