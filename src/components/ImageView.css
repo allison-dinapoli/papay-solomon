@@ -63,10 +63,21 @@
     padding-left: 0px!important; 
 }
 
+.infotext {
+    top: 50%;
+    height: 80vh;
+    position: absolute;
+}
+
 @media only screen and (orientation: portrait) {
     .infoviewingimage {
         width: 80vw; 
         align-self: center;
         
+    }
+    .infotext {
+        top: 2%;
+        height: 40vh;
+        position: relative;
     }
 }    

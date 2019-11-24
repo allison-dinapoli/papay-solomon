@@ -107,13 +107,15 @@ class ImageView extends React.Component {
         </div> ;
 
         image = <Container style={{width: "80vw"}}>
-              <Row>
+              <Row style={{width: "80vw"}}>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                  <div style={{fontWeight: "bold"}}>{this.props.images[this.state.currentImageIndex].name}</div>
-                  <div>{this.props.images[this.state.currentImageIndex].size}</div> 
-                  <div>{this.props.images[this.state.currentImageIndex].medium}</div> 
-                  <div>{this.props.images[this.state.currentImageIndex].year}</div> 
+                  <div className="infotext" >
+                    <div style={{fontWeight: "bold"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                    <div>{this.props.images[this.state.currentImageIndex].size}</div> 
+                    <div>{this.props.images[this.state.currentImageIndex].medium}</div> 
+                    <div>{this.props.images[this.state.currentImageIndex].year}</div> 
+                  </div>
                 </Col>
               </Row>
             </Container>
