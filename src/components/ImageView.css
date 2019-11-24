@@ -44,6 +44,7 @@
 .directionarrowscontainer {
     align-items: center;
     width: 10vw;
+    height: 80vh; 
 }
 
 .infoviewingimage {
@@ -63,6 +64,10 @@
     padding-left: 0px!important; 
 }
 
+.row {
+    margin-left: 0px!important; 
+    margin-right: 0px!important; 
+}
 
 .infoviewingimage {
     max-width: 80vw; 
@@ -72,7 +77,6 @@
 .infotext {
     top: 5%;
     height: 40vh;
-    margin-left: 10vw; 
     text-align: center;
 }
 
@@ -92,7 +96,6 @@
     .infoviewingimage {
         max-width: 80vw; 
         align-self: center;
-        
     }
     .infotext {
         top: 40%;

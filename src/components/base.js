@@ -32,9 +32,6 @@ export default class Base extends React.Component {
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                 <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>Chapter 1</Link>
               </Dropdown.Item>
-              <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter2'>Chapter2</Link>
-              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
@@ -64,9 +61,6 @@ export default class Base extends React.Component {
               <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter1'>Chapter 1</Link>
-                </Dropdown.Item>
-                <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter2'>Chapter 2</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

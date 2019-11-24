@@ -55,5 +55,41 @@
             "diluting-dreams-2.jpg"
         ], 
         "category": "painting"
+    }, 
+    {
+        "src": "/img/inside-the-lappa-with-grace.jpg", 
+        "thumbnail": "/img/inside-the-lappa-with-grace-thumb.jpg",
+        "thumbnailWidth": 300,
+        "thumbnailHeight": 300,
+        "width": 3730,
+        "height": 3730,
+        "id": "inside-the-lappa",
+        "caption": "Inside the Lappa with Grace, Portrait of Grace Mbola. Oil on Canvas, Mirror. 40in x 40in. 2018.",
+        "name": "Inside the Lappa with Grace- Portrait of Grace Mbola", 
+        "medium": "Oil on Canvas, Mirror",
+        "year": 2018, 
+        "size": "40in x 40in",
+        "additionalPhotos": [
+            "inside-the-lappa-with-grace-1.jpg",
+            "inside-the-lappa-with-grace-2.jpg"
+        ], 
+        "category": "painting"
+    },
+    {
+        "src": "/img/internal-prowess.jpg", 
+        "thumbnail": "/img/internal-prowess-thumb.jpg",
+        "thumbnailWidth": 300,
+        "thumbnailHeight": 300,
+        "width": 3762,
+        "height": 3762,
+        "id": "internal-prowess.jpg",
+        "caption": "Internal Prowess- Portrait of Alphonsine Mbuyi. Oil and Graphite on Canvas, Mirror. 40in x 40in. 2019.",
+        "name": "Internal Prowess- Portrait of Alphonsine Mbuyi", 
+        "medium": "Oil and Graphite on Canvas, Mirror",
+        "year": 2019, 
+        "size": "40in x 40in",
+        "additionalPhotos": [
+        ], 
+        "category": "painting"
     }
 ]
