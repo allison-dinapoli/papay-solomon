@@ -18,27 +18,33 @@ export default class Base extends React.Component {
     }; 
   }
   render() {
+    var navbarBrand = <Link to='/' className="headerLink"><h2 className="headerLink">Papay Solomon</h2></Link>;
+
+    if (this.props.doNotIncludeNavbarBrand) {
+      var navbarBrand = "";
+    }
+
     var navbar = 
       <Navbar scrolling light bg="transparent" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed"}}>
         <Navbar.Brand>
-          <Link to='/'><img src="/img/icons/PapaySolomon_Logo-01.png" height="32px" alt="Logo- Papay Solomon"/></Link>
+          {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse style={{textAlign: 'right', padding: '20px'}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
-          <Dropdown.Toggle as={Nav.Link}>Works</Dropdown.Toggle>
+          <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>Chapter 1</Link>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} to='/about'>About</Link>
+            <Link className={'nav-link'} to='/about'>ABOUT</Link>
           </Nav.Item>
           <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} to='/news'>News</Link>
+            <Link className={'nav-link'} to='/news'>NEWS</Link>
           </Nav.Item>
           <Nav.Item eventKey={4}>
             <Link className={'nav-link'} to='/cv'>CV</Link>
@@ -51,25 +57,25 @@ export default class Base extends React.Component {
       navbar = 
       <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white"}}>
         <Navbar.Brand>
-          <Link to='/'><img src="/img/icons/PapaySolomon_Logo-01.png" height="32px" alt="Logo- Papay Solomon"/></Link>
+          {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle> <div className={'test'}/> </Navbar.Toggle>
         <Navbar.Collapse style={{textAlign: 'right', padding: '20px'}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >Works</Dropdown.Toggle>
+              <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
               <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter1'>Chapter 1</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter1'>CHAPTER &#8544;</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
          
             <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} style={{color: 'white'}} to='/about'>About</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} to='/about'>ABOUT</Link>
             </Nav.Item>
             <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} style={{color: 'white'}} to='/news'>News</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} to='/news'>NEWS</Link>
             </Nav.Item>
             <Nav.Item eventKey={4}>
               <Link className={'nav-link'} style={{color: 'white'}} to='/cv'>CV</Link>
@@ -80,7 +86,7 @@ export default class Base extends React.Component {
     }
 
 
-    var content = <div className="content">{this.props.content}</div>
+    var content = <div className="content" style={{marginTop: "20px"}}>{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
     }

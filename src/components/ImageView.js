@@ -23,9 +23,24 @@ class ImageView extends React.Component {
  
     this.state = {
       currentImageIndex: currentImageIndex,
-      currentImageId: this.props.match.params.id,
+      // currentImageId: this.props.match.params.id,
       showImageZoom: false, 
       infoOpen: false
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  handleKeyDown = (event) => {
+    console.log(event.keyCode);
+    if (event.keyCode === 37) { // Arrow Left 
+      var imgIndex = this.previousPhoto(); 
+      this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
+    } else if (event.keyCode === 39) { // Arrow Right 
+      var imgIndex = this.nextPhoto(); 
+      this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
     }
   }
  
@@ -36,6 +51,7 @@ class ImageView extends React.Component {
   nextPhoto = () => {
     var nextPhoto = this.nextPhotoPos();  
     this.setState({currentImageIndex: nextPhoto}); 
+    return nextPhoto; 
   }
 
   nextPhotoPos = () => {
@@ -67,6 +83,7 @@ class ImageView extends React.Component {
   previousPhoto = () => {
     var nextPhoto = this.previousPhotoPos(); 
     this.setState({currentImageIndex: nextPhoto}); 
+    return nextPhoto; 
   }
 
   openPhotoZoom = () => {
@@ -96,61 +113,69 @@ class ImageView extends React.Component {
 
   render() {
     var infoButton =  <div id="infodiv"><img className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></div>; 
-    var image = <div className="viewingimagecontainer"><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
+    try {
+      var image = <div className="viewingimagecontainer"><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
+    
    
-    if (this.state.openInfo) {
-      infoButton = <div id="infodiv">
-          <img className="icon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
-          <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
-          <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
-          <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
-        </div> ;
+      if (this.state.openInfo) {
+        infoButton = <div id="infodiv">
+            <img className="icon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
+            <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
+            <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
+            <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
+          </div> ;
 
-        image = <Container style={{width: "80vw", justifyContent: "flex-start"}}>
-              <Row style={{width: "80vw"}}>
-                <Col xs={12} sm={12} md={12} lg={12} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
-                <Col xs={12} sm={12} md={12} lg={12} xl={6}>
-                  <div className="infotext" >
-                    <div style={{fontWeight: "bold", marginBottom: "14px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
-                    <div style={{marginBottom: "14px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
-                    <div style={{marginBottom: "14px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
-                    <div style={{marginBottom: "14px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+          image = <Container style={{width: "80vw", justifyContent: "flex-start"}}>
+                <Row style={{width: "80vw"}}>
+                  <Col xs={12} sm={12} md={12} lg={12} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
+                  <Col xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <div className="infotext" >
+                      <div style={{fontWeight: "bold", fontStyle: "italic", marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
+                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
+                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+                    </div>
+                  </Col>
+                </Row>
+              </Container>       
+      }
+
+      const pageContent =  <div>
+        {infoButton}
+
+        <div style={{display: "flex", justifyContent: "center",  alignItems: "center", textAlign: "center", width: "100vw"}}>
+          <table style={{width: "100vw"}}>
+            <tbody> 
+              <tr>
+                <td style={{width: "10vw"}}> 
+                  <div className="directionarrowscontainer">
+                    <Link to={this.previousPhotoId()}>
+                      <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
+                    </Link> 
                   </div>
-                </Col>
-              </Row>
-            </Container>       
+                </td> 
+                <td style={{width: "80vw"}}> {image} </td>
+                <td style={{width: "10vw"}}> 
+                  <div className="directionarrowscontainer">
+                    <Link to={this.nextPhotoId()}>
+                      <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> ; 
+      return (
+        <Base content={pageContent} doNotIncludeFooter={true} />
+      );
+    } catch(error) {
+      this.props.history.push("/")
+      return (
+        <div></div>
+      );
     }
-
-    const pageContent =  <div>
-      {infoButton}
-
-      <div style={{display: "flex", justifyContent: "center",  alignItems: "center", textAlign: "center", width: "100vw"}}>
-        <table style={{width: "100vw"}}>
-          <tbody> 
-            <tr>
-              <td style={{width: "10vw"}}> 
-                <div className="directionarrowscontainer">
-                  <Link to={this.previousPhotoId()}>
-                    <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
-                  </Link> 
-                </div>
-              </td> 
-              <td style={{width: "80vw"}}> {image} </td>
-              <td style={{width: "10vw"}}> 
-                <div className="directionarrowscontainer">
-                  <Link to={this.nextPhotoId()}>
-                    <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
-                  </Link>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div> ; 
-    return (
-      <Base content={pageContent} doNotIncludeFooter={true} />
-    );
   }
 }
 

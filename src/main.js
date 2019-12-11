@@ -2,9 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Base from './components/base';
 import ImageViewChapter1 from './components/ImageViewChapter1';
-import Gallery from './components/gallery';
 import PDFViewer from './components/cv';
-import Sculptures from './components/sculptures';
 import ImageViewChapter2 from './components/ImageViewChapter2';
 import './components/base.css';
 import News from './components/news';
@@ -12,7 +10,7 @@ import About from './components/about';
 
 
 const HomePage = () => (
-  <Base content={<About />} doNotIncludeContentClassName={true} useLightNavbar={true} />
+  <Base content={<About />} doNotIncludeContentClassName={true} doNotIncludeNavbarBrand={true} useLightNavbar={true} />
 )
 
 const Main = () => (

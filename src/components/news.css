@@ -1,0 +1,36 @@
+
+
+.newsBlock {
+    margin: auto;
+    width: 50%; 
+}
+
+.newsHeader {
+    font-style: italic; 
+    font-weight: bold;
+    text-align: left; 
+}
+
+.newsText {
+    color: black; 
+    text-align: left; 
+}
+
+.vimeoVideo {
+    padding: 40% 0 0 0;
+    position: relative; 
+    max-width: 50%;
+    max-height: 50%; 
+    margin: auto;
+}
+
+
+@media only screen and (orientation: portrait) {
+    .vimeoVideo {
+        max-width: 90%; 
+        max-height: 90%; 
+    }
+    .newsBlock {
+        width: 90%; 
+    }
+}   
