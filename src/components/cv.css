@@ -1,4 +1,10 @@
-.react-pdf__Page__textContent {
-    top: 41.8%!important; 
-    left: 16.3%!important; 
+#documentwindow {
+    text-align: center; 
+    width: 100%; 
+    max-width: 100vh; 
 }
+
+canvas {
+    display: inline!important;
+ }
+ 

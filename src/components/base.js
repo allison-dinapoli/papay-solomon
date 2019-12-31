@@ -18,19 +18,19 @@ export default class Base extends React.Component {
     }; 
   }
   render() {
-    var navbarBrand = <Link to='/' className="headerLink"><h2 className="headerLink">Papay Solomon</h2></Link>;
+    var navbarBrand = <Link to='/' className="headerLink"><a className="headerLink">PAPAY SOLOMON</a></Link>;
 
     if (this.props.doNotIncludeNavbarBrand) {
       var navbarBrand = "";
     }
 
     var navbar = 
-      <Navbar scrolling light bg="transparent" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed"}}>
+      <Navbar scrolling light bg="transparent" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", paddingBottom: "0px"}}>
         <Navbar.Brand>
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse style={{textAlign: 'right', padding: '20px'}}>
+        <Navbar.Collapse style={{textAlign: 'right'}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
@@ -55,12 +55,12 @@ export default class Base extends React.Component {
 
     if (this.props.useLightNavbar) {
       navbar = 
-      <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white"}}>
+      <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px"}}>
         <Navbar.Brand>
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle> <div className={'test'}/> </Navbar.Toggle>
-        <Navbar.Collapse style={{textAlign: 'right', padding: '20px'}}>
+        <Navbar.Collapse style={{textAlign: 'right'}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
               <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
@@ -91,7 +91,7 @@ export default class Base extends React.Component {
       content = <div>{this.props.content}</div>
     }
 
-    var elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "5vh"}}>
+    var elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "3vh"}}>
         {navbar}
         {content}
         <div style={{marginBottom: "30vh", position: "relative"}}></div>
@@ -99,7 +99,7 @@ export default class Base extends React.Component {
       </div>;
 
     if (this.props.doNotIncludeFooter) {
-      elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "5vh"}}>
+      elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "3vh"}}>
         {navbar}
         {content}
       </div>;

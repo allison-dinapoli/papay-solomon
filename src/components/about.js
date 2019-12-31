@@ -33,7 +33,7 @@ class About extends React.Component {
         <div>
             <div id="test"> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
-                <h1>ABOUT</h1>
+                <h2>ABOUT</h2>
                 <div id="aboutheader"> {aboutHeaderText} </div>
                 <div id="abouttext"> {aboutText} </div>
             </div>

@@ -16,26 +16,35 @@ class PDFViewer extends Component {
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
   }
+
+  onDocumentClick = () => {
+    window.open("/CV.pdf", "_blank");
+  }
  
   render() {
     const { pageNumber, numPages } = this.state;
-    const doc = <div style={{textAlign: "left"}}>
+    const doc = <div style={{textAlign: "center"}}>
       <h2 className="heading" style={{marginTop: "60px"}}>CV</h2>
-        <Document
-          file="CV.pdf"
-          onLoadSuccess={this.onDocumentLoadSuccess}
-          externalLinkTarget="_blank"
-          renderTextLayer="false"
-        >
-          <Page renderMode="svg" 
-            externalLinkTarget="_blank" 
-            renderTextLayer={false}
-            pageNumber={1} />
-          <Page renderMode="svg" 
-            externalLinkTarget="_blank" 
-            renderTextLayer={false}
-            pageNumber={2} />
-        </Document>
+        <div id="documentwindow">
+          
+            
+            <Document
+              file="CV.pdf"
+              onLoadSuccess={this.onDocumentLoadSuccess}
+              externalLinkTarget="_blank"
+              renderTextLayer="true"
+            >
+              <Page
+                externalLinkTarget="_blank" 
+                renderTextLayer={true}
+                pageNumber={1} />
+              <Page
+                externalLinkTarget="_blank" 
+                renderTextLayer={true}
+                pageNumber={2} />
+            </Document>
+          
+        </div>
       </div>; 
  
     return (

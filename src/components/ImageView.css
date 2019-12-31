@@ -10,18 +10,27 @@
     height: 100vh;
 }
 
-#infodiv {
+#infocontainer {
     width: 100vw; 
     margin-bottom: 2vh;
     margin-top: 6vh;
-    margin-left: 4vw;
+    text-align:right;
 }
 
-.icon {
-    margin-right: 25px;
+#infoicon {
+    margin-right:50%;
+    position: relative; 
     cursor: pointer; 
     width: 3vh; 
     min-width: 20px;
+}
+
+.icon {
+    position: relative; 
+    cursor: pointer; 
+    width: 3vh; 
+    min-width: 20px;
+    margin-right: 12px; 
 }
 
 .quietLinkIcon {
