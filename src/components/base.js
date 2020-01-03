@@ -15,6 +15,7 @@ export default class Base extends React.Component {
     super(props); 
     
     this.state = {
+      
     }; 
   }
   render() {
@@ -25,12 +26,13 @@ export default class Base extends React.Component {
     }
 
     var navbar = 
-      <Navbar scrolling light bg="transparent" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", paddingBottom: "0px"}}>
-        <Navbar.Brand>
+      <Navbar scrolling light bg="transparent" sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
+        <Navbar.Brand style={{zIndex: 2}}>
           {navbarBrand}
         </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse style={{textAlign: 'right'}}>
+        <Navbar.Text className="sectionheader">{this.props.sectionHeader}</Navbar.Text>
+        <Navbar.Toggle style={{zIndex: 2}} />
+        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
@@ -86,12 +88,12 @@ export default class Base extends React.Component {
     }
 
 
-    var content = <div className="content" style={{marginTop: "20px"}}>{this.props.content}</div>
+    var content = <div className="content" style={{marginTop: "1vh"}}>{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
     }
 
-    var elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "3vh"}}>
+    var elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "3vh"}}>
         {navbar}
         {content}
         <div style={{marginBottom: "30vh", position: "relative"}}></div>
@@ -99,7 +101,7 @@ export default class Base extends React.Component {
       </div>;
 
     if (this.props.doNotIncludeFooter) {
-      elementsToReturn = <div style={{position: "absolute", width: "100vw", overflowX: "hidden", marginBottom: "3vh"}}>
+      elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "3vh"}}>
         {navbar}
         {content}
       </div>;

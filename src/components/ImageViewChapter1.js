@@ -12,7 +12,7 @@ class ImageViewChapter1 extends React.Component {
 
   render() {
     return (
-      <ImageView pathName="chapter1" images={images} />
+      <ImageView pathName="chapter1" sectionHeader="CHAPTER &#8544;" images={images} />
     );
   }
 }

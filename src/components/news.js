@@ -17,10 +17,9 @@ export default class News extends React.Component {
 
   render(){
     const content = 
-      <div style={{paddingTop: "5vh"}}>
-        <h2 className="heading">NEWS</h2>  
+      <div style={{paddingTop: "1vh"}}>
 
-        <div style={{marginTop: "40px", marginBottom: "10px"}}>
+        <div style={{marginTop: "7vh", marginBottom: "10px"}}>
           <div className="newsBlock">
             <div className="newsHeader">AFRICAN FOR THE FIRST TIME</div> 
             <div className="newsText">Solo Exhibition</div>
@@ -58,6 +57,6 @@ export default class News extends React.Component {
 
       </div>;
 
-    return <Base content={content}></Base>
+    return <Base content={content} sectionHeader="NEWS"></Base>
   }
 }

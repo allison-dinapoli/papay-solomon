@@ -5,10 +5,6 @@ src: url('../fonts/GeosansLight.ttf'),
 url('../fonts/GeosansLight.eot');
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .test {
   color: white!important;
   z-index: 100; 
@@ -51,6 +47,7 @@ h1, h2, h3 {
 
 h2 {
   text-align: center;
+  letter-spacing: 0.1em;
 }
 
 h1 {
@@ -89,6 +86,37 @@ div {
   padding: 15px; 
 }
 
+.nav-link {
+  letter-spacing: 2px; 
+}
+
+.sticky {
+  position: sticky; 
+  position: -webkit-sticky; 
+  z-index: 2; 
+  top: 0;
+  height: 3vh; 
+  width: 100vw; 
+}
+
+.content {
+  z-index: 1;
+}
+
+.sectionheader {
+  width: 100vw; 
+  position: absolute; 
+  text-align: center; 
+  font-size: 2rem; 
+  margin-top: 15px;
+  letter-spacing: 0.1em;
+  left: 0; 
+  color: black!important; 
+  font-weight: 500; 
+  background-color: white; 
+  z-index: 1; 
+}
+
 @media only screen and (min-width: 800px) {
   .headerLink {
       font-size: 24px; 
@@ -102,7 +130,5 @@ div {
   div {
     font-size: 12px!important;
   }
-  .nav-link {
-    font-size: 12px!important; 
-  }
+
 }

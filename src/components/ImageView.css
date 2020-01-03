@@ -144,4 +144,7 @@
         position: relative;
         margin-left: 0vw; 
     }
+    #nav-link {
+        letter-spacing: 3px; 
+    }
 } 

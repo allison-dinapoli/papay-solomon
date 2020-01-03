@@ -23,8 +23,7 @@ class PDFViewer extends Component {
  
   render() {
     const { pageNumber, numPages } = this.state;
-    const doc = <div style={{textAlign: "center"}}>
-      <h2 className="heading" style={{marginTop: "60px"}}>CV</h2>
+    const doc = <div style={{textAlign: "center", marginTop: "6vh"}}>
         <div id="documentwindow">
           
             
@@ -48,7 +47,7 @@ class PDFViewer extends Component {
       </div>; 
  
     return (
-      <Base content={doc}></Base>
+      <Base content={doc} sectionHeader="CV"></Base>
       
     );
   }
