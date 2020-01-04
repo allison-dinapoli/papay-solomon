@@ -11,8 +11,26 @@ class About extends React.Component {
     super(props);
   
     this.state = {
+      isSticky: false
+    }
+    this.ref = React.createRef()
+  }
+  
+  useEffect = () => {
+    const cachedRef = this.ref.current,
+          observer = new IntersectionObserver(
+            ([e]) => this.setState({isSticky: e.intersectionRatio < 1}),
+            {threshold: [1]}
+          )
+
+    observer.observe(cachedRef)
+    
+    // unmount
+    return function(){
+      observer.unobserve(cachedRef)
     }
   }
+
  
 
   render() {
@@ -33,7 +51,9 @@ class About extends React.Component {
         <div>
             <div id="test"> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
-                <h2>ABOUT</h2>
+                <div className="sticky" style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
+                  <h2 style={{alignSelf: "center"}}>ABOUT</h2>
+                </div>
                 <div id="aboutheader"> {aboutHeaderText} </div>
                 <div id="abouttext"> {aboutText} </div>
             </div>

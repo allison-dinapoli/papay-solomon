@@ -26,11 +26,11 @@ export default class Base extends React.Component {
     }
 
     var navbar = 
-      <Navbar scrolling light bg="transparent" sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
+      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
         <Navbar.Brand style={{zIndex: 2}}>
           {navbarBrand}
         </Navbar.Brand>
-        <Navbar.Text className="sectionheader">{this.props.sectionHeader}</Navbar.Text>
+        <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}</span></Navbar.Text>
         <Navbar.Toggle style={{zIndex: 2}} />
         <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
           <Nav className="justify-content-end" defaultActiveKey="/">

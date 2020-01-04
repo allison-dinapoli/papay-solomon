@@ -97,6 +97,7 @@ div {
   top: 0;
   height: 3vh; 
   width: 100vw; 
+  background-color: white!important; 
 }
 
 .content {
@@ -115,6 +116,14 @@ div {
   font-weight: 500; 
   background-color: white; 
   z-index: 1; 
+  vertical-align: bottom;
+  display: flex; 
+  justify-content: center; 
+  height: 14vh; 
+}
+
+.sectionheader span {
+  align-self: flex-end;
 }
 
 @media only screen and (min-width: 800px) {
@@ -123,12 +132,17 @@ div {
   }
 }   
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 766px) {
   a {
     font-size: 12px!important; 
   }
   div {
     font-size: 12px!important;
+  }
+
+  .sectionheader {
+    font-size: 1rem; 
+    margin-top: 3vh;
   }
 
 }
