@@ -24,7 +24,7 @@ class About extends React.Component {
 
     observer.observe(cachedRef)
     return function(){
-      observer.unobsnpm erve(cachedRef)
+      observer.unobserve(cachedRef)
     }
   }
 
