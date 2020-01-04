@@ -1,7 +1,6 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import Footer from './footer';
-import { Container, Row, Col } from 'react-bootstrap';
+import NavHeader from './navheader';
 import './about.css';
 import './base.css';
 
@@ -13,30 +12,26 @@ class About extends React.Component {
     this.state = {
       isSticky: false
     }
-    this.ref = React.createRef()
   }
-  
-  useEffect = () => {
+
+  componentDidMount() {
+    this.ref = React.createRef()
     const cachedRef = this.ref.current,
-          observer = new IntersectionObserver(
-            ([e]) => this.setState({isSticky: e.intersectionRatio < 1}),
-            {threshold: [1]}
-          )
+    observer = new IntersectionObserver(
+      ([e]) => this.setState({isSticky: e.intersectionRatio < 1}),
+      {threshold: [1]}
+    )
 
     observer.observe(cachedRef)
-    
-    // unmount
     return function(){
-      observer.unobserve(cachedRef)
+      observer.unobsnpm erve(cachedRef)
     }
   }
 
- 
-
   render() {
-    var aboutHeaderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et tortor consequat id porta nibh venenatis cras sed."
+    const aboutHeaderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et tortor consequat id porta nibh venenatis cras sed."
 
-    var aboutText = `Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Integer eget aliquet nibh praesent tristique magna sit amet. Pellentesque massa placerat duis ultricies. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Amet commodo nulla facilisi nullam vehicula ipsum. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Egestas tellus rutrum tellus pellentesque. Faucibus scelerisque eleifend donec pretium vulputate. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut porttitor leo a diam sollicitudin tempor. At urna condimentum mattis pellentesque id nibh tortor id. Nulla malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio. Laoreet non curabitur gravida arcu. Nisi est sit amet facilisis magna. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Congue quisque egestas diam in arcu cursus. Est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque.
+    const aboutText = `Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Integer eget aliquet nibh praesent tristique magna sit amet. Pellentesque massa placerat duis ultricies. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Amet commodo nulla facilisi nullam vehicula ipsum. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Egestas tellus rutrum tellus pellentesque. Faucibus scelerisque eleifend donec pretium vulputate. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut porttitor leo a diam sollicitudin tempor. At urna condimentum mattis pellentesque id nibh tortor id. Nulla malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio. Laoreet non curabitur gravida arcu. Nisi est sit amet facilisis magna. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Congue quisque egestas diam in arcu cursus. Est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque.
 
     Fermentum leo vel orci porta non. Velit sed ullamcorper morbi tincidunt ornare. Netus et malesuada fames ac turpis egestas integer eget. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Leo vel orci porta non pulvinar neque laoreet. Elit eget gravida cum sociis. Tortor posuere ac ut consequat semper. Aliquam ultrices sagittis orci a scelerisque purus semper. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Elit at imperdiet dui accumsan sit amet nulla facilisi. Etiam tempor orci eu lobortis. Amet est placerat in egestas erat imperdiet sed euismod. Ultrices in iaculis nunc sed augue lacus viverra vitae congue.
     
@@ -46,12 +41,21 @@ class About extends React.Component {
     
     Id diam maecenas ultricies mi eget mauris pharetra. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Orci ac auctor augue mauris. Luctus accumsan tortor posuere ac ut consequat semper viverra. Felis donec et odio pellentesque diam volutpat commodo. Vitae tempus quam pellentesque nec nam. Congue nisi vitae suscipit tellus mauris a diam maecenas sed. Ipsum dolor sit amet consectetur adipiscing elit. Eu tincidunt tortor aliquam nulla facilisi. Sapien pellentesque habitant morbi tristique senectus et netus. Euismod lacinia at quis risus. Proin libero nunc consequat interdum varius sit amet mattis. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada.    
     
-    `
+    `;
+    
+    var navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={true} />;
+
+    if (this.state.isSticky) {
+      navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={false} />;
+    }
+
+
     return (
         <div>
-            <div id="test"> <div id="backgroundimage"></div> </div>
+            {navbar}
+            <div> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
-                <div className="sticky" style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
+                <div className="sticky" ref={this.ref} style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
                   <h2 style={{alignSelf: "center"}}>ABOUT</h2>
                 </div>
                 <div id="aboutheader"> {aboutHeaderText} </div>

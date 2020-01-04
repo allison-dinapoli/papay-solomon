@@ -117,7 +117,7 @@ div {
   background-color: white; 
   z-index: 1; 
   vertical-align: bottom;
-  display: flex; 
+  display: flex!important; 
   justify-content: center; 
   height: 14vh; 
 }

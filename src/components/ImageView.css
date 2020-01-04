@@ -13,12 +13,12 @@
 #infocontainer {
     width: 100vw; 
     margin-bottom: 2vh;
-    margin-top: 6vh;
+    margin-top: 8vh;
     text-align:right;
 }
 
 #infoicon {
-    margin-right:50%;
+    margin-right:49.4%;
     position: relative; 
     cursor: pointer; 
     width: 3vh; 
@@ -89,6 +89,15 @@
     text-align: center;
     color: darkslategrey; 
 }
+
+@media only screen and (max-width: 800px) {
+    #infocontainer {
+        margin-top: 10vh;
+    }
+    #infoicon {
+        margin-right: 48%;
+    }
+}  
 
 @media only screen and (min-width: 1200px) {
     .infotext {
