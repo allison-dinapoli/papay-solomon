@@ -12,19 +12,20 @@ class About extends React.Component {
     this.state = {
       isSticky: false
     }
-    this.ref = React.createRef();
+    this.backgroundImage = React.createRef();
   }
 
   componentDidMount() {
-    const cachedRef = this.ref.current;
+    const cachedRef = this.backgroundImage.current;
     this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < .99 && e.intersectionRatio > 0.89}),
-      {threshold: [1], delay: 100}
+      ([e]) => {this.setState({isSticky: e.intersectionRatio < 0.01})},
+      {threshold: [0], delay: 100}
     )
     this.observer.observe(cachedRef);
-    return function(){
-      this.observer.unobserve(cachedRef)
-    }
+  }
+
+  componentWillUnmount() {
+    this.observer.unobserve(this.backgroundImage.current);
   }
 
   render() {
@@ -52,9 +53,9 @@ class About extends React.Component {
     return (
         <div>
             {navbar}
-            <div> <div id="backgroundimage"></div> </div>
+            <div> <div id="backgroundimage" ref={this.backgroundImage}></div> </div>
             <div id="aboutcontent">
-                <div className="sticky" ref={this.ref} style={{height: "11vh", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
+                <div className="sticky" style={{height: "11vh", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
                   <h2 style={{alignSelf: "center"}}>ABOUT</h2>
                 </div>
                 <div id="aboutheader"> {aboutHeaderText} </div>
