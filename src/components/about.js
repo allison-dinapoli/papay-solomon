@@ -19,21 +19,7 @@ class About extends React.Component {
     const cachedRef = this.ref.current;
     this.observer = new IntersectionObserver(
       ([e]) => this.setState({isSticky: e.intersectionRatio < .99 && e.intersectionRatio > 0.89}),
-      {threshold: [1]}
-    )
-    this.observer.observe(cachedRef);
-    return function(){
-      this.observer.unobserve(cachedRef)
-    }
-  }
-
-
-
-  componentDidUpdate() {
-    const cachedRef = this.ref.current;
-    this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < .99 && e.intersectionRatio > 0.89}),
-      {threshold: [1]}
+      {threshold: [1], delay: 100}
     )
     this.observer.observe(cachedRef);
     return function(){
