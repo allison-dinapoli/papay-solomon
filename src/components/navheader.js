@@ -19,7 +19,12 @@ export default class NavHeader extends React.Component {
     var navbarBrand = <Link to='/' className="headerLink"><a className="headerLink">PAPAY SOLOMON</a></Link>;
 
     if (this.props.doNotIncludeNavbarBrand) {
-      var navbarBrand = "";
+      navbarBrand = "";
+    }
+
+    var cvDownload = "";
+    if (this.props.includeCvDownload) {
+      cvDownload = <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="downloadicon"><img src="./img/icons/download.svg" alt="download" className="downloadIcon" ></img></a>
     }
 
     var navbar = 
@@ -27,7 +32,7 @@ export default class NavHeader extends React.Component {
         <Navbar.Brand style={{zIndex: 2}}>
           {navbarBrand}
         </Navbar.Brand>
-        <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}</span></Navbar.Text>
+        <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>
         <Navbar.Toggle style={{zIndex: 2}} />
         <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
           <Nav className="justify-content-end" defaultActiveKey="/">

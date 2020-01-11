@@ -122,6 +122,15 @@ div {
   height: 14vh; 
 }
 
+.downloadicon {
+  min-width: 15px;
+  width: 2vw;
+  max-width: 34px;
+  position: absolute; 
+  margin-left: 3vw; 
+  align-self: flex-end;  
+}
+
 .sectionheader span {
   align-self: flex-end;
 }
