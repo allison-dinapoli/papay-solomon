@@ -4,12 +4,6 @@ import {  withRouter } from 'react-router-dom';
 import ImageView from './ImageView.js';
 
 class ImageViewChapter1 extends React.Component {
-  
-  constructor(props) {
-    super(props);
-  }
- 
-
   render() {
     return (
       <ImageView pathName="chapter1" sectionHeader="CHAPTER &#8544;" images={images} />

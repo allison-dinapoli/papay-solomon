@@ -87,6 +87,35 @@ export default class NavHeader extends React.Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>; 
+    } else if (this.props.useTransparentDarkNavbar) {
+      navbar = 
+      <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false}>
+        <Navbar.Brand style={{zIndex: 2}}>
+          {navbarBrand}
+        </Navbar.Brand>
+        <Navbar.Toggle style={{zIndex: 2}} />
+        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
+          <Nav className="justify-content-end" defaultActiveKey="/">
+          <Dropdown as={Nav.Item}>
+          <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
+           <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
+              <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Nav.Item eventKey={2}>
+            <Link className={'nav-link'} to='/about'>ABOUT</Link>
+          </Nav.Item>
+          <Nav.Item eventKey={3}>
+            <Link className={'nav-link'} to='/news'>NEWS</Link>
+          </Nav.Item>
+          <Nav.Item eventKey={4}>
+            <Link className={'nav-link'} to='/cv'>CV</Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>; 
     }
 
     return (

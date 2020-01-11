@@ -19,6 +19,12 @@
     text-align: justify; 
 }
 
+.sticky {
+    top: -1px; 
+    padding-top: 1px; 
+    transition: .5s ease-out;
+}
+
 @media only screen and (orientation: landscape) {
     #abouttext {
         column-count: 2;

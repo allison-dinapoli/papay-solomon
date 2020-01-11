@@ -10,7 +10,8 @@ class About extends React.Component {
     super(props);
   
     this.state = {
-      isSticky: false
+      isSticky: false, 
+      blz: 0
     }
     this.ref = React.createRef();
   }
@@ -18,7 +19,7 @@ class About extends React.Component {
   componentDidMount() {
     const cachedRef = this.ref.current;
     this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < 1, test: e.intersectionRatio}),
+      ([e]) => this.setState({isSticky: e.intersectionRatio < .99 && e.intersectionRatio > 0.89}),
       {threshold: [1]}
     )
     this.observer.observe(cachedRef);
@@ -32,7 +33,7 @@ class About extends React.Component {
   componentDidUpdate() {
     const cachedRef = this.ref.current;
     this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < 1, test: e.intersectionRatio}),
+      ([e]) => this.setState({isSticky: e.intersectionRatio < .99 && e.intersectionRatio > 0.89}),
       {threshold: [1]}
     )
     this.observer.observe(cachedRef);
@@ -59,7 +60,7 @@ class About extends React.Component {
     var navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={true} />;
 
     if (this.state.isSticky) {
-      navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={false} />;
+      navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={false} useTransparentDarkNavbar={true} />;
     }
 
 
@@ -68,7 +69,7 @@ class About extends React.Component {
             {navbar}
             <div> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
-                <div className="sticky" ref={this.ref} style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
+                <div className="sticky" ref={this.ref} style={{height: "11vh", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
                   <h2 style={{alignSelf: "center"}}>ABOUT</h2>
                 </div>
                 <div id="aboutheader"> {aboutHeaderText} </div>
