@@ -1,0 +1,10 @@
+#documentwindow {
+    text-align: center; 
+    width: 100%; 
+    max-width: 100vh; 
+}
+
+canvas {
+    display: inline!important;
+ }
+ 

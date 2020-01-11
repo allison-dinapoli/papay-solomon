@@ -10,18 +10,27 @@
     height: 100vh;
 }
 
-#infodiv {
+#infocontainer {
     width: 100vw; 
     margin-bottom: 2vh;
-    margin-top: 6vh;
-    margin-left: 4vw;
+    margin-top: 8vh;
+    text-align:right;
 }
 
-.icon {
-    margin-right: 25px;
+#infoicon {
+    margin-right:49.4%;
+    position: relative; 
     cursor: pointer; 
     width: 3vh; 
     min-width: 20px;
+}
+
+.icon {
+    position: relative; 
+    cursor: pointer; 
+    width: 3vh; 
+    min-width: 20px;
+    margin-right: 12px; 
 }
 
 .quietLinkIcon {
@@ -81,6 +90,15 @@
     color: darkslategrey; 
 }
 
+@media only screen and (max-width: 800px) {
+    #infocontainer {
+        margin-top: 10vh;
+    }
+    #infoicon {
+        margin-right: 48%;
+    }
+}  
+
 @media only screen and (min-width: 1200px) {
     .infotext {
         top: 40%;
@@ -134,5 +152,8 @@
         text-align: left;
         position: relative;
         margin-left: 0vw; 
+    }
+    #nav-link {
+        letter-spacing: 3px; 
     }
 } 

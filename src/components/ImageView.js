@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
 import './ImageView.css';
+import "./base.css";
 
 class ImageView extends React.Component {
   
@@ -112,18 +113,21 @@ class ImageView extends React.Component {
   }
 
   render() {
-    var infoButton =  <div id="infodiv"><img className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></div>; 
+    var infoButton =   <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>; 
     try {
       var image = <div className="viewingimagecontainer"><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
     
-   
       if (this.state.openInfo) {
-        infoButton = <div id="infodiv">
-            <img className="icon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
-            <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
-            <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
-            <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
-          </div> ;
+        infoButton = 
+        <div id="infocontainer">
+            
+              <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
+              <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
+              <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
+              <span id="infodiv">
+                <img id="infoicon" className="infoicon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
+              </span>
+        </div> ;
 
           image = <Container style={{width: "80vw", justifyContent: "flex-start"}}>
                 <Row style={{width: "80vw"}}>
@@ -168,7 +172,7 @@ class ImageView extends React.Component {
         </div>
       </div> ; 
       return (
-        <Base content={pageContent} doNotIncludeFooter={true} />
+        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} />
       );
     } catch(error) {
       this.props.history.push("/")

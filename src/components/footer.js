@@ -22,7 +22,7 @@ function Footer() {
   return (
       <div style={{phantom}}>
         <div style={style}>
-          <div style={{fontSize: "0.9em", marginBottom: "1vh"}}><a className="quietLink" href="mailto://papaysolomon@gmail.com"> papaysolomon@gmail.com </a></div>
+          <div style={{fontSize: "1.0em", marginBottom: "1vh"}}><a className="quietLink" href="mailto://papaysolomon@gmail.com"> papaysolomon@gmail.com </a></div>
           <table width="100%" style={{textAlign: "center"}}>
             <tr>
               <td width="45%"></td>
@@ -32,8 +32,8 @@ function Footer() {
             </tr>
           </table>
           
-          <div style={{fontSize: "0.9em", marginTop: "10vh" }}>© Papay Solomon.</div> 
-          <div style={{fontSize: "0.9em" }}>Website by Alli DiNapoli.</div>
+          <div style={{fontSize: "0.85em", marginTop: "10vh" }}>© Papay Solomon.</div> 
+          <div style={{fontSize: "0.85em" }}>Website by Alli DiNapoli.</div>
         </div>
       </div>
   )

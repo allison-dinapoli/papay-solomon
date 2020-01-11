@@ -12,34 +12,38 @@ class About extends React.Component {
     this.state = {
       isSticky: false
     }
-    this.ref = React.createRef();
+    this.ref = React.createRef()
   }
 
   componentDidMount() {
-    const cachedRef = this.ref.current;
-    this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < 1, test: e.intersectionRatio}),
+    this.ref = React.createRef()
+    const cachedRef = this.ref.current,
+    observer = new IntersectionObserver(
+      ([e]) => this.setState({isSticky: e.intersectionRatio < 1}),
       {threshold: [1]}
     )
-    this.observer.observe(cachedRef);
+
+    observer.observe(cachedRef)
     return function(){
-      this.observer.unobserve(cachedRef)
+      observer.unobserve(cachedRef)
     }
   }
-
-
 
   componentDidUpdate() {
-    const cachedRef = this.ref.current;
-    this.observer = new IntersectionObserver(
-      ([e]) => this.setState({isSticky: e.intersectionRatio < 1, test: e.intersectionRatio}),
+    const cachedRef = this.ref.current,
+    observer = new IntersectionObserver(
+      ([e]) => this.setState({isSticky: e.intersectionRatio < 1}),
       {threshold: [1]}
     )
-    this.observer.observe(cachedRef);
+
+    observer.observe(cachedRef)
+
+    // unmount
     return function(){
-      this.observer.unobserve(cachedRef)
+    observer.unobserve(cachedRef)
     }
   }
+
 
   render() {
     const aboutHeaderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et tortor consequat id porta nibh venenatis cras sed."
@@ -68,7 +72,7 @@ class About extends React.Component {
             {navbar}
             <div> <div id="backgroundimage"></div> </div>
             <div id="aboutcontent">
-                <div className="sticky" ref={this.ref} style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
+                <div className="sticky" style={{height: "4rem", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
                   <h2 style={{alignSelf: "center"}}>ABOUT</h2>
                 </div>
                 <div id="aboutheader"> {aboutHeaderText} </div>
@@ -81,3 +85,10 @@ class About extends React.Component {
 }
 
 export default withRouter(About);
+
+c
+
+
+:q
+:q
+
