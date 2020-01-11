@@ -7,14 +7,31 @@
         "width": 3752,
         "height": 3752,
         "id": "knowledge-of-self",
-        "caption": "K.O.S.- Knowledge of Self. Self Portrait. Oil on Canvas, Mirror. 36in x 36in. 2018.", 
-        "name": "K.O.S.- Knowledge of Self", 
+        "name": "K.O.S (Knowledge of Self), Self Portrait", 
         "medium": "Oil on Canvas, Mirror",
         "year": 2018, 
         "size": "36in x 36in",
         "additionalPhotos": [
             "KOS-1.jpg",
             "KOS-2.jpg"
+        ], 
+        "category": "painting"
+    },
+    {
+        "src": "/img/inside-the-lappa-with-grace.jpg", 
+        "thumbnail": "/img/inside-the-lappa-with-grace-thumb.jpg",
+        "thumbnailWidth": 300,
+        "thumbnailHeight": 300,
+        "width": 3730,
+        "height": 3730,
+        "id": "inside-the-lappa",
+        "name": "Inside the Lappa with Grace, Portrait of Grace Mbola - Congo-Brazzaville", 
+        "medium": "Oil on Canvas, Mirror",
+        "year": 2018, 
+        "size": "40in x 40in",
+        "additionalPhotos": [
+            "inside-the-lappa-with-grace-1.jpg",
+            "inside-the-lappa-with-grace-2.jpg"
         ], 
         "category": "painting"
     },
@@ -26,8 +43,7 @@
         "width": 3762,
         "height": 3762,
         "id": "diluting-dreams",
-        "caption": "Diluting Dreams- Portrait of Allesene Ntwali. Oil on Canvas, Mirror. 40in x 40in. 2017.",
-        "name": "Diluting Dreams- Portrait of Allesene Ntwali", 
+        "name": "Diluting Dreams, Portrait of Allesene Ntwali - Rwanda", 
         "medium": "Oil on Canvas, Mirror",
         "year": 2017, 
         "size": "40in x 40in",
@@ -38,25 +54,6 @@
         "category": "painting"
     }, 
     {
-        "src": "/img/inside-the-lappa-with-grace.jpg", 
-        "thumbnail": "/img/inside-the-lappa-with-grace-thumb.jpg",
-        "thumbnailWidth": 300,
-        "thumbnailHeight": 300,
-        "width": 3730,
-        "height": 3730,
-        "id": "inside-the-lappa",
-        "caption": "Inside the Lappa with Grace, Portrait of Grace Mbola. Oil on Canvas, Mirror. 40in x 40in. 2018.",
-        "name": "Inside the Lappa with Grace- Portrait of Grace Mbola", 
-        "medium": "Oil on Canvas, Mirror",
-        "year": 2018, 
-        "size": "40in x 40in",
-        "additionalPhotos": [
-            "inside-the-lappa-with-grace-1.jpg",
-            "inside-the-lappa-with-grace-2.jpg"
-        ], 
-        "category": "painting"
-    },
-    {
         "src": "/img/internal-prowess.jpg", 
         "thumbnail": "/img/internal-prowess-thumb.jpg",
         "thumbnailWidth": 300,
@@ -64,11 +61,26 @@
         "width": 3762,
         "height": 3762,
         "id": "internal-prowess",
-        "caption": "Internal Prowess- Portrait of Alphonsine Mbuyi. Oil and Graphite on Canvas, Mirror. 40in x 40in. 2019.",
-        "name": "Internal Prowess- Portrait of Alphonsine Mbuyi", 
+        "name": "Internal Prowess, Portrait of Alphonsine Mbuyi - Zambia", 
         "medium": "Oil and Graphite on Canvas, Mirror",
         "year": 2019, 
         "size": "40in x 40in",
+        "additionalPhotos": [
+        ], 
+        "category": "painting"
+    }, 
+    {
+        "src": "/img/in-the-likeness-of-the-foremothers.jpg", 
+        "thumbnail": "/img/in-the-likeness-of-the-foremothers-thumb.jpg",
+        "thumbnailWidth": 300,
+        "thumbnailHeight": 300,
+        "width": 3762,
+        "height": 3762,
+        "id": "in-the-likeness-of-the-foremothers",
+        "name": "In the Likeness of the Foremothers, Portrait of Vanessa Iriza - Rwanda", 
+        "medium": "Oil and Graphite on Canvas, Mirror",
+        "year": 2019, 
+        "size": "36in x 36in",
         "additionalPhotos": [
         ], 
         "category": "painting"
