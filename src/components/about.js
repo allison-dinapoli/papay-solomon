@@ -10,8 +10,7 @@ class About extends React.Component {
     super(props);
   
     this.state = {
-      isSticky: false, 
-      blz: 0
+      isSticky: false
     }
     this.ref = React.createRef();
   }
