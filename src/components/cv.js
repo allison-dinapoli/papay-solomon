@@ -21,21 +21,8 @@ class PDFViewer extends Component {
     const { pageNumber, numPages } = this.state;
     const doc = <div style={{textAlign: "left"}}>
       <h2 className="heading" style={{marginTop: "60px"}}>CV</h2>
-        <Document
-          file="CV.pdf"
-          onLoadSuccess={this.onDocumentLoadSuccess}
-          externalLinkTarget="_blank"
-          renderTextLayer="false"
-        >
-          <Page renderMode="svg" 
-            externalLinkTarget="_blank" 
-            renderTextLayer={false}
-            pageNumber={1} />
-          <Page renderMode="svg" 
-            externalLinkTarget="_blank" 
-            renderTextLayer={false}
-            pageNumber={2} />
-        </Document>
+      <object data="CV-1.svg" type="image/svg+xml">
+      </object>
       </div>; 
  
     return (
