@@ -4,6 +4,7 @@ import Base from './components/base';
 import ImageViewChapter1 from './components/ImageViewChapter1';
 import PDFViewer from './components/cv';
 import ImageViewChapter2 from './components/ImageViewChapter2';
+import Exhibitions from './components/Exhibitions';
 import './components/base.css';
 import News from './components/news';
 import About from './components/about';
@@ -27,6 +28,7 @@ const Main = () => (
                 <Route path='/chapter1/:id' component={ImageViewChapter1}/>
                 <Route path='/chapter1' component={ImageViewChapter1}/>
                 <Route path='/about' component={HomePage}/>
+                <Route path='/exhibitions' component={Exhibitions}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />
