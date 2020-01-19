@@ -29,19 +29,11 @@ class About extends React.Component {
   }
 
   render() {
-    const aboutHeaderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et tortor consequat id porta nibh venenatis cras sed."
-
-    const aboutText = `Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Integer eget aliquet nibh praesent tristique magna sit amet. Pellentesque massa placerat duis ultricies. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Amet commodo nulla facilisi nullam vehicula ipsum. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Egestas tellus rutrum tellus pellentesque. Faucibus scelerisque eleifend donec pretium vulputate. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut porttitor leo a diam sollicitudin tempor. At urna condimentum mattis pellentesque id nibh tortor id. Nulla malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio. Laoreet non curabitur gravida arcu. Nisi est sit amet facilisis magna. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Congue quisque egestas diam in arcu cursus. Est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque.
-
-    Fermentum leo vel orci porta non. Velit sed ullamcorper morbi tincidunt ornare. Netus et malesuada fames ac turpis egestas integer eget. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Leo vel orci porta non pulvinar neque laoreet. Elit eget gravida cum sociis. Tortor posuere ac ut consequat semper. Aliquam ultrices sagittis orci a scelerisque purus semper. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Elit at imperdiet dui accumsan sit amet nulla facilisi. Etiam tempor orci eu lobortis. Amet est placerat in egestas erat imperdiet sed euismod. Ultrices in iaculis nunc sed augue lacus viverra vitae congue.
-    
-    Nunc consequat interdum varius sit amet mattis vulputate. Tellus pellentesque eu tincidunt tortor aliquam nulla. Viverra maecenas accumsan lacus vel. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Nulla aliquet porttitor lacus luctus. Aliquet lectus proin nibh nisl condimentum. Sed viverra ipsum nunc aliquet bibendum enim facilisis. Scelerisque felis imperdiet proin fermentum leo. Porta nibh venenatis cras sed. Luctus accumsan tortor posuere ac.
-    
-    Purus sit amet luctus venenatis. Ornare arcu dui vivamus arcu felis. Risus sed vulputate odio ut enim blandit. Condimentum vitae sapien pellentesque habitant. Ullamcorper velit sed ullamcorper morbi tincidunt. Ipsum consequat nisl vel pretium lectus quam id. Duis at consectetur lorem donec. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Consectetur adipiscing elit pellentesque habitant morbi tristique. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Ut morbi tincidunt augue interdum velit euismod. Porttitor leo a diam sollicitudin tempor id eu nisl. Pulvinar sapien et ligula ullamcorper malesuada proin. Mauris pharetra et ultrices neque. Ac auctor augue mauris augue neque gravida in. Blandit massa enim nec dui nunc mattis enim ut tellus.
-    
-    Id diam maecenas ultricies mi eget mauris pharetra. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Orci ac auctor augue mauris. Luctus accumsan tortor posuere ac ut consequat semper viverra. Felis donec et odio pellentesque diam volutpat commodo. Vitae tempus quam pellentesque nec nam. Congue nisi vitae suscipit tellus mauris a diam maecenas sed. Ipsum dolor sit amet consectetur adipiscing elit. Eu tincidunt tortor aliquam nulla facilisi. Sapien pellentesque habitant morbi tristique senectus et netus. Euismod lacinia at quis risus. Proin libero nunc consequat interdum varius sit amet mattis. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada.    
-    
-    `;
+    const aboutText = <span><a style={{fontWeight: "bold", fontSize: "1.1em"}}>Award-winning</a><a> Phoenix-based painter and Liberian war refugee, Papay Solomon lives in the space between two worlds, the world of his adopted home in America and that of his African heritage. His work boldly attempts to reconcile the two into a cohesive whole, with an artistic vision tempered by his formal education in the West and at the same time wildly alive with the indelible imprint of his home country. Known for his paintings of fellow members of the African diaspora, Solomon uses the vocabulary of classical works of art with a modern spin. </a><br/><br/> 
+    <a>In his paintings, faces of African immigrants are meticulously rendered with reverence that echoes the grandeur of classical Western art. Through his paintings he aims to honor his sitter’s dignity and cultural identity by representing their stories and experiences. In doing so, Solomon manages to invigorate the structures and techniques of Western art with an African soul.</a> <br/><br/>
+    <a>Solomon was born in Guinea in 1993, his mother having fled the First Liberian Civil War while she was still pregnant with him and crossed the border to the neighboring country on foot. At age 5, growing political unrest forced Solomon and his family to once again relocate, this time from the Guinean city of Gueckedou to the refugee camps built several hundred miles away, where he would spend much of his childhood. </a><br/><br/>
+    <a>At the age of 14, Solomon migrated with his family to the United States, where he attended High School and then completed his college education at Herberger Institute of Design and the Arts at Arizona State University, receiving the honor of Outstanding Undergraduate of his class. In 2018, shortly after graduating from ASU, Solomon received the 2018 Friends of Contemporary Art Artists’ Grants Award from the Phoenix Art Museum and the Erni Cabat Award from the Tucson Museum of Art. </a>
+    </span>;
     
     var navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={true} />;
 
@@ -58,7 +50,6 @@ class About extends React.Component {
                 <div className="sticky" style={{height: "11vh", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
                   <h2 style={{alignSelf: "center"}}>ABOUT</h2>
                 </div>
-                <div id="aboutheader"> {aboutHeaderText} </div>
                 <div id="abouttext"> {aboutText} </div>
             </div>
         </div>

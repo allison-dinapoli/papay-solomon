@@ -33,7 +33,7 @@ function Footer() {
           </table>
           
           <div style={{fontSize: "0.85em", marginTop: "10vh" }}>© Papay Solomon.</div> 
-          <div style={{fontSize: "0.85em" }}>Website by Alli DiNapoli.</div>
+          <div style={{fontSize: "0.85em" }}>Website by Allison DiNapoli.</div>
         </div>
       </div>
   )
