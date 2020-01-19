@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.8d29e413.chunk.css",
-    "main.js": "/static/js/main.56f299bf.chunk.js",
-    "main.js.map": "/static/js/main.56f299bf.chunk.js.map",
+    "main.js": "/static/js/main.285ed77e.chunk.js",
+    "main.js.map": "/static/js/main.285ed77e.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.bf1508af.chunk.js": "/static/js/2.bf1508af.chunk.js",
-    "static/js/2.bf1508af.chunk.js.map": "/static/js/2.bf1508af.chunk.js.map",
+    "static/js/2.f07896a2.chunk.js": "/static/js/2.f07896a2.chunk.js",
+    "static/js/2.f07896a2.chunk.js.map": "/static/js/2.f07896a2.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.23c73a0d3d3d86b142c1a59d2e73d689.js": "/precache-manifest.23c73a0d3d3d86b142c1a59d2e73d689.js",
+    "precache-manifest.0cc739dd8c205800e19af06482bda17f.js": "/precache-manifest.0cc739dd8c205800e19af06482bda17f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.8d29e413.chunk.css.map": "/static/css/main.8d29e413.chunk.css.map",
     "static/media/base.css": "/static/media/GeosansLight.36e6a06a.ttf"
