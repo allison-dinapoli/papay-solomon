@@ -122,6 +122,25 @@ div {
   height: 14vh; 
 }
 
+.sectionheadernotext {
+  width: 100vw; 
+  position: absolute; 
+  text-align: center; 
+  font-size: 2rem; 
+  margin-top: 15px;
+  letter-spacing: 0.1em;
+  left: 0; 
+  color: black!important; 
+  font-weight: 500; 
+  background-color: white; 
+  z-index: 1; 
+  vertical-align: bottom;
+  display: flex!important; 
+  justify-content: center; 
+  height: 10vh; 
+}
+
+
 .downloadicon {
   min-width: 15px;
   width: 2vw;
@@ -153,8 +172,8 @@ div {
   }
 
   .sectionheader {
-    font-size: 1rem; 
     margin-top: 3vh;
+    height: 20vh;
   }
 
 }

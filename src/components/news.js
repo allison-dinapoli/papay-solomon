@@ -14,9 +14,9 @@ export default class News extends React.Component {
 
   render(){
     const content = 
-      <div style={{paddingTop: "1vh"}}>
+      <div style={{paddingTop: "3vh"}}>
 
-        <div style={{marginTop: "7vh", marginBottom: "10px"}}>
+        <div style={{marginTop: "8vh", marginBottom: "10px", alignContent: "center", display: "flex"}}>
           <div className="newsBlock">
             <div className="newsHeader">AFRICAN FOR THE FIRST TIME</div> 
             <div className="newsText">Solo Exhibition</div>
@@ -26,7 +26,6 @@ export default class News extends React.Component {
             <div className="newsText">Reception: Febuary 13th from 5:00pm - 6:30pm</div>
           </div> 
         </div>
-
         
 
         <div style={{paddingTop: "5vh"}}> </div>

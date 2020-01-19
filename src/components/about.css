@@ -31,7 +31,7 @@
 }    
 
 #backgroundimage {
-    background: url("/img/PapayHomepage.jpg");
+    background: url("/img/PapayHomepageWithLogo.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -41,7 +41,18 @@
     
 @media only screen and (orientation: landscape) {
     #backgroundimage {
-        background: url("/img/PapayHomepage.jpg");
+        background: url("/img/PapayHomepageWithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+@media only screen and (max-width: 460px) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobileWithLogo.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;

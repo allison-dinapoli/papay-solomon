@@ -29,7 +29,7 @@ export default class NavHeader extends React.Component {
 
     var navbar = 
       <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
-        <Navbar.Brand style={{zIndex: 2}}>
+        <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>
@@ -90,7 +90,7 @@ export default class NavHeader extends React.Component {
     } else if (this.props.useTransparentDarkNavbar) {
       navbar = 
       <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false}>
-        <Navbar.Brand style={{zIndex: 2}}>
+        <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle style={{zIndex: 2}} />
@@ -119,10 +119,10 @@ export default class NavHeader extends React.Component {
     } else if (this.props.useDarkNavbar) {
       navbar = 
       <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
-          <Navbar.Brand style={{zIndex: 2}}>
+          <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
             {navbarBrand}
           </Navbar.Brand>
-          <Navbar.Text className="sectionheader"><div></div></Navbar.Text>
+          <Navbar.Text className="sectionheadernotext"><div></div></Navbar.Text>
           <Navbar.Toggle style={{zIndex: 2}} />
           <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
             <Nav className="justify-content-end" defaultActiveKey="/">

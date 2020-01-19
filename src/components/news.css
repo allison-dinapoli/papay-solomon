@@ -2,7 +2,6 @@
 
 .newsBlock {
     margin: auto;
-    width: 50%; 
 }
 
 .newsHeader {
@@ -24,13 +23,9 @@
     margin: auto;
 }
 
-
 @media only screen and (orientation: portrait) {
     .vimeoVideo {
         max-width: 90%; 
         max-height: 90%; 
-    }
-    .newsBlock {
-        width: 90%; 
     }
 }   
