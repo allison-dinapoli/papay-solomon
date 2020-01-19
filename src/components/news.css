@@ -1,7 +1,10 @@
-
-
 .newsBlock {
-    margin: auto;
+    margin-top: 8vh;
+    margin-bottom: 10px; 
+    align-content: flex-start;
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
 }
 
 .newsHeader {
@@ -27,5 +30,11 @@
     .vimeoVideo {
         max-width: 90%; 
         max-height: 90%; 
+    }
+    .newsBlock {
+        align-content: center;
+        display: flex;
+        width: 100%;
+        margin-left: 15%;
     }
 }   

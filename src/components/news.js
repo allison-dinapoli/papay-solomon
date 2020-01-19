@@ -16,8 +16,8 @@ export default class News extends React.Component {
     const content = 
       <div style={{paddingTop: "3vh"}}>
 
-        <div style={{marginTop: "8vh", marginBottom: "10px", alignContent: "center", display: "flex"}}>
-          <div className="newsBlock">
+        <div className="newsBlock">
+          <div>
             <div className="newsHeader">AFRICAN FOR THE FIRST TIME</div> 
             <div className="newsText">Solo Exhibition</div>
             <div className="newsText">Joseph Gross Gallery, University of Arizona</div>

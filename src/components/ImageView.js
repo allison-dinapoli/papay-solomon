@@ -34,6 +34,10 @@ class ImageView extends React.Component {
     document.addEventListener("keydown", this.handleKeyDown);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
   handleKeyDown = (event) => {
     console.log(event.keyCode);
     if (event.keyCode === 37) { // Arrow Left 
