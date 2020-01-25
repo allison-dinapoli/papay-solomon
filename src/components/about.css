@@ -19,6 +19,10 @@
     text-align: justify; 
 }
 
+.aboutparagraph { 
+    margin-bottom: 10px; 
+}
+
 .sticky {
     top: -1px; 
     padding-top: 1px;
