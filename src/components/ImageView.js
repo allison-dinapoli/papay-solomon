@@ -162,7 +162,7 @@ class ImageView extends React.Component {
                     </Link> 
                   </div>
                 </td> 
-                <td style={{width: "80vw"}}> {image} </td>
+                <td id="imagewall" style={{width: "80vw"}}> {image} </td>
                 <td style={{width: "10vw"}}> 
                   <div className="directionarrowscontainer">
                     <Link to={this.nextPhotoId()}>

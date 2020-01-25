@@ -90,6 +90,16 @@
     color: darkslategrey; 
 }
 
+#imagewall {
+    vertical-align: center; 
+}
+
+@media only screen and (max-width: 1999px) {
+    #imagewall {
+        vertical-align: text-top;
+    }
+}
+
 @media only screen and (max-width: 1100px) {
     .infotext {
         margin-top: 3vh; 
