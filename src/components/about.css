@@ -50,9 +50,32 @@
     }    
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 400px) {
     #backgroundimage {
         background: url("/img/PapayHomepageMobileWithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+@media only screen and (max-width: 700px) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobile3WithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+
+@media only screen and (min-width: 700px) and (orientation: portrait) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobile1WithLogo.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
