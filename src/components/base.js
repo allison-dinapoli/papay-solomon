@@ -18,20 +18,20 @@ export default class Base extends React.Component {
       navbar = <NavHeader doNotIncludeNavbarBrand={this.props.doNotIncludeNavbarBrand} useLightNavbar={this.props.useLightNavbar} sectionHeader={this.props.sectionHeader} includeCvDownload={this.props.includeCvDownload} useTransparentDarkNavbar={this.props.useTransparentDarkNavbar} useDarkNavbar={this.props.useDarkNavbar} />
     }
     
-    var content = <div className="content" style={{marginTop: "1vh"}}>{this.props.content}</div>
+    var content = <div className="content" style={{marginTop: "10px"}}>{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
     }
 
-    var elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "3vh"}}>
+    var elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "150px"}}>
         {navbar}
         {content}
-        <div style={{marginBottom: "30vh", position: "relative"}}></div>
+        <div style={{marginBottom: "100px", position: "relative"}}></div>
         <Footer/>
       </div>;
 
     if (this.props.doNotIncludeFooter) {
-      elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "3vh"}}>
+      elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "100px"}}>
         {navbar}
         {content}
       </div>;

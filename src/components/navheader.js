@@ -28,7 +28,7 @@ export default class NavHeader extends React.Component {
     }
     
     var navbar = 
-      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
+      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
         <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
           {navbarBrand}
         </Navbar.Brand>
@@ -59,7 +59,7 @@ export default class NavHeader extends React.Component {
 
     if (this.props.useLightNavbar) {
       navbar = 
-      <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px"}}>
+      <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px", alignItems: "flex-start"}}>
         <Navbar.Brand>
           {navbarBrand}
         </Navbar.Brand>
@@ -89,7 +89,7 @@ export default class NavHeader extends React.Component {
       </Navbar>; 
     } else if (this.props.useTransparentDarkNavbar) {
       navbar = 
-      <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false}>
+      <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
         <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
           {navbarBrand}
         </Navbar.Brand>
@@ -118,7 +118,7 @@ export default class NavHeader extends React.Component {
     </Navbar>; 
     } else if (this.props.useDarkNavbar) {
       navbar = 
-      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false}>
+      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
           <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
             {navbarBrand}
           </Navbar.Brand>
