@@ -15,6 +15,11 @@ export default class NavHeader extends React.Component {
       
     }; 
   }
+
+  resetScrollBar = () => {
+    window.scrollTo(0,0);
+  }
+
   render() {
     var navbarBrand = <Link to='/' className="headerLink"><a className="headerLink">PAPAY SOLOMON</a></Link>;
 
@@ -40,18 +45,18 @@ export default class NavHeader extends React.Component {
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
+                <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} to='/about'>ABOUT</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
           </Nav.Item>
           <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} to='/news'>NEWS</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
           </Nav.Item>
           <Nav.Item eventKey={4}>
-            <Link className={'nav-link'} to='/cv'>CV</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
@@ -70,19 +75,19 @@ export default class NavHeader extends React.Component {
               <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
               <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} to='/chapter1'>CHAPTER &#8544;</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
          
             <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} style={{color: 'white'}} to='/about'>ABOUT</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
             <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} style={{color: 'white'}} to='/news'>NEWS</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
             </Nav.Item>
             <Nav.Item eventKey={4}>
-              <Link className={'nav-link'} style={{color: 'white'}} to='/cv'>CV</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/cv'>CV</Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
@@ -100,18 +105,18 @@ export default class NavHeader extends React.Component {
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} to='/about'>ABOUT</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
           </Nav.Item>
           <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} to='/news'>NEWS</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
           </Nav.Item>
           <Nav.Item eventKey={4}>
-            <Link className={'nav-link'} to='/cv'>CV</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
@@ -130,18 +135,18 @@ export default class NavHeader extends React.Component {
             <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
             <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} to='/about'>ABOUT</Link>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
             <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} to='/news'>NEWS</Link>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
             </Nav.Item>
             <Nav.Item eventKey={4}>
-              <Link className={'nav-link'} to='/cv'>CV</Link>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
