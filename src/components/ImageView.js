@@ -179,6 +179,7 @@ class ImageView extends React.Component {
         <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} useDarkNavbar={true} />
       );
     } catch(error) {
+      console.log(error);
       this.props.history.push("/")
       return (
         <div></div>

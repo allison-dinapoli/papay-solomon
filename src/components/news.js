@@ -36,7 +36,7 @@ export default class News extends React.Component {
             allow="autoplay; fullscreen" 
             webkitallowfullscreen 
             mozallowfullscreen 
-            allowfullscreen>
+            allowFullScreen>
           </iframe>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
@@ -49,7 +49,7 @@ export default class News extends React.Component {
                   allow="autoplay; fullscreen" 
                   webkitallowfullscreen 
                   mozallowfullscreen 
-                  allowfullscreen>
+                  allowFullScreen>
           </iframe>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
