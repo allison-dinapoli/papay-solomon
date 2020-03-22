@@ -137,7 +137,7 @@ div {
   vertical-align: bottom;
   display: flex!important; 
   justify-content: center; 
-  height: 85px; 
+  height: 45px; 
 }
 
 
@@ -180,6 +180,6 @@ div {
 
 @media only screen and (max-height: 799px) {
   .sectionheadernotext {
-    height: 70px; 
+    height: 10px; 
   }
 }

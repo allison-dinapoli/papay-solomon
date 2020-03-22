@@ -138,10 +138,10 @@ class ImageView extends React.Component {
                   <Col xs={12} sm={12} md={12} lg={12} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
                   <Col xs={12} sm={12} md={12} lg={12} xl={6}>
                     <div className="infotext" >
-                      <div style={{fontWeight: "bold", fontStyle: "italic", marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
-                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
-                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
-                      <div style={{marginBottom: "34px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+                      <div style={{fontStyle: "italic", marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
+                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
+                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
                     </div>
                   </Col>
                 </Row>
