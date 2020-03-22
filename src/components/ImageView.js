@@ -1,5 +1,4 @@
 import React from 'react'; 
-import { Container, Row, Col } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
 import './ImageView.css';
@@ -133,19 +132,21 @@ class ImageView extends React.Component {
               </span>
         </div> ;
 
-          image = <Container style={{width: "80vw", justifyContent: "flex-start"}}>
-                <Row style={{width: "80vw"}}>
-                  <Col xs={12} sm={12} md={12} lg={12} xl={6}><div className="viewingimagecontainer"><img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div></Col>
-                  <Col xs={12} sm={12} md={12} lg={12} xl={6}>
-                    <div className="infotext" >
-                      <div style={{fontStyle: "italic", marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
-                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
-                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
-                      <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+          image = <div id="frame">
+                    <div id="pictureframe">
+                      <div className="viewingimagecontainer">
+                        <img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' />
+                      </div>
                     </div>
-                  </Col>
-                </Row>
-              </Container>       
+                    <div id="infocard">
+                      <div className="infotext" >
+                        <div style={{fontStyle: "italic", marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
+                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
+                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+                      </div>  
+                    </div>
+                  </div> 
       }
 
       const pageContent =  <div>

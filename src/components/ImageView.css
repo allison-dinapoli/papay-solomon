@@ -95,6 +95,30 @@
     vertical-align: center; 
 }
 
+#frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (orientation: portrait) {
+    #frame {
+         flex-direction: column;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #frame {
+         flex-direction: row;
+    }
+    .infotext {
+        top: 40%;
+        text-align: left;
+        position: relative;
+        width: 30vh; 
+    }
+}
+
 @media only screen and (max-width: 1999px) {
     #imagewall {
         vertical-align: text-top;
@@ -126,13 +150,21 @@
     }
 }  
 
+@media only screen and (orientation: landscape) and (max-width: 1300px) {
+    .infotext {
+        padding-left: 30px;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
+
+    #frame {
+        flex-direction: row;
+    }
     .infotext {
         top: 40%;
-        height: 80vh;
         text-align: left;
         position: relative;
-        margin-left: 25vw; 
         width: 30vh; 
     }
     
@@ -143,12 +175,8 @@
         max-width: 80vw; 
         align-self: center;
     }
-    .infotext {
-        top: 40%;
-        height: 80vh;
-        text-align: left;
-        position: relative;
-        margin-left: 15vw; 
+    #frame {
+        justify-content: space-around;
     }
 } 
 
@@ -158,13 +186,6 @@
         align-self: center;
         
     }
-    .infotext {
-        top: 40%;
-        height: 80vh;
-        text-align: left;
-        position: relative;
-        margin-left: 50px; 
-    }
 } 
 
 @media only screen and (min-width: 2400px) {
@@ -172,13 +193,6 @@
         max-width: 80vw; 
         align-self: center;
         
-    }
-    .infotext {
-        top: 40%;
-        height: 80vh;
-        text-align: left;
-        position: relative;
-        margin-left: 0vw; 
     }
     #nav-link {
         letter-spacing: 3px; 
