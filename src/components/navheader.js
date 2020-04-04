@@ -16,8 +16,44 @@ export default class NavHeader extends React.Component {
     }; 
   }
 
+  componentDidMount() {
+    window.onscroll = this.collapseMenu; 
+  }
+
+  componentWillUnmount() {
+    window.onscroll = null; 
+  }
+
+
   resetScrollBar = () => {
     window.scrollTo(0,0);
+  }
+
+  eventFire = (el, etype) => {
+    if (el.fireEvent) {
+      el.fireEvent('on' + etype);
+    } else {
+      var evObj = document.createEvent('Events');
+      evObj.initEvent(etype, true, false); 
+      el.dispatchEvent(evObj); 
+    }
+  }
+
+  menuIsExpanded = () => { 
+    var hamburger = document.getElementsByClassName("navbar-toggler"); 
+    if (hamburger.length > 0) {
+      hamburger = hamburger[0];
+      if (hamburger.className) { 
+        return hamburger.className.includes("collapsed"); 
+      }
+    }
+    return false; 
+  }  
+
+  collapseMenu = () => {
+    if (this.menuIsExpanded()) {
+      this.eventFire(document.getElementsByClassName("navbar-toggler")[0], 'click'); 
+    }
   }
 
   render() {
