@@ -152,30 +152,25 @@ class ImageView extends React.Component {
       const pageContent =  <div>
         {infoButton}
 
-        <div style={{display: "flex", justifyContent: "center",  alignItems: "center", textAlign: "center", width: "100vw"}}>
-          <table style={{width: "100vw"}}>
-            <tbody> 
-              <tr>
-                <td style={{width: "10vw"}}> 
-                  <div className="directionarrowscontainer">
-                    <Link to={this.previousPhotoId()}>
-                      <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
-                    </Link> 
-                  </div>
-                </td> 
-                <td id="imagewall" style={{width: "80vw"}}> {image} </td>
-                <td style={{width: "10vw"}}> 
-                  <div className="directionarrowscontainer">
-                    <Link to={this.nextPhotoId()}>
-                      <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw"}}>
+          <div style={{width: "10vw"}} > 
+            <div className="directionarrowscontainer">
+              <Link to={this.previousPhotoId()}>
+                <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
+              </Link> 
+            </div>
+          </div> 
+          <div id="imagewall" style={{width: "80vw"}}> {image} </div>
+          <div style={{width: "10vw"}}> 
+            <div className="directionarrowscontainer">
+              <Link to={this.nextPhotoId()}>
+                <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
+              </Link>
+            </div>
+          </div> 
         </div>
       </div> ; 
+
       return (
         <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} useDarkNavbar={true} />
       );
