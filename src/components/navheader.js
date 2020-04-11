@@ -75,7 +75,7 @@ export default class NavHeader extends React.Component {
         </Navbar.Brand>
         <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>
         <Navbar.Toggle style={{zIndex: 2}} />
-        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
+        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
@@ -105,7 +105,7 @@ export default class NavHeader extends React.Component {
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle> <div className={'test'}/> </Navbar.Toggle>
-        <Navbar.Collapse style={{textAlign: 'right'}}>
+        <Navbar.Collapse style={{textAlign: 'right', marginRight: "15px"}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
               <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
@@ -135,7 +135,7 @@ export default class NavHeader extends React.Component {
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle style={{zIndex: 2}} />
-        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
+        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
@@ -165,7 +165,7 @@ export default class NavHeader extends React.Component {
           </Navbar.Brand>
           <Navbar.Text className="sectionheadernotext"><div></div></Navbar.Text>
           <Navbar.Toggle style={{zIndex: 2}} />
-          <Navbar.Collapse style={{textAlign: 'right', zIndex: 2}}>
+          <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
             <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
             <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
