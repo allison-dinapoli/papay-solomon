@@ -95,7 +95,7 @@ div {
   position: -webkit-sticky; 
   z-index: 2; 
   top: 0;
-  height: 75px; 
+  height: 65px; 
   width: 100vw; 
   background-color: white!important; 
 }
