@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
+import ImageWithLoading from './ImageWithLoading'
 import './ImageView.css';
 import "./base.css";
 
@@ -103,7 +104,7 @@ class ImageView extends React.Component {
   }
 
   openFullScreen = () => {
-    var elem = document.getElementById("viewingimage");
+    var elem = document.getElementById("highRezImage");
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -115,15 +116,33 @@ class ImageView extends React.Component {
     }
   }
 
+  getImageHeight = () => {
+    if (window.innerHeight > window.innerWidth) {
+      console.log('condition 1')
+      return window.innerHeight/2; 
+    }
+    console.log('condition 2')
+    return 5 * window.innerHeight / 6;
+  }
+
+  getImageWidth = () => {
+    var width = 2 * window.innerWidth / 3;
+    if (this.state.openInfo && this.props.images[this.state.currentImageIndex].orientation == "landscape" && window.innerHeight < window.innerWidth) {
+      width = 2 * width / 3;  
+    }
+    return width; 
+  }
+
   render() {
-    var infoButton =   <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>; 
+    var infoButton = <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>; 
     try {
-      var image = <div className="viewingimagecontainer"><img id="viewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /> </div>
-    
+
+      var image1 = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.props.images[this.state.currentImageIndex].src} lowRezImageUrl={this.props.images[this.state.currentImageIndex].lowRezSrc} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
+      var image = image1;
+
       if (this.state.openInfo) {
         infoButton = 
         <div id="infocontainer">
-            
               <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
               <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
               <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
@@ -134,9 +153,7 @@ class ImageView extends React.Component {
 
           image = <div id="frame">
                     <div id="pictureframe">
-                      <div className="viewingimagecontainer">
-                        <img id="viewingimage" className="infoviewingimage" src={this.props.images[this.state.currentImageIndex].src} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' />
-                      </div>
+                      {image1}
                     </div>
                     <div id="infocard">
                       <div className="infotext" >

@@ -1,0 +1,42 @@
+[
+    {
+        "src": "/img/chapter2/unapologetically-african.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter2/unapologetically-african-low-rez.jpg", 
+        "id": "unapologetically-african",
+        "name": "Unapologetically African, Portrait of Bocar Gueye - Sengal", 
+        "medium": "<medium here>",
+        "year": 2019, 
+        "size": "<size here>"
+    }, 
+    {
+        "src": "/img/chapter2/damn-look-at-me.jpg", 
+        "orientation": "portrait",
+        "lowRezSrc": "/img/chapter2/damn-look-at-me-low-rez.jpg", 
+        "id": "damn-look-at-me",
+        "name": "DAMN! Look at Me, Portrait of Sekera Rasheri", 
+        "medium": "<medium here>",
+        "year": 2019, 
+        "size": "<size here>"
+    }, 
+    {
+        "src": "/img/chapter2/the-black-boy-who-wears-white-skin.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter2/the-black-boy-who-wears-white-skin-low-rez.jpg", 
+        "id": "the-black-boy-who-wears-white-skin",
+        "name": "The Black Boy who Wears White Skin, Portrait of Yaya Simeon", 
+        "medium": "<medium here>",
+        "year": 2019, 
+        "size": "<size here>"
+    }, 
+    {
+        "src": "/img/chapter2/theres-nothing-dreadful-about-this-crown.jpg", 
+        "orientation": "square",
+        "lowRezSrc": "/img/chapter2/theres-nothing-dreadful-about-this-crown-low-rez.jpg", 
+        "id": "theres-nothing-dreadful-about-this-crown",
+        "name": "There's Nothing Dreadful About This Crown, Portrait of Fiston Dimanche Ndarabu Buhendwa - Congo", 
+        "medium": "<medium here>",
+        "year": 2019, 
+        "size": "<size here>"
+    }
+]

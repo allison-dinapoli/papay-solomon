@@ -82,6 +82,7 @@ export default class NavHeader extends React.Component {
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                 <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
+                <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter2'>CHAPTER &#8545;</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -112,6 +113,7 @@ export default class NavHeader extends React.Component {
               <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -142,6 +144,7 @@ export default class NavHeader extends React.Component {
            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                 <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
+                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -172,6 +175,7 @@ export default class NavHeader extends React.Component {
             <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
+                  <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
