@@ -48,7 +48,7 @@ class About extends React.Component {
             <div> <div id="backgroundimage" ref={this.backgroundImage}></div> </div>
             <div id="aboutcontent">
                 <div className="sticky" style={{height: "11vh", width: "100vw", marginTop: "1rem", display: "flex", justifyContent: "center" }}>
-                  <h2 style={{alignSelf: "center"}}>ABOUT</h2>
+                  <h2 style={{alignSelf: "center", fontSize: "1.75rem"}}>ABOUT</h2>
                 </div>
                 <div id="abouttext"> {aboutText} </div>
             </div>

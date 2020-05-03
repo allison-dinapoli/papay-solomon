@@ -87,12 +87,15 @@ export default class NavHeader extends React.Component {
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
           </Nav.Item>
           <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
           </Nav.Item>
           <Nav.Item eventKey={4}>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+          </Nav.Item>
+          <Nav.Item eventKey={5}>
             <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
           </Nav.Item>
         </Nav>
@@ -117,14 +120,16 @@ export default class NavHeader extends React.Component {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-         
             <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
             </Nav.Item>
             <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
             <Nav.Item eventKey={4}>
+              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+            </Nav.Item>
+            <Nav.Item eventKey={5}>
               <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/cv'>CV</Link>
             </Nav.Item>
           </Nav>
@@ -149,12 +154,15 @@ export default class NavHeader extends React.Component {
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
           </Nav.Item>
           <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
           </Nav.Item>
           <Nav.Item eventKey={4}>
+            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+          </Nav.Item>
+          <Nav.Item eventKey={5}>
             <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
           </Nav.Item>
         </Nav>
@@ -180,12 +188,15 @@ export default class NavHeader extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
             </Nav.Item>
             <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
             <Nav.Item eventKey={4}>
+              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+            </Nav.Item>
+            <Nav.Item eventKey={5}>
               <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
             </Nav.Item>
           </Nav>

@@ -118,10 +118,8 @@ class ImageView extends React.Component {
 
   getImageHeight = () => {
     if (window.innerHeight > window.innerWidth) {
-      console.log('condition 1')
       return window.innerHeight/2; 
     }
-    console.log('condition 2')
     return 5 * window.innerHeight / 6;
   }
 

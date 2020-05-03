@@ -119,7 +119,7 @@ div {
   vertical-align: bottom;
   display: flex!important; 
   justify-content: center; 
-  height: 136px; 
+  height: 50px; 
 }
 
 .sectionheadernotext {
@@ -173,7 +173,8 @@ div {
 
   .sectionheader {
     margin-top: 15px;
-    height: 100px;
+    height: 75px;
+    font-size: 1.75rem;
   }
 
 }
