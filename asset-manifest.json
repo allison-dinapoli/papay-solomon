@@ -1,14 +1,23 @@
 {
-  "main.css": "/static/css/main.f83154bf.chunk.css",
-  "main.js": "/static/js/main.93f8b556.chunk.js",
-  "main.js.map": "/static/js/main.93f8b556.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.1a5d7fa8.chunk.js": "/static/js/2.1a5d7fa8.chunk.js",
-  "static/js/2.1a5d7fa8.chunk.js.map": "/static/js/2.1a5d7fa8.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.c82715898a4e0d6b7a113c5a64909d5f.js": "/precache-manifest.c82715898a4e0d6b7a113c5a64909d5f.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.f83154bf.chunk.css.map": "/static/css/main.f83154bf.chunk.css.map",
-  "static/media/base.css": "/static/media/GeosansLight.36e6a06a.ttf"
+  "files": {
+    "main.css": "/static/css/main.84242045.chunk.css",
+    "main.js": "/static/js/main.132a9aa8.chunk.js",
+    "main.js.map": "/static/js/main.132a9aa8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6c52fd71.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6c52fd71.js.map",
+    "static/js/2.29e0eee2.chunk.js": "/static/js/2.29e0eee2.chunk.js",
+    "static/js/2.29e0eee2.chunk.js.map": "/static/js/2.29e0eee2.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.eea1c1bc04b849fb581a73d07413b23a.js": "/precache-manifest.eea1c1bc04b849fb581a73d07413b23a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.84242045.chunk.css.map": "/static/css/main.84242045.chunk.css.map",
+    "static/js/2.29e0eee2.chunk.js.LICENSE": "/static/js/2.29e0eee2.chunk.js.LICENSE",
+    "static/media/base.css": "/static/media/GeosansLight.36e6a06a.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c52fd71.js",
+    "static/js/2.29e0eee2.chunk.js",
+    "static/css/main.84242045.chunk.css",
+    "static/js/main.132a9aa8.chunk.js"
+  ]
 }
