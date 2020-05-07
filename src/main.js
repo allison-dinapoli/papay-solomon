@@ -8,7 +8,12 @@ import Exhibitions from './components/Exhibitions';
 import './components/base.css';
 import News from './components/news';
 import About from './components/about';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import imageLoadReducers from './reducers/imageLoadReducers';
+import { BrowserRouter } from 'react-router-dom';
 
+const store = createStore(imageLoadReducers);
 
 const HomePage = () => (
   <Base content={<About />} doNotIncludeNavBar={true} doNotIncludeContentClassName={true} />
@@ -23,6 +28,8 @@ const Main = () => (
         crossorigin="anonymous"
       />
         <main>
+          <Provider store={store}>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route exact path='/' component={HomePage}/>
                 <Route path='/chapter1/:id' component={ImageViewChapter1}/>
@@ -35,6 +42,8 @@ const Main = () => (
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />
             </Switch>
+            </BrowserRouter>
+          </Provider>
         </main>
     </div>
 )

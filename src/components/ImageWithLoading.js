@@ -1,6 +1,8 @@
 import React from "react";
 import './ImageView.css';
 import { bindActionCreators } from "redux";
+import { connect } from "react-redux"; 
+import * as imageLoadActions from '../actions/imageLoadActions';
 
 class ImageWithLoading extends React.Component {
   constructor(props) {
@@ -20,6 +22,7 @@ class ImageWithLoading extends React.Component {
     if (!this.state.highRezLoaded) {
       this.setState({lowRezLoaded: true, lowRezClass: "visibleImage", loadingClass: "hiddenImage"});
     }
+    this.props.actions.arrowKeyPressed(false); 
     this.getMaxHeightWidth();
   }
  
@@ -40,6 +43,9 @@ class ImageWithLoading extends React.Component {
     var fullHighRezClassName = this.state.highRezClass; 
     if (this.state.classNameAgain) {
         fullHighRezClassName = fullHighRezClassName + " " + this.state.classNameAgain;
+    }
+    if (this.props.imageStatus.arrowKeyPressed && !this.state.highRezLoaded && !this.state.lowRezLoaded) {
+      this.setState({loadingClass: "visibleImage", lowRezClass: "hiddenImage", highRezClass: "hiddenImage"});
     }
     return (
       <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>

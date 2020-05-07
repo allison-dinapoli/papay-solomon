@@ -4,6 +4,9 @@ import Base from './base';
 import ImageWithLoading from './ImageWithLoading'
 import './ImageView.css';
 import "./base.css";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux"; 
+import * as imageLoadActions from '../actions/imageLoadActions';
 
 class ImageView extends React.Component {
   
@@ -40,6 +43,7 @@ class ImageView extends React.Component {
 
   handleKeyDown = (event) => {
     console.log(event.keyCode);
+    this.props.actions.arrowKeyPressed(true);
     if (event.keyCode === 37) { // Arrow Left 
       var imgIndex = this.previousPhoto(); 
       this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
@@ -204,4 +208,17 @@ ImageView.defaultProps = {
     images: []
 }
 
-export default withRouter(ImageView);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...imageLoadActions }, dispatch),
+  }
+}
+
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    imageStatus: state.imageStatus
+  }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ImageView));

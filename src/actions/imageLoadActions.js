@@ -1,8 +1,8 @@
-import { LOW_REZ_IMAGE_FINISHED_LOADING} from "./actionTypes";
+import { ARROW_KEY_PRESSED} from "./actionTypes";
 
-export function lowRezImageFinishedLoading(status) {
+export function arrowKeyPressed(status) {
     return {
-        type: LOW_REZ_IMAGE_FINISHED_LOADING, 
+        type: ARROW_KEY_PRESSED, 
         status
     }
 }
