@@ -71,10 +71,11 @@ class ImageWithLoading extends React.Component {
     if (this.internetSpeed > 7) {
       loadingClass = 'hiddenImage';
     }
-  
-    return (
-      <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
-        <img 
+
+    var highRezImage = ""; 
+
+    if (this.state.lowRezLoaded) {
+      highRezImage = <img 
           className={highRezClass}
           style={{objectFit: "contain"}}
           src={this.props.highRezImageUrl}
@@ -84,7 +85,12 @@ class ImageWithLoading extends React.Component {
           sizes={this.props.sizes}
           onLoad={this.handleImageLoaded}
           onError={this.handleImageErrored.bind(this)}
-        />
+        />; 
+    }
+  
+    return (
+      <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
+        { highRezImage }
         <img 
           style={{objectFit: "contain"}}
           alt={this.props.alt}
