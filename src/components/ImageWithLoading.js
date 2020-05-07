@@ -4,7 +4,7 @@ import './ImageView.css';
 class ImageWithLoading extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { highRezClass: "hiddenImage", lowRezClass: "visibleImage", lowRezLoaded: false, highRezLoaded:false};
+    this.state = { highRezClass: "hiddenImage", lowRezClass: "visibleImage", loadingClass: "visibleImage", lowRezLoaded: false, highRezLoaded:false};
     this.handleLowRezImageLoaded = this.handleLowRezImageLoaded.bind(this);
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.getMaxHeightWidth = this.getMaxHeightWidth.bind(this);
@@ -12,16 +12,18 @@ class ImageWithLoading extends React.Component {
 
   handleImageLoaded() {
     this.getMaxHeightWidth();
-    this.setState({ highRezClass: "visibleImage", lowRezClass: "hiddenImage", highRezLoaded: true });
+    this.setState({ highRezClass: "visibleImage", lowRezClass: "hiddenImage", loadingClass: "hiddenImage", highRezLoaded: true });
   }
 
   handleLowRezImageLoaded() {
+    if (!this.state.highRezLoaded) {
+      this.setState({lowRezLoaded: true, lowRezClass: "visibleImage", loadingClass: "hiddenImage"});
+    }
     this.getMaxHeightWidth();
-    this.setState({lowRezLoaded: true});
   }
  
   handleImageErrored() {
-    this.setState({ highRezClass: "hiddenImage", lowRezClass: "visibleImage" });
+    this.setState({ highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "hiddenImage" });
   }
   
   getMaxHeightWidth() {
@@ -42,7 +44,7 @@ class ImageWithLoading extends React.Component {
       <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
         <img 
           className={fullHighRezClassName}
-          style={{visibility: this.state.highRezVisibility, objectFit: "contain"}}
+          style={{objectFit: "contain"}}
           src={this.props.highRezImageUrl}
           alt={this.props.alt}
           id="highRezImage"
@@ -52,7 +54,7 @@ class ImageWithLoading extends React.Component {
           onError={this.handleImageErrored.bind(this)}
         />
         <img 
-          style={{visibility: this.state.lowRezVisibility}}
+          style={{objectFit: "contain"}}
           alt={this.props.alt}
           className={this.state.lowRezClass}
           srcSet={this.props.srcSet}
@@ -60,6 +62,12 @@ class ImageWithLoading extends React.Component {
           id="lowRezImage"
           onLoad={this.handleLowRezImageLoaded}
           src={this.props.lowRezImageUrl}
+        />
+        <img
+          alt="loading..."
+          className={this.state.loadingClass}
+          id="loadingImage"
+          src="./img/icons/loading-spinner.svg"
         />
       </div>
     );
