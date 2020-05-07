@@ -1,5 +1,6 @@
 import React from "react";
 import './ImageView.css';
+import { bindActionCreators } from "redux";
 
 class ImageWithLoading extends React.Component {
   constructor(props) {
@@ -73,4 +74,15 @@ class ImageWithLoading extends React.Component {
     );
   }
 }
-export default ImageWithLoading;
+
+function mapDispatchToProps(dispatch) {
+  return {
+    action: bindActionCreators({...imageLoadActions }, dispatch),
+  }
+}
+
+const mapStateToProps = state => ({
+  imageStatus: state.imageStatus
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageWithLoading);
