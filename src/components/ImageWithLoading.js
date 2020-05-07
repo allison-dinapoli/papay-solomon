@@ -7,10 +7,29 @@ import * as imageLoadActions from '../actions/imageLoadActions';
 class ImageWithLoading extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { highRezClass: "hiddenImage", lowRezClass: "visibleImage", loadingClass: "visibleImage", lowRezLoaded: false, highRezLoaded:false};
-    this.handleLowRezImageLoaded = this.handleLowRezImageLoaded.bind(this);
+    this.state = { highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", lowRezLoaded: false, highRezLoaded:false};
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.getMaxHeightWidth = this.getMaxHeightWidth.bind(this);
+    if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
+      this.internetSpeed = navigator.connection.downlink; 
+    } else {
+      this.internetSpeed = 1; 
+    }
+  }
+
+  componentWillUnmount() {
+    this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", highRezLoaded: false, lowRezLoaded: false }); 
+  }
+
+  componentDidUpdate(previousProps) {
+    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 7) {
+      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", highRezLoaded: false, lowRezLoaded: false }); 
+    }
+    if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
+      this.internetSpeed = navigator.connection.downlink; 
+    } else {
+      this.internetSpeed = 1; 
+    }
   }
 
   handleImageLoaded() {
@@ -18,7 +37,7 @@ class ImageWithLoading extends React.Component {
     this.setState({ highRezClass: "visibleImage", lowRezClass: "hiddenImage", loadingClass: "hiddenImage", highRezLoaded: true });
   }
 
-  handleLowRezImageLoaded() {
+  handleLowRezImageLoaded = () => {
     if (!this.state.highRezLoaded) {
       this.setState({lowRezLoaded: true, lowRezClass: "visibleImage", loadingClass: "hiddenImage"});
     }
@@ -40,17 +59,23 @@ class ImageWithLoading extends React.Component {
   }  
 
   render() {
-    var fullHighRezClassName = this.state.highRezClass; 
-    if (this.state.classNameAgain) {
-        fullHighRezClassName = fullHighRezClassName + " " + this.state.classNameAgain;
+    var highRezClass = this.state.highRezClass;
+    var lowRezClass = this.state.lowRezClass; 
+    var loadingClass = this.state.loadingClass; 
+    if (this.props.imageStatus.arrowKeyPressed) {
+      highRezClass = "hiddenImage"; 
+      lowRezClass = "hiddenImage"; 
+      loadingClass = "visibleImage"; 
     }
-    if (this.props.imageStatus.arrowKeyPressed && !this.state.highRezLoaded && !this.state.lowRezLoaded) {
-      this.setState({loadingClass: "visibleImage", lowRezClass: "hiddenImage", highRezClass: "hiddenImage"});
+    console.log(this.internetSpeed);
+    if (this.internetSpeed > 7) {
+      loadingClass = 'hiddenImage';
     }
+  
     return (
       <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
         <img 
-          className={fullHighRezClassName}
+          className={highRezClass}
           style={{objectFit: "contain"}}
           src={this.props.highRezImageUrl}
           alt={this.props.alt}
@@ -63,7 +88,7 @@ class ImageWithLoading extends React.Component {
         <img 
           style={{objectFit: "contain"}}
           alt={this.props.alt}
-          className={this.state.lowRezClass}
+          className={lowRezClass}
           srcSet={this.props.srcSet}
           sizes={this.props.sizes}
           id="lowRezImage"
@@ -72,9 +97,9 @@ class ImageWithLoading extends React.Component {
         />
         <img
           alt="loading..."
-          className={this.state.loadingClass}
+          className={loadingClass}
           id="loadingImage"
-          src="./img/icons/loading-spinner.svg"
+          src="/img/icons/loading-spinner.svg"
         />
       </div>
     );
@@ -83,12 +108,12 @@ class ImageWithLoading extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    action: bindActionCreators({...imageLoadActions }, dispatch),
+    actions: bindActionCreators({...imageLoadActions }, dispatch),
   }
 }
 
 const mapStateToProps = state => ({
   imageStatus: state.imageStatus
-});
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageWithLoading);

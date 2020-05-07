@@ -38,12 +38,11 @@ class ImageView extends React.Component {
   }
 
   componentWillUnmount() {
+    this.props.actions.arrowKeyPressed(false);
     document.removeEventListener("keydown", this.handleKeyDown);
   }
 
   handleKeyDown = (event) => {
-    console.log(event.keyCode);
-    this.props.actions.arrowKeyPressed(true);
     if (event.keyCode === 37) { // Arrow Left 
       var imgIndex = this.previousPhoto(); 
       this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
@@ -58,6 +57,7 @@ class ImageView extends React.Component {
   //}
 
   nextPhoto = () => {
+    this.props.actions.arrowKeyPressed(true);
     var nextPhoto = this.nextPhotoPos();  
     this.setState({currentImageIndex: nextPhoto}); 
     return nextPhoto; 
@@ -90,6 +90,7 @@ class ImageView extends React.Component {
   }
 
   previousPhoto = () => {
+    this.props.actions.arrowKeyPressed(true);
     var nextPhoto = this.previousPhotoPos(); 
     this.setState({currentImageIndex: nextPhoto}); 
     return nextPhoto; 
@@ -214,11 +215,8 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    imageStatus: state.imageStatus
-  }
-};
+const mapStateToProps = state => ({
+  imageStatus: state.imageStatus
+})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ImageView));

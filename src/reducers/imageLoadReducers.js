@@ -17,7 +17,7 @@ function imageLoadReducer(state = initialState, action) {
                 }
             }
         default: 
-            return
+            return state
     }
 }
 

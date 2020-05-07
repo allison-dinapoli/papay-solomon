@@ -10,10 +10,12 @@ import News from './components/news';
 import About from './components/about';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import imageLoadReducers from './reducers/imageLoadReducers';
+import imageLoadReducer from './reducers/imageLoadReducers';
 import { BrowserRouter } from 'react-router-dom';
+import devToolsEnhancer from 'remote-redux-devtools';
 
-const store = createStore(imageLoadReducers);
+
+const store = createStore(imageLoadReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const HomePage = () => (
   <Base content={<About />} doNotIncludeNavBar={true} doNotIncludeContentClassName={true} />

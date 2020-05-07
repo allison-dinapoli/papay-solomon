@@ -1,4 +1,4 @@
-import { ARROW_KEY_PRESSED} from "./actionTypes";
+import { ARROW_KEY_PRESSED } from "./actionTypes";
 
 export function arrowKeyPressed(status) {
     return {
