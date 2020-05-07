@@ -22,7 +22,7 @@ class ImageWithLoading extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 7) {
+    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 8) {
       this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", highRezLoaded: false, lowRezLoaded: false }); 
     }
     if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
@@ -68,7 +68,7 @@ class ImageWithLoading extends React.Component {
       loadingClass = "visibleImage"; 
     }
     console.log(this.internetSpeed);
-    if (this.internetSpeed > 7) {
+    if (this.internetSpeed > 8) {
       loadingClass = 'hiddenImage';
     }
 
