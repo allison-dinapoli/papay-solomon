@@ -67,7 +67,6 @@ class ImageWithLoading extends React.Component {
       lowRezClass = "hiddenImage"; 
       loadingClass = "visibleImage"; 
     }
-    console.log(this.internetSpeed);
     if (this.internetSpeed > 8) {
       loadingClass = 'hiddenImage';
     }

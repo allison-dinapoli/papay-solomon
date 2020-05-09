@@ -18,10 +18,19 @@ export default class NavHeader extends React.Component {
 
   componentDidMount() {
     window.onscroll = this.collapseMenu; 
+    document.addEventListener('mousedown', this.handleMouseClick); 
   }
 
   componentWillUnmount() {
     window.onscroll = null; 
+    document.removeEventListener('mousedown', this.handleMouseClick)
+  }
+
+  handleMouseClick = (event) => {
+    let className = event.srcElement.className; 
+    if (!(className.includes("nav-link") || className.includes("navbar"))) {
+      this.collapseMenu(); 
+    } 
   }
 
 
@@ -68,6 +77,7 @@ export default class NavHeader extends React.Component {
       cvDownload = <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="downloadicon"><img src="./img/icons/download.svg" alt="download" className="downloadIcon" ></img></a>
     }
     
+    // DEFAULT NAVBAR -- news, exhibitions, CV
     var navbar = 
       <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
         <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
@@ -79,8 +89,8 @@ export default class NavHeader extends React.Component {
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-           <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
-              <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
+           <Dropdown.Menu>
+              <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
                 <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
                 <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter2'>CHAPTER &#8545;</Link>
               </Dropdown.Item>
@@ -102,18 +112,18 @@ export default class NavHeader extends React.Component {
       </Navbar.Collapse>
     </Navbar>; 
 
-    if (this.props.useLightNavbar) {
+    if (this.props.useLightNavbar) { // ABOUT PAGE
       navbar = 
       <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px", alignItems: "flex-start"}}>
         <Navbar.Brand>
           {navbarBrand}
         </Navbar.Brand>
-        <Navbar.Toggle> <div className={'test'}/> </Navbar.Toggle>
-        <Navbar.Collapse style={{textAlign: 'right', marginRight: "15px"}}>
+        <Navbar.Toggle> <div className={'test navbar-not'}/> </Navbar.Toggle>
+        <Navbar.Collapse style={{textAlign: 'right', marginRight: "15px", backgroundColor: "transparent"}}>
           <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
               <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
-              <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
+              <Dropdown.Menu style={{}}>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
@@ -135,8 +145,8 @@ export default class NavHeader extends React.Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>; 
-    } else if (this.props.useTransparentDarkNavbar) {
-      navbar = 
+    } else if (this.props.useTransparentDarkNavbar) { //ABOUT AFTER SCROLLING A BIT 
+      navbar =  
       <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
         <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
           {navbarBrand}
@@ -146,7 +156,7 @@ export default class NavHeader extends React.Component {
           <Nav className="justify-content-end" defaultActiveKey="/">
           <Dropdown as={Nav.Item}>
           <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-           <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
+           <Dropdown.Menu >
               <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                 <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
                 <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
@@ -168,7 +178,7 @@ export default class NavHeader extends React.Component {
         </Nav>
       </Navbar.Collapse>
     </Navbar>; 
-    } else if (this.props.useDarkNavbar) {
+    } else if (this.props.useDarkNavbar) { //IMAGE VIEW
       navbar = 
       <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
           <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
@@ -180,7 +190,7 @@ export default class NavHeader extends React.Component {
             <Nav className="justify-content-end" defaultActiveKey="/">
             <Dropdown as={Nav.Item}>
             <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-            <Dropdown.Menu style={{backgroundColor: 'transparent'}}>
+            <Dropdown.Menu>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
                   <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>

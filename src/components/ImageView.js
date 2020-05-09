@@ -121,6 +121,21 @@ class ImageView extends React.Component {
     }
   }
 
+  fullScreenEnabled = () => {
+    console.log(navigator.userAgent);
+    try {
+      if (navigator.userAgent.includes("iPhone") && navigator.userAgent.includes("Safari")) {
+        return false; 
+      } else if (navigator.userAgent.includes("Mobile") && navigator.userAgent.includes("OPR")) {
+
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    
+    return true; 
+  }
+
   getImageHeight = () => {
     if (window.innerHeight > window.innerWidth) {
       return window.innerHeight/2; 
@@ -143,12 +158,17 @@ class ImageView extends React.Component {
       var image1 = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.props.images[this.state.currentImageIndex].src} lowRezImageUrl={this.props.images[this.state.currentImageIndex].lowRezSrc} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
       var image = image1;
 
+      var fullScreenButton = <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>; 
+      if (!this.fullScreenEnabled()) {
+        fullScreenButton = "";
+      }
+
       if (this.state.openInfo) {
         infoButton = 
         <div id="infocontainer">
               <a className="quietLinkIcon" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/instagram.svg" alt="instagram"/></a>
               <a className="quietLinkIcon" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img className="icon" src="/img/icons/facebook.svg" alt="facebook"/></a>
-              <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>
+              { fullScreenButton }
               <span id="infodiv">
                 <img id="infoicon" className="infoicon" src="/img/icons/info_dark.svg" alt="info" onClick={this.closeInfo}></img> 
               </span>

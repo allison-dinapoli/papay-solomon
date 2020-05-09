@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import './ImageView.css';
+import './Exhibition.css';
 import ImageWithLoading from './ImageWithLoading'
 import "./base.css";
 
@@ -67,13 +67,13 @@ class Exhibition extends React.Component {
             <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw", height: this.getImageHeight() }}>
                 <div style={{width: "15vw"}} > 
                     <div className="directionarrowscontainer" style={{height: this.getImageHeight(), textAlign:"right", width: "15vw"}}>
-                        <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
+                        <img className="directionarrowsplz" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
                     </div>
                 </div> 
                 <div id="imagewall" style={{width: "70vw"}}> {image} </div>
                 <div style={{width: "15vw"}}> 
                     <div className="directionarrowscontainer" style={{height: this.getImageHeight(), textAlign: "left", width: "15vw"}}>
-                        <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
+                        <img className="directionarrowsplz" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
                     </div>
                 </div> 
             </div>
