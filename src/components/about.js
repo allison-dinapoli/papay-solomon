@@ -18,8 +18,8 @@ class About extends React.Component {
   componentDidMount() {
     const cachedRef = this.backgroundImage.current;
     this.observer = new IntersectionObserver(
-      ([e]) => {this.setState({isSticky: e.intersectionRatio < 0.01})},
-      {threshold: [0], delay: 100}
+      ([e]) => {this.setState({isSticky: e.intersectionRatio < 0.0001, intersectionRatio: e.intersectionRatio})},
+      {threshold: [0], delay: 50}
     )
     this.observer.observe(cachedRef);
   }
