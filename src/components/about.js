@@ -16,16 +16,26 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-    const cachedRef = this.backgroundImage.current;
-    this.observer = new IntersectionObserver(
-      ([e]) => {this.setState({isSticky: e.intersectionRatio < 0.0001, intersectionRatio: e.intersectionRatio})},
-      {threshold: [0], delay: 50}
-    )
-    this.observer.observe(cachedRef);
+    try {
+      const cachedRef = this.backgroundImage.current;
+      this.observer = new IntersectionObserver(
+        ([e]) => {this.setState({isSticky: e.intersectionRatio < 0.0001, intersectionRatio: e.intersectionRatio})},
+        {threshold: [0], delay: 50}
+      )
+      this.observer.observe(cachedRef);
+    } catch (error) {
+      // do nothing. usually this is because IntersectionObserver is undefined :p 
+    }
+
   }
 
   componentWillUnmount() {
-    this.observer.unobserve(this.backgroundImage.current);
+    try {
+      this.observer.unobserve(this.backgroundImage.current);
+    } catch (error) {
+       // do nothing. usually this is because IntersectionObserver is undefined :p 
+    }
+    
   }
 
   render() {

@@ -80,7 +80,7 @@ class Exhibition extends React.Component {
             <div style={{textAlign: "center"}}>
                 <br/>
                 {this.props.exhibitionJson["startDate"]} - {this.props.exhibitionJson["endDate"]} <br/>
-                <b>{this.props.exhibitionJson["name"]}</b> <br/>
+                <b style={{fontStyle: "italic"}}>{this.props.exhibitionJson["name"]}</b> <br/>
                 {this.props.exhibitionJson["gallery"]}
 
             </div>   

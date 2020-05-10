@@ -4,6 +4,9 @@ import './index.css';
 import Main from './main';
 import * as serviceWorker from './serviceWorker';
 
+var ES6Promise = require("es6-promise");
+ES6Promise.polyfill();
+require('es6-object-assign').polyfill();
 
 ReactDOM.render(
       <Main />
