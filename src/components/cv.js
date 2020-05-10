@@ -21,9 +21,7 @@ class PDFViewer extends Component {
             <object data="CV-1.svg" type="image/svg+xml" class="documentwindow">
             </object>
             <object data="CV-2.svg" type="image/svg+xml" class="documentwindow">
-            </object>  
-            <object data="CV-3.svg" type="image/svg+xml" class="documentwindow">
-            </object>           
+            </object>       
           </div>
         </div>; 
  
