@@ -31,6 +31,8 @@ class ImageView extends React.Component {
       showImageZoom: false, 
       infoOpen: false
     }
+
+    this.parser = require('ua-parser-js');
   }
 
   componentDidMount() {
@@ -122,13 +124,15 @@ class ImageView extends React.Component {
   }
 
   fullScreenEnabled = () => {
+    console.log(this.parser);
     console.log(navigator.userAgent);
+    var userAgent = this.parser(navigator.userAgent); 
+    console.log(userAgent.browser.name);
+    console.log(userAgent)
     try {
-      if (navigator.userAgent.includes("iPhone") && navigator.userAgent.includes("Safari")) {
+      if (userAgent.browser.name.includes("Mobile Safari") || userAgent.browser.name.includes("Opera Mini") || userAgent.browser.name.includes("Opera Mobi") || userAgent.browser.name.includes("Android Browser")) {
         return false; 
-      } else if (navigator.userAgent.includes("Mobile") && navigator.userAgent.includes("OPR")) {
-
-      }
+      } 
     } catch (error) {
       console.log(error);
     }

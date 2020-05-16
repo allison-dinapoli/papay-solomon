@@ -1,13 +1,14 @@
 import React from "react";
-import './ImageView.css';
+import './ImageWithLoading.css';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux"; 
 import * as imageLoadActions from '../actions/imageLoadActions';
 
+
 class ImageWithLoading extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", lowRezLoaded: false, highRezLoaded:false};
+    this.state = { highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", lowRezLoaded: false, highRezLoaded:false};
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
     this.getMaxHeightWidth = this.getMaxHeightWidth.bind(this);
     if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
@@ -15,15 +16,22 @@ class ImageWithLoading extends React.Component {
     } else {
       this.internetSpeed = 1; 
     }
+    this.useSpinnerGif = true; 
+    this.parser = require('ua-parser-js');
+    this.userAgent = this.parser(navigator.userAgent); 
+    console.log(this.userAgent.browser); 
+    if(this.userAgent.browser.name.includes("Chrome") || this.userAgent.browser.name.includes("Chromium") || this.userAgent.browser.name.includes("Firefox")) {
+      this.useSpinnerGif = false; 
+    }
   }
 
   componentWillUnmount() {
-    this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", highRezLoaded: false, lowRezLoaded: false }); 
+    this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false }); 
   }
 
   componentDidUpdate(previousProps) {
     if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 8) {
-      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage", highRezLoaded: false, lowRezLoaded: false }); 
+      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false }); 
     }
     if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
       this.internetSpeed = navigator.connection.downlink; 
@@ -65,7 +73,7 @@ class ImageWithLoading extends React.Component {
     if (this.props.imageStatus.arrowKeyPressed) {
       highRezClass = "hiddenImage"; 
       lowRezClass = "hiddenImage"; 
-      loadingClass = "visibleImage"; 
+      loadingClass = "visibleImage loadingImage"; 
     }
     if (this.internetSpeed > 8) {
       loadingClass = 'hiddenImage';
@@ -86,7 +94,24 @@ class ImageWithLoading extends React.Component {
           onError={this.handleImageErrored.bind(this)}
         />; 
     }
-  
+
+    var loadingSpinner = <img
+                            alt="loading..."
+                            className={loadingClass}
+                            id="loadingImage"
+                            src="/img/icons/loading-spinner.svg"
+                          />;
+    
+    if (this.useSpinnerGif) {
+      loadingSpinner = <img
+                          alt="loading..."
+                          style={{objectFit: "contain"}}
+                          className={loadingClass}
+                          id="loadingImage"
+                          src="/img/icons/loading-spinner.gif"
+                        />;
+    }       
+
     return (
       <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
         { highRezImage }
@@ -100,12 +125,7 @@ class ImageWithLoading extends React.Component {
           onLoad={this.handleLowRezImageLoaded}
           src={this.props.lowRezImageUrl}
         />
-        <img
-          alt="loading..."
-          className={loadingClass}
-          id="loadingImage"
-          src="/img/icons/loading-spinner.svg"
-        />
+        { loadingSpinner }
       </div>
     );
   }
