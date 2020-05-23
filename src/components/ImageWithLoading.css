@@ -17,6 +17,22 @@
     width: 20vh;
 }
 
+#highRezImage:fullscreen {
+    background-color: black;
+}
+
+#highRezImage:-ms-fullscreen {
+    background-color: black;
+}
+
+#highRezImage:-moz-full-screen {
+    background-color: black;
+}
+
+#highRezImage:-webkit-full-screen {
+    background-color: black;
+}
+
 @media only screen and (orientation: portrait) {
     .loadingImage {
         max-width: 40%;

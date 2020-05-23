@@ -65,16 +65,15 @@
 
 .directionarrows {
     cursor: pointer;
-    top: 50%;
     position: relative;
     width: 2vw;
     min-width: 30px;
 }
 
 .directionarrowscontainer {
+    display: flex; 
+    justify-content: center;
     align-items: center;
-    width: 10vw;
-    height: 80vh; 
     padding: 0px;
 }
 
