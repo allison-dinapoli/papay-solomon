@@ -61,7 +61,7 @@ class Exhibition extends React.Component {
   render() {
     try {
       var altText = "Photo " + String(this.state.currentImageIndex + 1) + " of " + this.props.exhibitionJson['name'];
-      let image = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} alt={altText} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
+      let image = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
       return (
         <div>
             <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw", height: this.getImageHeight() }}>

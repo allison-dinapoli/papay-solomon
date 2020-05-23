@@ -39,13 +39,6 @@
     width: 0px;
 }
 
-.visibleImage {
-    visibility: visible;
-    width:100%;
-    height:100%;
-    max-width: 80vw;
-}
-
 .quietLinkIcon {
     text-decoration: none;
 }
