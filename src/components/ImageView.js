@@ -185,10 +185,10 @@ class ImageView extends React.Component {
                     </div>
                     <div id="infocard">
                       <div className="infotext" >
-                        <div style={{fontStyle: "italic", marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].name}</div>
-                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].size}</div> 
-                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].medium}</div> 
-                        <div style={{marginBottom: "24px"}}>{this.props.images[this.state.currentImageIndex].year}</div> 
+                        <div className="infoline" style={{fontStyle: "italic"}}>{this.props.images[this.state.currentImageIndex].name}</div>
+                        <div className="infoline">{this.props.images[this.state.currentImageIndex].size}</div> 
+                        <div className="infoline">{this.props.images[this.state.currentImageIndex].medium}</div> 
+                        <div className="infoline">{this.props.images[this.state.currentImageIndex].year}</div> 
                       </div>  
                     </div>
                   </div> 
@@ -198,7 +198,7 @@ class ImageView extends React.Component {
         {infoButton}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw"}}>
-          <div style={{width: "10vw"}} > 
+          <div className="directionarrowscontainercontainer"> 
             <div className="directionarrowscontainer" style={{height: this.getImageHeight(), textAlign: "right", width: "10vw"}}>
               <Link to={this.previousPhotoId()}>
                 <img className="directionarrows" src="/img/icons/left.svg" onClick={this.previousPhoto} alt="previous" />
@@ -206,8 +206,8 @@ class ImageView extends React.Component {
             </div>
           </div> 
           <div id="imagewall" style={{width: "80vw"}}> {image} </div>
-          <div style={{width: "10vw"}}> 
-            <div className="directionarrowscontainer"  style={{height: this.getImageHeight(), textAlign: "left", width: "10vw"}}>
+          <div className="directionarrowscontainercontainer"> 
+            <div className="directionarrowscontainer" style={{height: this.getImageHeight(), textAlign: "left", width: "10vw"}}>
               <Link to={this.nextPhotoId()}>
                 <img className="directionarrows" src="/img/icons/right.svg" onClick={this.nextPhoto} alt="next" />
               </Link>

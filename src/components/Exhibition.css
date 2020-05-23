@@ -100,7 +100,6 @@
 .infotext {
     top: 5%;
     height: 40vh;
-    font-size: 12px;
     text-align: center;
     color: darkslategrey; 
 }
@@ -114,16 +113,25 @@
     flex-direction: row;
     justify-content: space-between;
 }
+#pictureframe {
+    max-width: 66vw;
+}
 
 @media only screen and (orientation: portrait) {
     #frame {
          flex-direction: column;
+    }
+    #pictureframe {
+        max-width: 100vw;
     }
 }
 
 @media only screen and (orientation: landscape) {
     #frame {
          flex-direction: row;
+    }
+    #pictureframe {
+        max-width: 66vw;
     }
     .infotext {
         top: 40%;
@@ -174,11 +182,13 @@
     #frame {
         flex-direction: column; 
     }
+    #pictureframe {
+        max-width: 100vw;
+    }
     .infotext {
         top: 1%;
         width: 100%;
         height: 40vh;
-        font-size: 12px;
         text-align: center;
         color: darkslategrey; 
     }
@@ -189,6 +199,9 @@
 
     #frame {
         flex-direction: row;
+    }
+    #pictureframe {
+        max-width: 66vw;
     }
     .infotext {
         top: 40%;
@@ -203,9 +216,6 @@
     .infoviewingimage {
         max-width: 80vw; 
         align-self: center;
-    }
-    #frame {
-        justify-content: space-around;
     }
 } 
 

@@ -37,8 +37,10 @@ class ImageWithLoading extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 8) {
+    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.internetSpeed < 8.5) {
       this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false }); 
+    } else if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl) {
+      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage"});
     }
     if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
       this.internetSpeed = navigator.connection.downlink; 
@@ -82,7 +84,7 @@ class ImageWithLoading extends React.Component {
       lowRezClass = "hiddenImage"; 
       loadingClass = "visibleImage loadingImage"; 
     }
-    if (this.internetSpeed > 8) {
+    if (this.internetSpeed > 8.5) {
       loadingClass = 'hiddenImage';
     }
 
@@ -170,7 +172,7 @@ class ImageWithLoading extends React.Component {
 
 
     return (    
-    <div id="imagedivboxcontainer" style={{maxWidth: this.state.divBoxWidth, maxHeight: this.state.divBoxHeight, height: this.props.height, width: this.props.width}}>
+    <div id="imagedivboxcontainer" style={{height: this.props.height}}>
       { highRezImage }
       { lowRezImage }
       { loadingSpinner }
