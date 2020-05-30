@@ -81,6 +81,7 @@
     height: 40vh;
     text-align: center;
     color: darkslategrey; 
+
 }
 
 #imagewall {
@@ -121,6 +122,7 @@
         text-align: left;
         position: relative;
         width: 30vh; 
+        padding-left: 15px;
     }
 }
 
