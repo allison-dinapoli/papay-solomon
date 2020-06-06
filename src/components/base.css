@@ -124,6 +124,7 @@ div {
 
 .content {
   z-index: 1;
+  margin-top: 50px;
 }
 
 .sectionheader {
@@ -141,7 +142,8 @@ div {
   vertical-align: bottom;
   display: flex!important; 
   justify-content: center; 
-  height: 50px; 
+  height: 10vh;
+  max-height: 100px; 
 }
 
 .sectionheadernotext {
@@ -194,9 +196,12 @@ div {
   }
 
   .sectionheader {
-    margin-top: 15px;
-    height: 75px;
+    margin-top: 20px;
+    max-height: 75px;
     font-size: 1.75rem;
+  }
+  .content {
+    margin-top: 15px;
   }
 
 }

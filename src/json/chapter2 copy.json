@@ -38,5 +38,25 @@
         "medium": "Oil and Pastel on Belgian Linen",
         "year": 2020, 
         "size": "33\" x 47\""
+    }, 
+    {
+        "src": "/img/chapter2/if-you-cant-remember.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter2/if-you-cant-remember-low-rez.jpg", 
+        "id": "if-you-cant-remember",
+        "name": "If You Can't Remember, it's Not Important: Sureya Mardaadi - Somalia", 
+        "medium": "Oil and Pastel on Belgian Linen",
+        "year": 2019, 
+        "size": "45\" x 80\""
+    }, 
+    {
+        "src": "/img/chapter2/heavyweight.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter2/heavyweight-low-rez.jpg", 
+        "id": "heavyweight",
+        "name": "Heavy(weight), Portrait of Benjamin Gasinga Gaspard - Rwanda", 
+        "medium": "Oil Belgian Linen",
+        "year": 2019, 
+        "size": "45\" x 80\""
     }
 ]

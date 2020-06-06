@@ -87,7 +87,7 @@ export default class NavHeader extends React.Component {
       cvDownload = <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="downloadicon"><img src="./img/icons/download.svg" alt="download" className="downloadIcon" ></img></a>
     }
     
-    // DEFAULT NAVBAR -- news, exhibitions, CV
+    // DEFAULT NAVBAR -- exhibitions, CV
     var navbar = 
       <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
         <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>

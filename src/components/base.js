@@ -17,7 +17,7 @@ export default class Base extends React.Component {
       navbar = <NavHeader doNotIncludeNavbarBrand={this.props.doNotIncludeNavbarBrand} useLightNavbar={this.props.useLightNavbar} sectionHeader={this.props.sectionHeader} includeCvDownload={this.props.includeCvDownload} useTransparentDarkNavbar={this.props.useTransparentDarkNavbar} useDarkNavbar={this.props.useDarkNavbar} />
     }
     
-    var content = <div className="content" style={{marginTop: "10px"}}>{this.props.content}</div>
+    var content = <div className="content">{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
     }

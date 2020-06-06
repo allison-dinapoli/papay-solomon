@@ -14,7 +14,8 @@ export default class News extends React.Component {
 
   render(){
     const content = 
-      <div style={{paddingTop: "3vh"}}>
+      <div className="topDiv">
+        <div className="newsTypeHeader">Upcoming Events</div>
 
         <div className="newsBlock">
           <div>
@@ -27,8 +28,9 @@ export default class News extends React.Component {
           </div> 
         </div>
         
-
-        <div style={{paddingTop: "5vh"}}> </div>
+        <div style={{paddingTop: "6vh"}}> </div>
+        <div className="newsTypeHeader">In the News</div>
+        
         <div className="vimeoVideo">
           <iframe src="https://player.vimeo.com/video/361556387" 
             style={{position: "absolute", top:0, left:0, width: '100%', height:'100%'}}
@@ -54,8 +56,8 @@ export default class News extends React.Component {
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
 
-      </div>;
+      </div>
 
-    return <Base content={content} sectionHeader="NEWS"></Base>
+    return <Base content={content} useDarkNavbar={true}></Base>
   }
 }
