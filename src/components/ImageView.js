@@ -110,6 +110,25 @@ class ImageView extends React.Component {
     this.setState({openInfo:false});
   }
 
+  positionInfoAtTop = () => {
+    if (this.isPortrait()) {
+      return true; 
+    } else {
+      if (window.innerWidth <= 450) {
+        return true; 
+      }
+    }
+    return false; 
+  }
+
+  isPortrait = () => {
+    if (window.innerHeight > window.innerWidth) {
+      return true; 
+    } else {
+      return false;
+    }
+  }
+
   openFullScreen = () => {
     var elem = document.getElementById("highRezImage");
     if (elem.requestFullscreen) {
@@ -124,11 +143,7 @@ class ImageView extends React.Component {
   }
 
   fullScreenEnabled = () => {
-    console.log(this.parser);
-    console.log(navigator.userAgent);
     var userAgent = this.parser(navigator.userAgent); 
-    console.log(userAgent.browser.name);
-    console.log(userAgent)
     try {
       if (userAgent.browser.name.includes("Mobile Safari") || userAgent.browser.name.includes("Opera Mini") || userAgent.browser.name.includes("Opera Mobi") || userAgent.browser.name.includes("Android Browser")) {
         return false; 
@@ -157,7 +172,7 @@ class ImageView extends React.Component {
   }
 
   render() {
-    var infoButton = <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>; 
+    var infoButton = <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>;
     try {
 
       var image1 = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.props.images[this.state.currentImageIndex].src} lowRezImageUrl={this.props.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.props.images[this.state.currentImageIndex].orientation} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
@@ -194,8 +209,17 @@ class ImageView extends React.Component {
                   </div> 
       }
 
+      var infoButtonTop = ""; 
+      var infoButtonBottom = ""; 
+      if (this.positionInfoAtTop()) {
+        infoButtonTop = infoButton;
+
+      } else {
+        infoButtonBottom = infoButton; 
+      }
+
       const pageContent =  <div>
-        {infoButton}
+        {infoButtonTop}
 
         <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw"}}>
           <div className="directionarrowscontainercontainer"> 
@@ -214,10 +238,11 @@ class ImageView extends React.Component {
             </div>
           </div> 
         </div>
+        {infoButtonBottom}
       </div> ; 
 
       return (
-        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} useDarkNavbar={true} />
+        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} useDarkNavbar={true} noTopMargin={true} />
       );
     } catch(error) {
       console.log(error);
