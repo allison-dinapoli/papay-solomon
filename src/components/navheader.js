@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
+import {navbarTypes} from '../enums/navbarTypes';
 
 import { Link } from 'react-router-dom';
 import './base.css';
@@ -10,10 +11,6 @@ export default class NavHeader extends React.Component {
 
   constructor(props) {
     super(props); 
-    
-    this.state = {
-      
-    }; 
   }
 
   componentDidMount() {
@@ -37,7 +34,6 @@ export default class NavHeader extends React.Component {
     }
 
   }
-
 
   resetScrollBar = () => {
     window.scrollTo(0,0);
@@ -86,146 +82,120 @@ export default class NavHeader extends React.Component {
     if (this.props.includeCvDownload) {
       cvDownload = <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="downloadicon"><img src="./img/icons/download.svg" alt="download" className="downloadIcon" ></img></a>
     }
-    
-    // DEFAULT NAVBAR -- exhibitions, CV
-    var navbar = 
-      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
-        <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
-          {navbarBrand}
-        </Navbar.Brand>
-        <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>
-        <Navbar.Toggle style={{zIndex: 2}} />
-        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
-          <Nav className="justify-content-end" defaultActiveKey="/">
-          <Dropdown as={Nav.Item}>
-          <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-           <Dropdown.Menu>
-              <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
-                <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter1'>CHAPTER &#8544;</Link>
-                <Link className={'nav-link'} onClick={this.resetScrollBar} style={{backgroundColor: 'transparent'}} to='/chapter2'>CHAPTER &#8545;</Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={4}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={5}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>; 
 
-    if (this.props.useLightNavbar) { // ABOUT PAGE
-      navbar = 
-      <Navbar scrolling varient="dark" fixed="top" collapseOnSelect={true} expand={false} style={{zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px", alignItems: "flex-start"}}>
-        <Navbar.Brand>
-          {navbarBrand}
-        </Navbar.Brand>
-        <Navbar.Toggle> <div className={'test navbar-not'}/> </Navbar.Toggle>
-        <Navbar.Collapse style={{textAlign: 'right', marginRight: "15px", backgroundColor: "transparent"}}>
-          <Nav className="justify-content-end" defaultActiveKey="/">
-            <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle as={Nav.Link} style={{color: 'white'}} >WORKS</Dropdown.Toggle>
-              <Dropdown.Menu style={{backgroundColor: "transparent"}}>
-                <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent', color: 'white'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={4}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={5}>
-              <Link className={'nav-link'} style={{color: 'white'}} onClick={this.resetScrollBar} to='/cv'>CV</Link>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>; 
-    } else if (this.props.useTransparentDarkNavbar) { //ABOUT AFTER SCROLLING A BIT 
-      navbar =  
-      <Navbar scrolling light fixed="top" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
-        <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
-          {navbarBrand}
-        </Navbar.Brand>
-        <Navbar.Toggle style={{zIndex: 2}} />
-        <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
-          <Nav className="justify-content-end" defaultActiveKey="/">
-          <Dropdown as={Nav.Item}>
-          <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-           <Dropdown.Menu >
-              <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
-                <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Nav.Item eventKey={2}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={3}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={4}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
-          </Nav.Item>
-          <Nav.Item eventKey={5}>
-            <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>; 
-    } else if (this.props.useDarkNavbar) { //IMAGE VIEW
-      navbar = 
-      <Navbar scrolling light sticky="top" className="sticky" collapseOnSelect={true} expand={false} style={{alignItems: "flex-start"}}>
-          <Navbar.Brand style={{zIndex: 2, marginLeft: "0.75rem"}}>
-            {navbarBrand}
-          </Navbar.Brand>
-          <Navbar.Text className="sectionheadernotext"><div></div></Navbar.Text>
-          <Navbar.Toggle style={{zIndex: 2}} />
-          <Navbar.Collapse style={{textAlign: 'right', zIndex: 2, marginRight: "15px"}}>
-            <Nav className="justify-content-end" defaultActiveKey="/">
-            <Dropdown as={Nav.Item}>
-            <Dropdown.Toggle as={Nav.Link}>WORKS</Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item style={{textAlign: 'right', backgroundColor: 'transparent'}}>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter1'>CHAPTER &#8544;</Link>
-                  <Link className={'nav-link'} style={{backgroundColor: 'transparent'}} onClick={this.resetScrollBar} to='/chapter2'>CHAPTER &#8545;</Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={3}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={4}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
-            </Nav.Item>
-            <Nav.Item eventKey={5}>
-              <Link className={'nav-link'} onClick={this.resetScrollBar} to='/cv'>CV</Link>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>; 
+    var navbarType = this.props.navbarType; 
+    if (!this.props.navbarType) {
+      navbarType = navbarTypes.DEFAULT;
     }
 
+    var navbarBrandStyle = {};
+    var navbarProps = {}; 
+    var navbarSectionHeader = ""; 
+    var navbarToggle = "";
+    var navbarCollapseStyle = {};
+    var dropdownToggleStyle = {};
+    var dropdownNavLinkStyle = {backgroundColor: "transparent"};
+    var navLinkStyle = {};
+    switch (navbarType) {
+      case navbarTypes.WHITE: // ABOUT page over picture
+        navbarProps['varient'] = 'dark';
+        navbarProps['fixed'] = 'top';
+        navbarProps['collapseOnSelect'] = true; 
+        navbarProps['expand'] = false; 
+        navbarProps['style'] = {zIndex: "1", position: "fixed", color: "white", paddingBottom: "0px", alignItems: "flex-start"};
+        
+        navbarBrandStyle = {};
+
+        navbarToggle = <Navbar.Toggle> <div className={'test navbar-not'}/> </Navbar.Toggle>; 
+
+        navbarCollapseStyle = {textAlign: 'right', marginRight: "15px", backgroundColor: "transparent"}; 
+        
+        dropdownToggleStyle = {color: "white"};
+        dropdownNavLinkStyle["color"] = "white";
+        navLinkStyle["color"] = "white";
+        break;
+
+      case navbarTypes.TRANSPARENT: // ABOUT page over white background 
+        navbarProps['varient'] = 'light';
+        navbarProps['fixed'] = 'top';
+        navbarProps['collapseOnSelect'] = true; 
+        navbarProps['expand'] = false; 
+        navbarProps['style'] = {alignItems: "flex-start"};
+
+        navbarBrandStyle = {zIndex: 2, marginLeft: "0.75rem"}; 
+
+        navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />; 
+
+        navbarCollapseStyle = {textAlign: 'right', zIndex: 2, marginRight: "15px"}; 
+        break;
+
+      case navbarTypes.NO_HEADER: // Image view and news 
+        navbarProps['varient'] = 'light';
+        navbarProps['className'] = 'sticky';
+        navbarProps['sticky'] = 'top';
+        navbarProps['collapseOnSelect'] = true; 
+        navbarProps['expand'] = false; 
+        navbarProps['style'] = {alignItems: "flex-start"};
+
+        navbarBrandStyle = {zIndex: 2, marginLeft: "0.75rem"}; 
+
+        navbarSectionHeader =  <Navbar.Text className="sectionheadernotext"><div></div></Navbar.Text>;
+
+        navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />;
+
+        navbarCollapseStyle = {textAlign: 'right', zIndex: 2, marginRight: "15px"}; 
+        break;
+      case navbarTypes.DEFAULT: // default ie: CV, Exhibitions, etc
+        navbarProps['varient'] = 'light';
+        navbarProps['className'] = 'sticky';
+        navbarProps['sticky'] = 'top';
+        navbarProps['collapseOnSelect'] = true; 
+        navbarProps['expand'] = false; 
+        navbarProps['style'] = {alignItems: "flex-start"};
+
+        navbarBrandStyle = {zIndex: 2, marginLeft: "0.75rem"};
+
+        navbarSectionHeader = <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>;
+        
+        navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />; 
+
+        navbarCollapseStyle = {textAlign: 'right', zIndex: 2, marginRight: "15px"}; 
+        break;
+    }
+    
     return (
-      navbar
+      <Navbar {...navbarProps}>
+        <Navbar.Brand style={navbarBrandStyle}>
+          {navbarBrand}
+        </Navbar.Brand>
+        {navbarSectionHeader}
+        {navbarToggle}
+        <Navbar.Collapse style={navbarCollapseStyle}>
+          <Nav className="justify-content-end" defaultActiveKey="/">
+            <Dropdown as={Nav.Item}>
+              <Dropdown.Toggle as={Nav.Link} style={dropdownToggleStyle}>WORKS</Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/chapter1'>CHAPTER &#8544;</Link>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/chapter2'>CHAPTER &#8545;</Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Nav.Item eventKey={2}>
+              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
+            </Nav.Item>
+            <Nav.Item eventKey={3}>
+              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
+            </Nav.Item>
+            <Nav.Item eventKey={4}>
+              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
+            </Nav.Item>
+            <Nav.Item eventKey={5}>
+              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/cv'>CV</Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 };

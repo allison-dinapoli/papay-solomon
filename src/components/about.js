@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import NavHeader from './navheader';
 import './about.css';
 import './base.css';
+import { navbarTypes } from '../enums/navbarTypes';
 
 class About extends React.Component {
   
@@ -45,10 +46,10 @@ class About extends React.Component {
     <div className="aboutparagraph"><a>At the age of 14, Solomon migrated with his family to the United States, where he attended High School and then completed his college education at Herberger Institute of Design and the Arts at Arizona State University, receiving the honor of Outstanding Undergraduate of his class. In 2018, shortly after graduating from ASU, Solomon received the 2018 Friends of Contemporary Art Artists’ Grants Award from the Phoenix Art Museum and the Erni Cabat Award from the Tucson Museum of Art. </a> </div>
     </span>;
     
-    var navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={true} />;
+    var navbar = <NavHeader doNotIncludeNavbarBrand={true} navbarType={navbarTypes.WHITE} />;
 
     if (this.state.isSticky) {
-      navbar = <NavHeader doNotIncludeNavbarBrand={true} useLightNavbar={false} useTransparentDarkNavbar={true} />;
+      navbar = <NavHeader doNotIncludeNavbarBrand={true} navbarType={navbarTypes.TRANSPARENT} />; 
     }
 
 

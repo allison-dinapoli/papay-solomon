@@ -5,6 +5,7 @@ import Base from './base';
 import './ImageView.css';
 import "./base.css";
 import exhibitionJson from '../json/exhibition1.json'; 
+import { navbarTypes } from '../enums/navbarTypes';
 
 class Exhibitions extends React.Component {
   
@@ -19,7 +20,7 @@ class Exhibitions extends React.Component {
           <Exhibition exhibitionJson={exhibitionJson} />
         </div>
       return (
-        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={"EXHIBITIONS"} />
+        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={"EXHIBITIONS"} navbarType={navbarTypes.DEFAULT} />
       );
     } catch(error) {
       console.log(error)

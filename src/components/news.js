@@ -1,6 +1,6 @@
 import React from 'react';
 import Base from './base'; 
-
+import { navbarTypes } from '../enums/navbarTypes';
 import './news.css';
 
 export default class News extends React.Component {
@@ -58,6 +58,6 @@ export default class News extends React.Component {
 
       </div>
 
-    return <Base content={content} useDarkNavbar={true}></Base>
+    return <Base content={content} navbarType={navbarTypes.NO_HEADER}></Base>
   }
 }

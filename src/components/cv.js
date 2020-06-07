@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Base from './base'; 
 import './cv.css';
-
+import { navbarTypes } from '../enums/navbarTypes';
 
 
 class PDFViewer extends Component {
@@ -26,7 +26,7 @@ class PDFViewer extends Component {
         </div>; 
  
     return (
-      <Base content={doc} sectionHeader="CV" includeCvDownload={true}></Base>
+      <Base content={doc} sectionHeader="CV" includeCvDownload={true} navbarType={navbarTypes.DEFAULT}></Base>
       
     );
   }

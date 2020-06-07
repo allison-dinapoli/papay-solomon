@@ -14,7 +14,7 @@ export default class Base extends React.Component {
   render() {
     var navbar = ''; 
     if (!this.props.doNotIncludeNavBar) {
-      navbar = <NavHeader doNotIncludeNavbarBrand={this.props.doNotIncludeNavbarBrand} useLightNavbar={this.props.useLightNavbar} sectionHeader={this.props.sectionHeader} includeCvDownload={this.props.includeCvDownload} useTransparentDarkNavbar={this.props.useTransparentDarkNavbar} useDarkNavbar={this.props.useDarkNavbar} />
+      navbar = <NavHeader doNotIncludeNavbarBrand={this.props.doNotIncludeNavbarBrand} navbarType={this.props.navbarType} sectionHeader={this.props.sectionHeader} includeCvDownload={this.props.includeCvDownload} />
     }
     var styles = {}; 
     if (this.props.noTopMargin) {

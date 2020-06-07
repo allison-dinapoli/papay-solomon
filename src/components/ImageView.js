@@ -7,6 +7,7 @@ import "./base.css";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux"; 
 import * as imageLoadActions from '../actions/imageLoadActions';
+import { navbarTypes } from '../enums/navbarTypes';
 
 class ImageView extends React.Component {
   
@@ -242,7 +243,7 @@ class ImageView extends React.Component {
       </div> ; 
 
       return (
-        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} useDarkNavbar={true} noTopMargin={true} />
+        <Base content={pageContent} doNotIncludeFooter={true} sectionHeader={this.props.sectionHeader} navbarType={navbarTypes.NO_HEADER} noTopMargin={true} />
       );
     } catch(error) {
       console.log(error);
