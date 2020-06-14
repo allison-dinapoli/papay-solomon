@@ -14,7 +14,6 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.4.0",
     "redux": "^4.0.5",
-    "sitemap-generator-cli": "^7.5.0",
     "ua-parser-js": "^0.7.21"
   },
   "scripts": {
@@ -35,6 +34,7 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "remote-redux-devtools": "^0.5.16"
+    "remote-redux-devtools": "^0.5.16",
+    "sitemap-generator-cli": "^7.5.0"
   }
 }
