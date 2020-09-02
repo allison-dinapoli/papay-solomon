@@ -18,7 +18,7 @@ export default class Base extends React.Component {
     }
     var styles = {}; 
     if (this.props.noTopMargin) {
-      styles = {marginTop: "20px"};
+      styles = {marginTop: "0px"};
     }
     var content = <div className="content" style={styles}>{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {

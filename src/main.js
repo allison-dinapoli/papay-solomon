@@ -8,17 +8,23 @@ import Exhibitions from './components/Exhibitions';
 import './components/base.css';
 import News from './components/news';
 import About from './components/about';
+import HomePageComponent from './components/homepage';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import imageLoadReducer from './reducers/imageLoadReducers';
 import { BrowserRouter } from 'react-router-dom';
+import { navbarTypes } from './enums/navbarTypes';
 import devToolsEnhancer from 'remote-redux-devtools';
 
 
 const store = createStore(imageLoadReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const HomePage = () => (
+const HomePageOld = () => (
   <Base content={<About />} doNotIncludeNavBar={true} doNotIncludeContentClassName={true} />
+)
+
+const HomePage = () => (
+  <Base content={<HomePageComponent />} navbarType={navbarTypes.NO_HEADER} noTopMargin={true} />
 )
 
 const Main = () => (

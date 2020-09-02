@@ -8,8 +8,8 @@
     visibility: visible;
     height: 100%;
     width: 100%;
-    max-width: 80vw;
     align-self: center;
+    transition: display 1.5s ease-out;
 }
 
 .loadingImage {
