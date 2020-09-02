@@ -1,7 +1,7 @@
 import React from 'react'; 
 import images from '../json/chapter1.json'; 
 import {  withRouter } from 'react-router-dom'; 
-import ImageView from './ImageView.js';
+import ImageView from '../components/ImageView';
 
 class ImageViewChapter1 extends React.Component {
   render() {

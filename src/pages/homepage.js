@@ -1,10 +1,10 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom';
 import homepageJson from '../json/homepage.json';  
-import './homepage.css';
-import ImageWithLoading from './ImageWithLoading'
-import ImageCarouselDots from './imageCarouselDots'
-import "./base.css";
+import '../css/homepage.css';
+import ImageWithLoading from '../components/ImageWithLoading'
+import ImageCarouselDots from '../components/imageCarouselDots'
+import "../css/base.css";
 
 class HomePage extends React.Component {
   

@@ -1,8 +1,8 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import './Exhibition.css';
+import '../css/Exhibition.css';
 import ImageWithLoading from './ImageWithLoading'
-import "./base.css";
+import "../css/base.css";
 
 class Exhibition extends React.Component {
   

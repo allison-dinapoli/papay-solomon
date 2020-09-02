@@ -1,7 +1,7 @@
 import React from 'react';
-import Base from './base'; 
+import Base from '../components/base'; 
 import { navbarTypes } from '../enums/navbarTypes';
-import './news.css';
+import '../css/news.css';
 
 export default class News extends React.Component {
 

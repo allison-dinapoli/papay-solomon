@@ -1,8 +1,8 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import NavHeader from './navheader';
-import './about.css';
-import './base.css';
+import NavHeader from '../components/navheader';
+import '../css/about.css';
+import '../css/base.css';
 import { navbarTypes } from '../enums/navbarTypes';
 
 class About extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import './ImageWithLoading.css';
+import '../css/ImageWithLoading.css';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux"; 
 import * as imageLoadActions from '../actions/imageLoadActions';

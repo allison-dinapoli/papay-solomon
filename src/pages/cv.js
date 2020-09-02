@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Base from './base'; 
-import './cv.css';
+import Base from '../components/base'; 
+import '../css/cv.css';
 import { navbarTypes } from '../enums/navbarTypes';
 
 

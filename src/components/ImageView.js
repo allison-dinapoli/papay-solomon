@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
 import ImageWithLoading from './ImageWithLoading'
-import './ImageView.css';
-import "./base.css";
+import '../css/ImageView.css';
+import "../css/base.css";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux"; 
 import * as imageLoadActions from '../actions/imageLoadActions';

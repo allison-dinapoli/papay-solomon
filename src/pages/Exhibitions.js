@@ -1,9 +1,9 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import Exhibition from './Exhibition';
-import Base from './base'; 
-import './ImageView.css';
-import "./base.css";
+import Exhibition from '../components/Exhibition';
+import Base from '../components/base'; 
+import '../css/ImageView.css';
+import "../css/base.css";
 import exhibitionJson from '../json/exhibition1.json'; 
 import { navbarTypes } from '../enums/navbarTypes';
 

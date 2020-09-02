@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import {navbarTypes} from '../enums/navbarTypes';
 
 import { Link } from 'react-router-dom';
-import './base.css';
+import '../css/base.css';
 
 export default class NavHeader extends React.Component {
 

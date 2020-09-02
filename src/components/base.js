@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './footer';
 import NavHeader from './navheader';
-import './base.css';
+import '../css/base.css';
 
 export default class Base extends React.Component {
 

@@ -1,6 +1,4 @@
 import React from "react";
-//import './ImageWithLoading.css';
-
 
 class ImageCarouselDots extends React.Component {
   constructor(props) {
