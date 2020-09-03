@@ -23,7 +23,7 @@ class ImageCarouselDots extends React.Component {
   lightCircle = () => {
     return (
         <svg height="20" width="30">
-          <circle cx="8" cy="8" r="6" stroke="#474747" stroke-width="1" fill="#fcfbf5" />
+          <circle cx="8" cy="8" r="6" stroke="#474747" strokeWidth="1" fill="#fcfbf5" />
         </svg> 
     )
   }
@@ -31,7 +31,7 @@ class ImageCarouselDots extends React.Component {
   darkCircle = () => {
     return ( 
       <svg height="20" width="30">
-        <circle cx="8" cy="8" r="6" stroke="#474747" stroke-width="1" fill="#6e6e6b" />  
+        <circle cx="8" cy="8" r="6" stroke="#474747" strokeWidth="1" fill="#6e6e6b" />  
       </svg> 
     )
   }

@@ -20,7 +20,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.nextPhoto, 5000);
+    this.interval = setInterval(this.nextPhoto, 7000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -68,9 +68,7 @@ class HomePage extends React.Component {
 
   render() {
     try {
-      var altText = "On of Papay Solomon's Works";
-      // TODO: Turn off spinner on homepage
-      // TODO: fix image height
+      var altText = "One of Papay Solomon's Works";
       var imageCarouselDots = <ImageCarouselDots numberOfImages={this.images.length} currentImageIndex={this.state.currentImageIndex}/>
       let image = <ImageWithLoading id="viewingimage" divId="homePageImage" useSpinner={false} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />
       return (
