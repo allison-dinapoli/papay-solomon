@@ -17,6 +17,25 @@ class Exhibition extends React.Component {
     }
   }
 
+  
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  handleKeyDown = (event) => {
+    if (event.keyCode === 37) { // Arrow Left 
+      var imgIndex = this.previousPhoto(); 
+      //this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
+    } else if (event.keyCode === 39) { // Arrow Right 
+      var imgIndex = this.nextPhoto(); 
+      //this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
+    }
+  }
+
   nextPhoto = () => {
     var nextPhoto = this.nextPhotoPos();  
     this.setState({currentImageIndex: nextPhoto}); 

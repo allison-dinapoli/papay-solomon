@@ -4,7 +4,8 @@ import Base from './components/base';
 import ImageViewChapter1 from './pages/ImageViewChapter1';
 import PDFViewer from './pages/cv';
 import ImageViewChapter2 from './pages/ImageViewChapter2';
-import Exhibitions from './pages/Exhibitions';
+import AfricanForTheFirstTimeExhibition from './pages/ExhibitionAFTFT';
+import PhoenixArtMuseumExhibition from './pages/Exhibition2018Award';
 import './css/base.css';
 import News from './pages/news';
 import About from './pages/about';
@@ -40,12 +41,12 @@ const Main = () => (
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route exact path='/' component={HomePage}/>
-                <Route path='/chapter1/:id' component={ImageViewChapter1}/>
-                <Route path='/chapter1' component={ImageViewChapter1}/>
-                <Route path='/chapter2/:id' component={ImageViewChapter2}/>
-                <Route path='/chapter2' component={ImageViewChapter2}/>
-                <Route path='/about' component={HomePage}/>
-                <Route path='/exhibitions' component={Exhibitions}/>
+                <Route path='/work/:id' component={ImageViewChapter1}/>
+                <Route path='/work' component={ImageViewChapter1}/>
+                <Route exact path='/exhibitions/2018friendsofcontemporaryartawards' component={PhoenixArtMuseumExhibition} />
+                <Route exact path='/exhibitions/africanforthefirsttime' component={AfricanForTheFirstTimeExhibition} />
+                <Route path='/about' component={About}/>
+                <Route path='/exhibitions' component={PhoenixArtMuseumExhibition}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />

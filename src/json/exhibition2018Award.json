@@ -1,0 +1,34 @@
+{
+    "name": "2018 Friends of Contemporary Art Artists’ Grants and Award", 
+    "location": "Phoenix, AZ",
+    "gallery": "Phoenix Art Museum", 
+    "startDate": "March 1st, 2019", 
+    "endDate": "August 4, 2019", 
+    "images": [
+        {
+            "src": "/img/exhibition2018Award/1.jpg",
+            "lowRezSrc": "/img/exhibition2018Award/1.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibition2018Award/2.jpg",
+            "lowRezSrc": "/img/exhibition2018Award/2.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibition2018Award/3.jpg",
+            "lowRezSrc": "/img/exhibition2018Award/3.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibition2018Award/4.jpg",
+            "lowRezSrc": "/img/exhibition2018Award/4.jpg", 
+            "orientation": "landscape"
+        },
+        {
+            "src": "/img/exhibition2018Award/5.jpg",
+            "lowRezSrc": "/img/exhibition2018Award/5.jpg", 
+            "orientation": "portrait"
+        }
+    ]
+}

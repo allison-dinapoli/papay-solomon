@@ -6,7 +6,7 @@ import ImageView from '../components/ImageView';
 class ImageViewChapter1 extends React.Component {
   render() {
     return (
-      <ImageView pathName="chapter1" sectionHeader="CHAPTER &#8544;" images={images} />
+      <ImageView pathName="work" sectionHeader="CHAPTER &#8544;" images={images} />
     );
   }
 }

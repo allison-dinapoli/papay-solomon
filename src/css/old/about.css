@@ -1,0 +1,89 @@
+#aboutcontent {
+    margin-top: 30px; 
+    text-align: center;
+}
+
+#aboutheader {
+    margin-top: 5vh; 
+    margin-left: 18vw; 
+    margin-right: 18vw; 
+    text-align: justify; 
+}
+
+#abouttext {
+    column-count: 1; 
+    column-gap: 5vw; 
+    margin-top: 4vh;
+    margin-left: 18vw; 
+    margin-right: 18vw; 
+    text-align: justify; 
+}
+
+.aboutparagraph { 
+    margin-bottom: 10px; 
+}
+
+.sticky {
+    top: -1px; 
+    padding-top: 1px;
+}
+
+@media only screen and (orientation: landscape) {
+    #abouttext {
+        column-count: 2;
+    }
+}    
+
+#backgroundimage {
+    background: url("/img/PapayHomepageWithLogo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh; 
+} 
+
+    
+@media only screen and (orientation: landscape) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageWithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+@media only screen and (max-width: 400px) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobileWithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+@media only screen and (max-width: 700px) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobile3WithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}
+
+
+@media only screen and (min-width: 700px) and (orientation: portrait) {
+    #backgroundimage {
+        background: url("/img/PapayHomepageMobile1WithLogo.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100vw; 
+        min-height: 150vh; 
+    }    
+}

@@ -172,18 +172,18 @@ export default class NavHeader extends React.Component {
         {navbarToggle}
         <Navbar.Collapse style={navbarCollapseStyle}>
           <Nav className="justify-content-end" defaultActiveKey="/">
+            <Nav.Item eventKey={1}>
+              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/work'>WORK</Link>
+            </Nav.Item>
             <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle as={Nav.Link} style={dropdownToggleStyle}>WORKS</Dropdown.Toggle>
+              <Dropdown.Toggle as={Nav.Link} style={dropdownToggleStyle}>EXHIBITIONS</Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
-                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/chapter1'>CHAPTER &#8544;</Link>
-                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/chapter2'>CHAPTER &#8545;</Link>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/exhibitions/2018friendsofcontemporaryartawards'>2018 Friends of<br/>Contemporary Art Awards</Link>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/exhibitions/africanforthefirsttime'>African for the First Time</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <Nav.Item eventKey={2}>
-              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/exhibitions'>EXHIBITIONS</Link>
-            </Nav.Item>
             <Nav.Item eventKey={3}>
               <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
