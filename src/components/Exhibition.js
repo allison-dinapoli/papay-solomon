@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
 import '../css/Exhibition.css';
+import ImageCarouselDots from './imageCarouselDots';
 import ImageWithLoading from './ImageWithLoading'
 import "../css/base.css";
 
@@ -96,6 +97,7 @@ class Exhibition extends React.Component {
                     </div>
                 </div> 
             </div>
+            <ImageCarouselDots currentImageIndex={this.state.currentImageIndex} numberOfImages={this.images.length} />
             <div style={{textAlign: "center"}}>
                 <br/>
                 {this.props.exhibitionJson["startDate"]} - {this.props.exhibitionJson["endDate"]} <br/>
