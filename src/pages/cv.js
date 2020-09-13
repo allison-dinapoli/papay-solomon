@@ -15,9 +15,8 @@ class PDFViewer extends Component {
   }
  
   render() {
-    
     const doc = <div style={{textAlign: "center", marginTop: "6vh"}}>
-          <div>
+          <div style={{paddingTop: "50px"}}>
             <object data="CV-1.svg" type="image/svg+xml" class="documentwindow">
             </object>
             <object data="CV-2.svg" type="image/svg+xml" class="documentwindow">
