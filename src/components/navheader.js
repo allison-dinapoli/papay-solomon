@@ -96,6 +96,7 @@ export default class NavHeader extends React.Component {
     var dropdownToggleStyle = {};
     var dropdownNavLinkStyle = {backgroundColor: "transparent"};
     var navLinkStyle = {};
+    
     switch (navbarType) {
       case navbarTypes.WHITE: // ABOUT page over picture
         navbarProps['varient'] = 'dark';
