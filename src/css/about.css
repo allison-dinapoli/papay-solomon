@@ -12,14 +12,27 @@
 }
 
 .papaypicture {
-  max-width: 50vw; 
-  max-height: 55vh;
+  max-width: 45vw; 
+  max-height: 45vh;
   display: inline-block;
   text-align: center;
 }
 
+.topHeader {
+  height:10px;
+  width: 100%;
+}
+
 @media only screen and (orientation: landscape) and (min-width: 865px) {
   .abouttext {
-      column-count: 2;
+    column-count: 2;
+  }
+
+  .papaypicture {
+    max-height: 40vh;
+  }
+
+  .topHeader {
+    height: 30px; 
   }
 }  

@@ -23,7 +23,7 @@ class About extends React.Component {
       <div className="aboutparagraph"><a>At the age of 14, Solomon migrated with his family to the United States, where he attended High School and then completed his college education at Herberger Institute of Design and the Arts at Arizona State University, receiving the honor of Outstanding Undergraduate of his class. In 2018, shortly after graduating from ASU, Solomon received the 2018 Friends of Contemporary Art Artists’ Grants Award from the Phoenix Art Museum and the Erni Cabat Award from the Tucson Museum of Art. </a> </div>
       </span>;
 
-    let pageContent = <div className="abouttext">{aboutInfo}</div>;
+    let pageContent = <span><div className="topHeader"></div><div className="abouttext">{aboutInfo}</div></span>;
     return (
       <Base content={pageContent} sectionHeader={"ABOUT"} navbarType={navbarTypes.DEFAULT} />
     )
