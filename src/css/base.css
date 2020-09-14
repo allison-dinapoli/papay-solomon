@@ -44,10 +44,12 @@ url('../fonts/GeosansLight.eot');
 @media only screen and (max-width: 800px) {
   .navbar-collapse.collapse.show {
     margin-left: 0%; 
+    margin-right: 0px;
   }
 
   .navbar-collapse.collapsing {
     margin-left: 0%;
+    margin-right: 0px; 
   }
   
 }   

@@ -15,7 +15,9 @@ class HomePage extends React.Component {
     let images = homepageJson['images'];
     this.images = images; 
     this.state = {
-      currentImageIndex: currentImageIndex,
+      currentImageIndex: currentImageIndex, 
+      previousImageIndex: images.length - 1, 
+      nextImageIndex: 1
     }
   }
 
@@ -28,7 +30,10 @@ class HomePage extends React.Component {
 
   nextPhoto = () => {
     var nextPhoto = this.nextPhotoPos();  
-    this.setState({currentImageIndex: nextPhoto}); 
+    var currentPhoto = this.state.currentImageIndex; 
+    var nextNextPhoto = this.nextNextPhotoPos();
+    console.log(`current photo: ${currentPhoto} nextPhoto: ${nextPhoto} nextNextPhoto: ${nextNextPhoto}`)
+    this.setState({currentImageIndex: nextPhoto, nextImageIndex: nextNextPhoto, previousImageIndex: currentPhoto}); 
     return nextPhoto; 
   }
 
@@ -38,12 +43,21 @@ class HomePage extends React.Component {
     return nextPhoto; 
   }
 
+  nextNextPhotoPos = () => {
+    var numPhotos = this.images.length;
+    var nextPhoto = (this.state.currentImageIndex + 2) % numPhotos;
+    return nextPhoto; 
+  }
+
   previousPhotoPos() {
     var numPhotos = this.images.length;
-    var nextPhoto = (this.state.currentImageIndex - 1);
-    if (nextPhoto < 0) {
-      nextPhoto = numPhotos - 1; 
-    }
+    var nextPhoto = (this.state.currentImageIndex - 1) % numPhotos;
+    return nextPhoto; 
+  }
+
+  previousPreviousPhotoPos() {
+    var numPhotos = this.images.length;
+    var nextPhoto = (this.state.currentImageIndex - 2) % numPhotos;
     return nextPhoto; 
   }
 
@@ -54,10 +68,9 @@ class HomePage extends React.Component {
   }
 
   getImageHeight = () => {
-    if (window.innerHeight > window.innerWidth) {
-      //return window.innerHeight; 
+    if (window.screen.height > window.screen.width) {
+      return 2 * window.screen.height / 3; 
     }
-    //return window.innerHeight;
     return "100%";
   }
 
@@ -65,17 +78,29 @@ class HomePage extends React.Component {
     return "100%"; 
   }
 
+  getCustomStyle = () => {
+    if (window.screen.height > window.screen.width) {
+      return {height: this.getImageHeight(), width: "auto"} 
+    } else {
+      return undefined; 
+    }
+  }
+
 
   render() {
     try {
-      var altText = "One of Papay Solomon's Works";
+      var altText = "One of Papay Solomon's Works"; 
+      var customStyle = this.getCustomStyle()
       var imageCarouselDots = <ImageCarouselDots numberOfImages={this.images.length} currentImageIndex={this.state.currentImageIndex}/>
-      let image = <ImageWithLoading id="viewingimage" divId="homePageImage" useSpinner={false} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />
+      let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} customStyle={customStyle} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
       return (
-        <div> 
+        <div>
           {image}
           <div>
           {imageCarouselDots}
+          </div>
+          <div width="0px" height="0px" class="hiddenImage">
+            <img src={this.images[this.state.nextImageIndex].lowRezSrc} />
           </div>
         </div>
       );

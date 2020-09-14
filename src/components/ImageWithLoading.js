@@ -1,8 +1,5 @@
 import React from "react";
-import '../css/ImageWithLoading.css';
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux"; 
-import * as imageLoadActions from '../actions/imageLoadActions';
+import '../css/ImageWithLoading.css'; 
 
 
 class ImageWithLoading extends React.Component {
@@ -33,14 +30,23 @@ class ImageWithLoading extends React.Component {
   }
 
   componentWillUnmount() {
-    this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false }); 
+    this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false });
   }
 
   componentDidUpdate(previousProps) {
-    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && this.useSpinner()) {
-      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false }); 
-    } else if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl && (!'useSpinner' in this.props)) {
-      this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage"});
+    if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl) {
+      console.log(`previous Low rez image url: ${previousProps.lowRezImageUrl} new low rez image url: ${this.props.lowRezImageUrl}`)
+      if (this.useSpinner()) {
+        this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false, previousImageUrl: previousProps.lowRezImageUrl }); 
+      } else {
+        var lowRezClass = "visibleImage"; 
+        var highRezClass = "hiddenImage";
+        if (this.state.highRezLoaded) {
+          lowRezClass = "hiddenImage"; 
+          highRezClass = "visibleImage";
+        }
+        this.setState({highRezClass: highRezClass, lowRezClass: lowRezClass, loadingClass: "hiddenImage", highRezLoaded: false, lowRezLoaded: false, previousImageUrl: previousProps.lowRezImageUrl }); 
+      }
     }
     if (typeof navigator !== 'undefined' && typeof navigator.connection !== 'undefined' && typeof navigator.connection.downlink !== 'undefined') {
       this.internetSpeed = navigator.connection.downlink; 
@@ -67,9 +73,8 @@ class ImageWithLoading extends React.Component {
 
   handleLowRezImageLoaded = () => {
     if (!this.state.highRezLoaded) {
-      this.setState({lowRezLoaded: true, lowRezClass: "visibleImage", loadingClass: "hiddenImage"});
+      this.setState({lowRezLoaded: true, lowRezClass: "visibleImage", loadingClass: "hiddenImage", highRezClass: "hiddenImage"});
     }
-    this.props.actions.arrowKeyPressed(false); 
   }
  
   handleImageErrored() {
@@ -79,19 +84,16 @@ class ImageWithLoading extends React.Component {
   render() {
     var highRezClass = this.state.highRezClass;
     var lowRezClass = this.state.lowRezClass; 
-    var loadingClass = this.state.loadingClass; 
-    if (this.props.imageStatus.arrowKeyPressed) {
-      highRezClass = "hiddenImage"; 
-      lowRezClass = "hiddenImage"; 
-      loadingClass = "visibleImage loadingImage"; 
-    }
-    if (!this.useSpinner()) {
-      loadingClass = 'hiddenImage';
-    }
+    var loadingClass = this.state.loadingClass;     
 
     var oldBrowserImageStyle = {height: "100%", width: "auto"}; 
     if (this.props.imageOrientation === "landscape") {
       oldBrowserImageStyle = {height: "auto", width: "100%"}; 
+    }
+
+    var style = {objectFit: "contain"}
+    if (this.props.customStyle) {
+      style = this.props.customStyle;
     }
 
     var highRezImage = ""; 
@@ -99,7 +101,7 @@ class ImageWithLoading extends React.Component {
     if (this.state.lowRezLoaded && !this.oldBrowser) {
       highRezImage = <img 
           className={highRezClass}
-          style={{objectFit: "contain"}}
+          style={style}
           src={this.props.highRezImageUrl}
           alt={this.props.alt}
           id="highRezImage"
@@ -123,7 +125,7 @@ class ImageWithLoading extends React.Component {
     }
 
     var lowRezImage = <img 
-      style={{objectFit: "contain"}}
+      style={style}
       alt={this.props.alt}
       className={lowRezClass}
       srcSet={this.props.srcSet}
@@ -132,6 +134,7 @@ class ImageWithLoading extends React.Component {
       onLoad={this.handleLowRezImageLoaded}
       src={this.props.lowRezImageUrl}
     />;
+
     if (this.oldBrowser) {
       lowRezImage = <img 
       style={oldBrowserImageStyle}
@@ -145,33 +148,38 @@ class ImageWithLoading extends React.Component {
     />;
     }
 
-    var loadingSpinner = <img
-                            alt="loading..."
-                            className={loadingClass}
-                            id="loadingImage"
-                            src="/img/icons/loading-spinner.svg"
-                          />;
-    
-    if (this.useSpinnerGif && !this.oldBrowser) {
+    var loadingSpinner = ""; 
+
+    if (this.useSpinner()) {
       loadingSpinner = <img
                           alt="loading..."
-                          style={{objectFit: "contain"}}
                           className={loadingClass}
                           id="loadingImage"
-                          src="/img/icons/loading-spinner.gif"
+                          src="/img/icons/loading-spinner.svg"
                         />;
-    } else if (this.useSpinnerGif && this.oldBrowser) {
-      loadingSpinner = <img
-        alt="loading..."
-        style={{height: "100%", width: "auto"}}
-        className={loadingClass}
-        id="loadingImage"
-        src="/img/icons/loading-spinner.gif"
-      />;
+      
+      if (this.useSpinnerGif && !this.oldBrowser) {
+        loadingSpinner = <img
+                            alt="loading..."
+                            style={{objectFit: "contain"}}
+                            className={loadingClass}
+                            id="loadingImage"
+                            src="/img/icons/loading-spinner.gif"
+                          />;
+      } else if (this.useSpinnerGif && this.oldBrowser) {
+        loadingSpinner = <img
+          alt="loading..."
+          style={{height: "100%", width: "auto"}}
+          className={loadingClass}
+          id="loadingImage"
+          src="/img/icons/loading-spinner.gif"
+        />;
+      }
     }
+    
 
 
-
+    console.log("image with loading rendered " + this.props.highRezImageUrl);
     return (    
     <div id={this.divId} style={{height: this.props.height}}>
       { highRezImage }
@@ -182,14 +190,4 @@ class ImageWithLoading extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({...imageLoadActions }, dispatch),
-  }
-}
-
-const mapStateToProps = state => ({
-  imageStatus: state.imageStatus
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ImageWithLoading);
+export default ImageWithLoading;

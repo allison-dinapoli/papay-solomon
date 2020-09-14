@@ -19,8 +19,12 @@ class PDFViewer extends Component {
           <div style={{paddingTop: "50px"}}>
             <object data="CV-1.svg" type="image/svg+xml" class="documentwindow">
             </object>
+            <div></div>
             <object data="CV-2.svg" type="image/svg+xml" class="documentwindow">
-            </object>       
+            </object>
+            <div></div>
+            <object data="CV-3.svg" type="image/svg+xml" class="documentwindow">
+            </object> 
           </div>
         </div>; 
  
