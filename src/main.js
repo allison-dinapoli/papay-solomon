@@ -1,24 +1,31 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Base from './components/base';
-import ImageViewChapter1 from './components/ImageViewChapter1';
-import PDFViewer from './components/cv';
-import ImageViewChapter2 from './components/ImageViewChapter2';
-import Exhibitions from './components/Exhibitions';
-import './components/base.css';
-import News from './components/news';
-import About from './components/about';
+import ImageViewChapter1 from './pages/ImageViewChapter1';
+import PDFViewer from './pages/cv';
+import ImageViewChapter2 from './pages/ImageViewChapter2';
+import AfricanForTheFirstTimeExhibition from './pages/ExhibitionAFTFT';
+import PhoenixArtMuseumExhibition from './pages/Exhibition2018Award';
+import './css/base.css';
+import News from './pages/news';
+import About from './pages/about';
+import HomePageComponent from './pages/homepage';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import imageLoadReducer from './reducers/imageLoadReducers';
 import { BrowserRouter } from 'react-router-dom';
+import { navbarTypes } from './enums/navbarTypes';
 import devToolsEnhancer from 'remote-redux-devtools';
 
 
 const store = createStore(imageLoadReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const HomePage = () => (
+const HomePageOld = () => (
   <Base content={<About />} doNotIncludeNavBar={true} doNotIncludeContentClassName={true} />
+)
+
+const HomePage = () => (
+  <Base content={<HomePageComponent />} navbarType={navbarTypes.NO_HEADER} noTopMargin={true} />
 )
 
 const Main = () => (
@@ -34,12 +41,12 @@ const Main = () => (
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route exact path='/' component={HomePage}/>
-                <Route path='/chapter1/:id' component={ImageViewChapter1}/>
-                <Route path='/chapter1' component={ImageViewChapter1}/>
-                <Route path='/chapter2/:id' component={ImageViewChapter2}/>
-                <Route path='/chapter2' component={ImageViewChapter2}/>
-                <Route path='/about' component={HomePage}/>
-                <Route path='/exhibitions' component={Exhibitions}/>
+                <Route path='/work/:id' component={ImageViewChapter1}/>
+                <Route path='/work' component={ImageViewChapter1}/>
+                <Route exact path='/exhibitions/2018friendsofcontemporaryartawards' component={PhoenixArtMuseumExhibition} />
+                <Route exact path='/exhibitions/africanforthefirsttime' component={AfricanForTheFirstTimeExhibition} />
+                <Route path='/about' component={About}/>
+                <Route path='/exhibitions' component={PhoenixArtMuseumExhibition}/>
                 <Route path='/news' component={News}/>
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />

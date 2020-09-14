@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom'; 
 import Base from './base'; 
 import ImageWithLoading from './ImageWithLoading'
-import './ImageView.css';
-import "./base.css";
+import '../css/ImageView.css';
+import "../css/base.css";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux"; 
 import * as imageLoadActions from '../actions/imageLoadActions';
@@ -176,7 +176,7 @@ class ImageView extends React.Component {
     var infoButton = <div id="infocontainer"><span id="infodiv"><img id="infoicon" className="icon" src="/img/icons/info.svg" alt="info" onClick={this.openInfo}></img></span></div>;
     try {
 
-      var image1 = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.props.images[this.state.currentImageIndex].src} lowRezImageUrl={this.props.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.props.images[this.state.currentImageIndex].orientation} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
+      var image1 = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} useSpinner={true} highRezImageUrl={this.props.images[this.state.currentImageIndex].src} lowRezImageUrl={this.props.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.props.images[this.state.currentImageIndex].orientation} alt={this.props.images[this.state.currentImageIndex].name} srcSet={this.props.images[this.state.currentImageIndex].srcset} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
       var image = image1;
 
       var fullScreenButton = <img className="icon" src="/img/icons/enter_fullscreen.svg" alt="fullscreen" onClick={this.openFullScreen}></img>; 

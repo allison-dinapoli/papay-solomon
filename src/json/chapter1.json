@@ -1,9 +1,49 @@
 [
     {
-        "src": "/img/chapter1/KOS.jpg", 
-        "lowRezSrc": "/img/chapter1/KOS-low-rez.jpg", 
+        "src": "/img/chapter1/unapologetically-african.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter1/unapologetically-african-low-rez.jpg", 
+        "id": "unapologetically-african",
+        "name": "Unapologetically African: Bocar Gueye - Senegal", 
+        "medium": "Oil and Pastel on Linen",
+        "year": 2020, 
+        "size": "40\" x 90\""
+    }, 
+    {
+        "src": "/img/chapter1/the-black-boy-who-wears-white-skin.jpg", 
+        "orientation": "landscape",
+        "lowRezSrc": "/img/chapter1/the-black-boy-who-wears-white-skin-low-rez.jpg", 
+        "id": "the-black-boy-who-wears-white-skin",
+        "name": "The Black Boy who Wears White Skin: Yaya Simeon Edamivoh - Nigeria", 
+        "medium": "Oil on Linen",
+        "year": 2020, 
+        "size": "45\" x 80\""
+    }, 
+    {
+        "src": "/img/chapter1/theres-nothing-dreadful-about-this-crown.jpg", 
         "orientation": "square",
-        "thumbnail": "/img/chapter1/KOS-thumb.jpg",
+        "lowRezSrc": "/img/chapter1/theres-nothing-dreadful-about-this-crown-low-rez.jpg", 
+        "id": "theres-nothing-dreadful-about-this-crown",
+        "name": "There's Nothing Dreadful About This Crown: Fiston Dimanche Ndarabu Buhendwa - Congo", 
+        "medium": "Oil on Linen",
+        "year": 2019, 
+        "size": "60\" x 60\""
+    }, 
+    {
+        "src": "/img/chapter1/damn-look-at-me.jpg", 
+        "orientation": "portrait",
+        "lowRezSrc": "/img/chapter1/damn-look-at-me-low-rez.jpg", 
+        "id": "damn-look-at-me",
+        "name": "DAMN! Look at Me: Sekera Rasheri - Burundi", 
+        "medium": "Oil and Pastel on Belgian Linen",
+        "year": 2020, 
+        "size": "33\" x 47\""
+    },
+    {
+        "src": "/img/chapter1/knowledge-of-self.jpg", 
+        "lowRezSrc": "/img/chapter1/knowledge-of-self-low-rez.jpg", 
+        "orientation": "square",
+        "thumbnail": "/img/chapter1/knowledge-of-self-thumb.jpg",
         "thumbnailWidth": 300,
         "thumbnailHeight": 300,
         "width": 3752,
@@ -20,10 +60,9 @@
         "category": "painting"
     },
     {
-        "src": "/img/chapter1/inside-the-lappa-with-grace.jpg", 
-        "lowRezSrc": "/img/chapter1/inside-the-lappa-with-grace-low-rez.jpg", 
+        "src": "/img/chapter1/inside-the-lappa.jpg", 
+        "lowRezSrc": "/img/chapter1/inside-the-lappa-low-rez.jpg", 
         "orientation": "square",
-        "thumbnail": "/img/chapter1/inside-the-lappa-with-grace-thumb.jpg",
         "thumbnailWidth": 300,
         "thumbnailHeight": 300,
         "width": 3730,
@@ -33,10 +72,6 @@
         "medium": "Oil on Canvas, Mirror",
         "year": 2018, 
         "size": "40in x 40in",
-        "additionalPhotos": [
-            "inside-the-lappa-with-grace-1.jpg",
-            "inside-the-lappa-with-grace-2.jpg"
-        ], 
         "category": "painting"
     },
     {

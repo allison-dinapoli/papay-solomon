@@ -1,0 +1,29 @@
+{
+    "images": [
+        {
+            "src": "/img/homepage/theres-nothing-dreadful-about-this-crown.jpg",
+            "lowRezSrc": "/img/homepage/theres-nothing-dreadful-about-this-crown-low-rez.jpg", 
+            "orientation": "landscape" 
+        }, 
+        {
+            "src": "/img/homepage/if-you-cant-remember-its-not-important.jpg",
+            "lowRezSrc": "/img/homepage/if-you-cant-remember-its-not-important-low-rez.jpg", 
+            "orientation": "landscape" 
+        }, 
+        {
+            "src": "/img/homepage/unapologetically-african.jpg",
+            "lowRezSrc": "/img/homepage/unapologetically-african-low-rez.jpg", 
+            "orientation": "landscape" 
+        }, 
+        {
+            "src": "/img/homepage/damn-look-at-me.jpg",
+            "lowRezSrc": "/img/homepage/damn-look-at-me-low-rez.jpg", 
+            "orientation": "landscape" 
+        }, 
+        {
+            "src": "/img/homepage/the-black-boy-who-wears-white-skin.jpg",
+            "lowRezSrc": "/img/homepage/the-black-boy-who-wears-white-skin-low-rez.jpg", 
+            "orientation": "landscape" 
+        }
+    ]
+}

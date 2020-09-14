@@ -1,8 +1,9 @@
 import React from 'react'; 
 import { withRouter } from 'react-router-dom'; 
-import './Exhibition.css';
+import '../css/Exhibition.css';
+import ImageCarouselDots from './imageCarouselDots';
 import ImageWithLoading from './ImageWithLoading'
-import "./base.css";
+import "../css/base.css";
 
 class Exhibition extends React.Component {
   
@@ -14,6 +15,25 @@ class Exhibition extends React.Component {
     this.images = images; 
     this.state = {
       currentImageIndex: currentImageIndex,
+    }
+  }
+
+  
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  handleKeyDown = (event) => {
+    if (event.keyCode === 37) { // Arrow Left 
+      var imgIndex = this.previousPhoto(); 
+      //this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
+    } else if (event.keyCode === 39) { // Arrow Right 
+      var imgIndex = this.nextPhoto(); 
+      //this.props.history.push(`/${this.props.pathName}/${this.props.images[imgIndex].id}`)
     }
   }
 
@@ -61,9 +81,10 @@ class Exhibition extends React.Component {
   render() {
     try {
       var altText = "Photo " + String(this.state.currentImageIndex + 1) + " of " + this.props.exhibitionJson['name'];
-      let image = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
+      let image = <div className="viewingimagecontainer"><ImageWithLoading id="viewingimage" height={this.getImageHeight()} width={this.getImageWidth()} useSpinner={true} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='(max-width: 480px) 70vw, (max-width: 1000px) 40vw, 400px' /></div>
       return (
         <div>
+          <div style={{height: "30px", width: "100vw"}}></div>
             <div style={{display: "flex", flexDirection: "row", justifyContent: "center",  textAlign: "center", width: "100vw", height: this.getImageHeight() }}>
                 <div style={{width: "15vw"}} > 
                     <div className="directionarrowscontainer" style={{height: this.getImageHeight(), textAlign:"right", width: "15vw"}}>
@@ -77,6 +98,7 @@ class Exhibition extends React.Component {
                     </div>
                 </div> 
             </div>
+            <ImageCarouselDots currentImageIndex={this.state.currentImageIndex} numberOfImages={this.images.length} />
             <div style={{textAlign: "center"}}>
                 <br/>
                 {this.props.exhibitionJson["startDate"]} - {this.props.exhibitionJson["endDate"]} <br/>

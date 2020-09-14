@@ -1,0 +1,51 @@
+.hiddenImage {
+    visibility: hidden;
+}
+
+.visibleImage {
+    visibility: visible;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    z-index: 2;
+}
+
+.loadingImage {
+    max-width: 15%;
+    max-height: 15%;
+    width: 20vh;
+}
+
+.loadingNoSpinnerImage {
+    width: 100%; 
+    height: 100%;
+}
+
+#highRezImage:fullscreen {
+    background-color: black;
+}
+
+#highRezImage:-ms-fullscreen {
+    background-color: black;
+}
+
+#highRezImage:-moz-full-screen {
+    background-color: black;
+}
+
+#highRezImage:-webkit-full-screen {
+    background-color: black;
+}
+
+@media only screen and (orientation: portrait) {
+    .loadingImage {
+        max-width: 40%;
+        max-height: 40%;
+        width: 35vw;
+    }
+    .visibleImage {
+        width: 100%; 
+        height: inherit; 
+        object-fit: contain;
+    }
+}

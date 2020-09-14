@@ -1,0 +1,29 @@
+{
+    "name": "African for the First Time", 
+    "location": "Tucson, AZ", 
+    "gallery": "Joseph Gross Gallery, University of Arizona", 
+    "startDate": "January 30th, 2020", 
+    "endDate": "March 10th, 2020", 
+    "images": [
+        {
+            "src": "/img/exhibitionAFTFT/aftft1.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft1-low-rez.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibitionAFTFT/aftft2.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft2-low-rez.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibitionAFTFT/aftft3.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft3-low-rez.jpg", 
+            "orientation": "landscape"
+        }, 
+        {
+            "src": "/img/exhibitionAFTFT/aftft4.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft4-low-rez.jpg", 
+            "orientation": "landscape"
+        }
+    ]
+}

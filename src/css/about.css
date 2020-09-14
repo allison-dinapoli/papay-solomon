@@ -1,0 +1,38 @@
+.abouttext {
+  column-count: 1; 
+  column-gap: 5vw; 
+  margin-top: 4vh;
+  margin-left: 18vw; 
+  margin-right: 18vw; 
+  text-align: justify; 
+}
+
+.aboutparagraph { 
+  margin-bottom: 10px; 
+}
+
+.papaypicture {
+  max-width: 45vw; 
+  max-height: 45vh;
+  display: inline-block;
+  text-align: center;
+}
+
+.topHeader {
+  height:10px;
+  width: 100%;
+}
+
+@media only screen and (orientation: landscape) and (min-width: 865px) {
+  .abouttext {
+    column-count: 2;
+  }
+
+  .papaypicture {
+    max-height: 40vh;
+  }
+
+  .topHeader {
+    height: 30px; 
+  }
+}  
