@@ -177,11 +177,13 @@ class ImageWithLoading extends React.Component {
       }
     }
     
-
-
-    console.log("image with loading rendered " + this.props.highRezImageUrl);
+    var divStyle = {height: `${this.props.height}px`}
+    if (window.screen.height > window.screen.width) {
+      let maxHeight = this.props.height + 20; 
+      divStyle = {maxHeight: `${maxHeight}px`}
+    } 
     return (    
-    <div id={this.divId} style={{height: this.props.height}}>
+    <div id={this.divId} style={divStyle}>
       { highRezImage }
       { lowRezImage }
       { loadingSpinner }
