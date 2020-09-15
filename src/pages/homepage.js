@@ -115,7 +115,7 @@ class HomePage extends React.Component {
           {imageCarouselDots}
           </div>
           <div width="0px" height="0px" class="hiddenImage">
-            <img src={this.images[this.state.nextImageIndex].lowRezSrc} />
+            <img width="0px" height="0px" src={this.getLowRezImageSrc()} />
           </div>
         </div>
       );

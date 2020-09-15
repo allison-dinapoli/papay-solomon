@@ -176,11 +176,13 @@ class ImageWithLoading extends React.Component {
         />;
       }
     }
+
+    var divHeight = ((typeof this.props.height === 'number') ? `${this.props.height}px` : this.props.height);
     
-    var divStyle = {height: `${this.props.height}px`}
+    var divStyle = {height: divHeight}
     if (window.screen.height > window.screen.width) {
-      let maxHeight = this.props.height + 20; 
-      divStyle = {maxHeight: `${maxHeight}px`}
+      let maxHeight = ((typeof this.props.height === 'number') ? `${this.props.height + 30}px` : this.props.height); 
+      divStyle = {maxHeight: `${maxHeight}`}
     } 
     return (    
     <div id={this.divId} style={divStyle}>
