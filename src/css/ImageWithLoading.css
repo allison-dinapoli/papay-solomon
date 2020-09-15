@@ -43,9 +43,4 @@
         max-height: 40%;
         width: 35vw;
     }
-    .visibleImage {
-        width: 100%; 
-        height: inherit; 
-        object-fit: contain;
-    }
 }

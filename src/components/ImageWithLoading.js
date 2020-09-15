@@ -181,7 +181,7 @@ class ImageWithLoading extends React.Component {
     
     var divStyle = {height: divHeight}
     if (window.screen.height > window.screen.width) {
-      let maxHeight = ((typeof this.props.height === 'number') ? `${this.props.height + 30}px` : this.props.height); 
+      let maxHeight = ((typeof this.props.height === 'number') ? `${this.props.height + 10}px` : this.props.height); 
       divStyle = {maxHeight: `${maxHeight}`}
     } 
     return (    
