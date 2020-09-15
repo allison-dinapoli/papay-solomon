@@ -86,13 +86,28 @@ class HomePage extends React.Component {
     }
   }
 
+  getImageSrc = () => {
+    if (window.screen.height > window.screen.width) {
+      return this.images[this.state.currentImageIndex].mobileSrc;
+    } else {
+      return this.images[this.state.currentImageIndex].src;
+    }
+  }
+
+  getLowRezImageSrc = () => {
+    if (window.screen.height > window.screen.width) {
+      return this.images[this.state.currentImageIndex].mobileLowRezSrc;
+    } else {
+      return this.images[this.state.currentImageIndex].lowRezSrc;
+    }
+  }
 
   render() {
     try {
       var altText = "One of Papay Solomon's Works"; 
       var customStyle = this.getCustomStyle()
       var imageCarouselDots = <ImageCarouselDots numberOfImages={this.images.length} currentImageIndex={this.state.currentImageIndex}/>
-      let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} customStyle={customStyle} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.images[this.state.currentImageIndex].src} lowRezImageUrl={this.images[this.state.currentImageIndex].lowRezSrc} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
+      let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.getImageSrc()} lowRezImageUrl={this.getLowRezImageSrc()} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
       return (
         <div>
           {image}
@@ -100,7 +115,7 @@ class HomePage extends React.Component {
           {imageCarouselDots}
           </div>
           <div width="0px" height="0px" class="hiddenImage">
-            <img src={this.images[this.state.nextImageIndex].lowRezSrc} />
+            <img width="0px" height="0px" src={this.getLowRezImageSrc()} />
           </div>
         </div>
       );
