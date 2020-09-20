@@ -22,7 +22,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.nextPhoto, 7000);
+    this.interval = setInterval(this.nextPhoto, 5000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
