@@ -156,7 +156,7 @@ export default class NavHeader extends React.Component {
 
         navbarBrandStyle = {zIndex: 2, marginLeft: "0.75rem"};
 
-        navbarSectionHeader = <Navbar.Text className="sectionheader"><span>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>;
+        navbarSectionHeader = <Navbar.Text className="sectionheader"><span style={{color: "darkslategrey"}}>{this.props.sectionHeader}{cvDownload}</span></Navbar.Text>;
         
         navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />; 
 

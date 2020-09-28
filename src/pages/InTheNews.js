@@ -3,7 +3,7 @@ import Base from '../components/base';
 import { navbarTypes } from '../enums/navbarTypes';
 import '../css/news.css';
 
-export default class News extends React.Component {
+export default class InTheNews extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,22 +15,6 @@ export default class News extends React.Component {
   render(){
     const content = 
       <div className="topDiv">
-        <div className="newsTypeHeader">Upcoming Events</div>
-
-        <div className="newsBlock">
-          <div>
-            <div className="newsHeader">AFRICAN FOR THE FIRST TIME</div> 
-            <div className="newsText">Solo Exhibition</div>
-            <div className="newsText">Joseph Gross Gallery, University of Arizona</div>
-            <div className="newsText">January 30th - March 10th</div>
-            <div className="newsText">Artist Talk: Febuary 13th from 4:00pm - 5:00pm</div>
-            <div className="newsText">Reception: Febuary 13th from 5:00pm - 6:30pm</div>
-          </div> 
-        </div>
-        
-        <div style={{paddingTop: "6vh"}}> </div>
-        <div className="newsTypeHeader">In the News</div>
-        
         <div className="vimeoVideo">
           <iframe src="https://player.vimeo.com/video/361556387" 
             style={{position: "absolute", top:0, left:0, width: '100%', height:'100%'}}
@@ -58,6 +42,6 @@ export default class News extends React.Component {
 
       </div>
 
-    return <Base content={content} navbarType={navbarTypes.NO_HEADER}></Base>
+    return <Base content={content} sectionHeader="In the News" navbarType={navbarTypes.DEFAULT}></Base>
   }
 }

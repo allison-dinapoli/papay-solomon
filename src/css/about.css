@@ -12,8 +12,8 @@
 }
 
 .papaypicture {
-  max-width: 45vw; 
-  max-height: 45vh;
+  max-width: 60vw;
+  max-height: 55vh;
   display: inline-block;
   text-align: center;
 }
@@ -23,13 +23,44 @@
   width: 100%;
 }
 
-@media only screen and (orientation: landscape) and (min-width: 865px) {
+@media only screen and (orientation: landscape) and (min-width: 1050px) and (max-width: 1250px) {
   .abouttext {
     column-count: 2;
   }
 
   .papaypicture {
     max-height: 40vh;
+    
+  }
+
+  .topHeader {
+    height: 30px; 
+  }
+}  
+
+@media only screen and (orientation: landscape) and (min-width: 1250px) and (max-width: 1450px) {
+  .abouttext {
+    column-count: 2;
+  }
+
+  .papaypicture {
+    max-height: 47vh;
+    
+  }
+
+  .topHeader {
+    height: 30px; 
+  }
+}  
+
+@media only screen and (orientation: landscape) and (min-width: 1450px) {
+  .abouttext {
+    column-count: 2;
+  }
+
+  .papaypicture {
+    max-height: 55vh;
+    
   }
 
   .topHeader {

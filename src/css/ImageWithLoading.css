@@ -6,6 +6,7 @@
     visibility: visible;
     height: 100%;
     width: 100%;
+    max-height: inherit;
     align-self: center;
     z-index: 2;
 }

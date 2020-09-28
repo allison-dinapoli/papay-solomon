@@ -23,7 +23,7 @@ class ImageCarouselDots extends React.Component {
   lightCircle = () => {
     return (
         <svg height="20" width="30">
-          <circle cx="8" cy="8" r="6" stroke="#474747" strokeWidth="1" fill="#fcfbf5" />
+          <circle cx="7" cy="7" r="5" stroke="#474747" strokeWidth="1" fill="#fcfbf5" />
         </svg> 
     )
   }
@@ -31,7 +31,7 @@ class ImageCarouselDots extends React.Component {
   darkCircle = () => {
     return ( 
       <svg height="20" width="30">
-        <circle cx="8" cy="8" r="6" stroke="#474747" strokeWidth="1" fill="#6e6e6b" />  
+        <circle cx="7" cy="7" r="5" stroke="#474747" strokeWidth="1" fill="#6e6e6b" />  
       </svg> 
     )
   }
@@ -41,9 +41,9 @@ class ImageCarouselDots extends React.Component {
     var i;
     for (i = 0; i < this.state.numberOfImages; i++) {
       if (i === this.state.currentImageIndex) {
-        circles.push(this.lightCircle())
-      } else {
         circles.push(this.darkCircle())
+      } else {
+        circles.push(this.lightCircle())
       }
     }
     return (    

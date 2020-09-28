@@ -4,6 +4,7 @@
     "gallery": "Phoenix Art Museum", 
     "startDate": "March 1st, 2019", 
     "endDate": "August 4, 2019", 
+    "acknowledgements": "Courtesy of the Phoenix Art Museum",
     "images": [
         {
             "src": "/img/exhibition2018Award/1.jpg",

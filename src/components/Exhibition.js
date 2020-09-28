@@ -98,13 +98,14 @@ class Exhibition extends React.Component {
                     </div>
                 </div> 
             </div>
+            <div style={{marginTop: '20px'}}></div>
             <ImageCarouselDots currentImageIndex={this.state.currentImageIndex} numberOfImages={this.images.length} />
             <div style={{textAlign: "center"}}>
                 <br/>
                 {this.props.exhibitionJson["startDate"]} - {this.props.exhibitionJson["endDate"]} <br/>
-                <b style={{fontStyle: "italic"}}>{this.props.exhibitionJson["name"]}</b> <br/>
-                {this.props.exhibitionJson["gallery"]}
-
+                <a style={{fontStyle: "italic"}}>{this.props.exhibitionJson["name"]}</a> <br/>
+                {this.props.exhibitionJson["gallery"]}<br/>
+                {this.props.exhibitionJson["acknowledgements"] || ""} 
             </div>   
         </div> 
       );

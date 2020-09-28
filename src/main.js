@@ -3,11 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 import Base from './components/base';
 import ImageViewChapter1 from './pages/ImageViewChapter1';
 import PDFViewer from './pages/cv';
-import ImageViewChapter2 from './pages/ImageViewChapter2';
 import AfricanForTheFirstTimeExhibition from './pages/ExhibitionAFTFT';
 import PhoenixArtMuseumExhibition from './pages/Exhibition2018Award';
 import './css/base.css';
-import News from './pages/news';
+import News from './pages/InTheNews';
 import About from './pages/about';
 import HomePageComponent from './pages/homepage';
 import { createStore } from 'redux';
@@ -15,7 +14,7 @@ import { Provider } from 'react-redux';
 import imageLoadReducer from './reducers/imageLoadReducers';
 import { BrowserRouter } from 'react-router-dom';
 import { navbarTypes } from './enums/navbarTypes';
-import devToolsEnhancer from 'remote-redux-devtools';
+import UpcomingEvents from './pages/UpcomingEvents';
 
 
 const store = createStore(imageLoadReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -25,7 +24,7 @@ const HomePageOld = () => (
 )
 
 const HomePage = () => (
-  <Base content={<HomePageComponent />} navbarType={navbarTypes.NO_HEADER} noTopMargin={true} />
+  <Base content={<HomePageComponent />} navbarType={navbarTypes.NO_HEADER} noTopMargin={true} doNotIncludeFooter={true} />
 )
 
 const Main = () => (
@@ -48,6 +47,7 @@ const Main = () => (
                 <Route path='/about' component={About}/>
                 <Route path='/exhibitions' component={PhoenixArtMuseumExhibition}/>
                 <Route path='/news' component={News}/>
+                <Route path="/upcomingevents" component={UpcomingEvents}/>
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />
             </Switch>

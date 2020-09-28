@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import homepageJson from '../json/homepage.json';  
 import '../css/homepage.css';
 import ImageWithLoading from '../components/ImageWithLoading'
-import ImageCarouselDots from '../components/imageCarouselDots'
 import "../css/base.css";
 
 class HomePage extends React.Component {
@@ -105,15 +104,10 @@ class HomePage extends React.Component {
   render() {
     try {
       var altText = "One of Papay Solomon's Works"; 
-      var customStyle = this.getCustomStyle()
-      var imageCarouselDots = <ImageCarouselDots numberOfImages={this.images.length} currentImageIndex={this.state.currentImageIndex}/>
       let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.getImageSrc()} lowRezImageUrl={this.getLowRezImageSrc()} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
       return (
         <div>
           {image}
-          <div>
-          {imageCarouselDots}
-          </div>
           <div width="0px" height="0px" class="hiddenImage">
             <img width="0px" height="0px" src={this.getLowRezImageSrc()} />
           </div>

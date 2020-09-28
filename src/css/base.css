@@ -61,11 +61,12 @@ url('../fonts/GeosansLight.eot');
 }
 
 a {
-  color: inherit; 
+  color: darkslategrey; 
   font-family: Helvetica Neue,sans-serif !important; 
   font-size: 0.99em; 
 }
 h1, h2, h3 {
+  color: darkslategrey;
   font-family: Helvetica Neue,sans-serif !important;  
 }
 
@@ -85,13 +86,14 @@ h3 {
 div {
   font-family: Helvetica Neue,sans-serif !important; 
   font-size: 0.99em; 
+  color: darkslategrey;
 }
 
 .quietLink {
-  color: inherit; 
+  color: darkslategrey; 
 }
 .quietLink:hover {
-  color: inherit;
+  color: black;
   text-decoration: none;
 }
 
@@ -137,8 +139,6 @@ div {
   margin-top: 15px;
   letter-spacing: 0.1em;
   left: 0; 
-  color: black!important; 
-  font-weight: 500; 
   background-color: white; 
   z-index: 1; 
   vertical-align: bottom;
