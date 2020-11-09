@@ -12,8 +12,8 @@
 }
 
 .papaypicture {
-  max-width: 60vw;
-  max-height: 55vh;
+  max-width: 55vw;
+  max-height: 50vh;
   display: inline-block;
   text-align: center;
 }
@@ -44,7 +44,7 @@
   }
 
   .papaypicture {
-    max-height: 47vh;
+    max-height: 46vh;
     
   }
 
@@ -59,7 +59,7 @@
   }
 
   .papaypicture {
-    max-height: 55vh;
+    max-height: 50vh;
     
   }
 

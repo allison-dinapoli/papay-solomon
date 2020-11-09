@@ -22,16 +22,23 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(this.nextPhoto, 5000);
+    this.appendStyleToBody(); 
   }
   componentWillUnmount() {
     clearInterval(this.interval);
+    document.body.removeChild(this.noScrolling); 
+  }
+
+  appendStyleToBody = () => {
+    var style = document.createElement('style'); 
+    style.innerHTML = "body { overflow-y: hidden; overflow-x: hidden; }"
+    this.noScrolling = document.body.appendChild(style); 
   }
 
   nextPhoto = () => {
     var nextPhoto = this.nextPhotoPos();  
     var currentPhoto = this.state.currentImageIndex; 
     var nextNextPhoto = this.nextNextPhotoPos();
-    console.log(`current photo: ${currentPhoto} nextPhoto: ${nextPhoto} nextNextPhoto: ${nextNextPhoto}`)
     this.setState({currentImageIndex: nextPhoto, nextImageIndex: nextNextPhoto, previousImageIndex: currentPhoto}); 
     return nextPhoto; 
   }
@@ -108,14 +115,10 @@ class HomePage extends React.Component {
       return (
         <div>
           {image}
-          <div width="0px" height="0px" class="hiddenImage">
-            <img width="0px" height="0px" src={this.getLowRezImageSrc()} />
-          </div>
         </div>
       );
     } catch(error) {
-      console.log(error)
-      //this.props.history.push("/")
+      console.log(error);
       return (
         <div></div>
       );

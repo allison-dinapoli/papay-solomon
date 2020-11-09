@@ -6,8 +6,8 @@
     "endDate": "March 10th, 2020", 
     "images": [
         {
-            "src": "/img/exhibitionAFTFT/aftft1.jpg",
-            "lowRezSrc": "/img/exhibitionAFTFT/aftft1-low-rez.jpg", 
+            "src": "/img/exhibitionAFTFT/aftft3.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft3-low-rez.jpg", 
             "orientation": "landscape"
         }, 
         {
@@ -16,8 +16,8 @@
             "orientation": "landscape"
         }, 
         {
-            "src": "/img/exhibitionAFTFT/aftft3.jpg",
-            "lowRezSrc": "/img/exhibitionAFTFT/aftft3-low-rez.jpg", 
+            "src": "/img/exhibitionAFTFT/aftft1.jpg",
+            "lowRezSrc": "/img/exhibitionAFTFT/aftft1-low-rez.jpg", 
             "orientation": "landscape"
         }, 
         {

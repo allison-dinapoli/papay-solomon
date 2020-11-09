@@ -35,7 +35,6 @@ class ImageWithLoading extends React.Component {
 
   componentDidUpdate(previousProps) {
     if (previousProps.lowRezImageUrl != this.props.lowRezImageUrl) {
-      console.log(`previous Low rez image url: ${previousProps.lowRezImageUrl} new low rez image url: ${this.props.lowRezImageUrl}`)
       if (this.useSpinner()) {
         this.setState({highRezClass: "hiddenImage", lowRezClass: "hiddenImage", loadingClass: "visibleImage loadingImage", highRezLoaded: false, lowRezLoaded: false, previousImageUrl: previousProps.lowRezImageUrl }); 
       } else {

@@ -127,7 +127,7 @@ export default class NavHeader extends React.Component {
 
         navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />; 
 
-        navbarCollapseStyle = {textAlign: 'right', zIndex: 2, marginRight: "15px"}; 
+        navbarCollapseStyle = {textAlign: 'right', zIndex: 2}; 
         break;
 
       case navbarTypes.NO_HEADER: // Image view and news 
@@ -144,7 +144,7 @@ export default class NavHeader extends React.Component {
 
         navbarToggle = <Navbar.Toggle style={{zIndex: 2}} />;
 
-        navbarCollapseStyle = {textAlign: 'right', zIndex: 2, marginRight: "15px"}; 
+        navbarCollapseStyle = {textAlign: 'right', zIndex: 2}; 
         break;
       case navbarTypes.DEFAULT: // default ie: CV, Exhibitions, etc
         navbarProps['varient'] = 'light';
