@@ -22,12 +22,11 @@ function Footer() {
   return (
       <div style={{phantom}}>
         <div style={style}>
-          <div style={{fontSize: "1.0em", marginBottom: "1vh"}}><a className="quietLink" href="mailto://papaysolomon@gmail.com"> papaysolomon@gmail.com </a></div>
           <table width="100%" style={{textAlign: "center"}}>
             <tr>
               <td width="45%"></td>
               <td width="5%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram_dark.svg" alt="instagram"/></a></td>
-              <td width="5%"><a className="quietLink" href="https://www.facebook.com/artbypapaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/facebook_dark.svg" alt="facebook"/></a></td>
+              <td width="5%"><a className="quietLink" href="mailto://papaysolomon@gmail.com" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/email.svg" alt="email"/></a></td>
               <td width="45%"></td>
             </tr>
           </table>
