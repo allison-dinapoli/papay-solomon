@@ -180,8 +180,8 @@ export default class NavHeader extends React.Component {
               <Dropdown.Toggle as={Nav.Link} style={dropdownToggleStyle}>EXHIBITIONS</Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
-                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/exhibitions/2018friendsofcontemporaryartawards'>2018 Friends of<br/>Contemporary Art Awards</Link>
                   <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/exhibitions/africanforthefirsttime'>African for the First Time</Link>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/exhibitions/2018friendsofcontemporaryartawards'>2018 Friends of<br/>Contemporary Art Awards</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
