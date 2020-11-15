@@ -15,6 +15,13 @@
             "orientation": "landscape" 
         }, 
         {
+            "src": "/img/homepage/heavyweight.jpg",
+            "lowRezSrc": "/img/homepage/heavyweight-low-rez.jpg",
+            "mobileSrc": "/img/homepage/heavyweight-mobile.jpg",
+            "mobileLowRezSrc": "/img/homepage/heavyweight-mobile-low-rez.jpg",
+            "orientation": "landscape" 
+        }, 
+        {
             "src": "/img/homepage/unapologetically-african.jpg",
             "lowRezSrc": "/img/homepage/unapologetically-african-low-rez.jpg",
             "mobileSrc": "/img/homepage/unapologetically-african-mobile.jpg",

@@ -74,9 +74,6 @@ class HomePage extends React.Component {
   }
 
   getImageHeight = () => {
-    if (window.screen.height > window.screen.width) {
-      return 2 * window.screen.height / 3; 
-    }
     return "100%";
   }
 
@@ -86,9 +83,14 @@ class HomePage extends React.Component {
 
   getCustomStyle = () => {
     if (window.screen.height > window.screen.width) {
-      return {height: this.getImageHeight(), width: "auto"} 
+      let aspectRatio = window.screen.width / window.screen.height; 
+      if (aspectRatio >= 0.5) {
+        return {objectFit: "contain", marginTop: "-40px", height: "auto", maxHeight: "5000px"}
+      } else {
+        return {objectFit: "contain", marginTop: "-40px", width: "auto"}
+      }
     } else {
-      return undefined; 
+      return {objectFit: "contain", maxHeight: "7000px"}
     }
   }
 
@@ -111,7 +113,7 @@ class HomePage extends React.Component {
   render() {
     try {
       var altText = "One of Papay Solomon's Works"; 
-      let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.getImageSrc()} lowRezImageUrl={this.getLowRezImageSrc()} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
+      let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} customStyle={this.getCustomStyle()} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.getImageSrc()} lowRezImageUrl={this.getLowRezImageSrc()} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
       return (
         <div>
           {image}
