@@ -1,7 +1,7 @@
 import React from 'react';
 import Base from '../components/base'; 
 import { navbarTypes } from '../enums/navbarTypes';
-import '../css/news.css';
+import '../css/upcomingevents.css';
 
 export default class UpcomingEvents extends React.Component {
 
@@ -14,20 +14,24 @@ export default class UpcomingEvents extends React.Component {
 
   render(){
     const content = 
-      <div className="topDiv">
+      <div className="parentDiv">
 
-        <div className="newsBlock">
+        <div className="newsRow">
           <div>
-            <div className="newsHeader">AFRICAN FOR THE FIRST TIME</div> 
+            <div className="newsHeader">Nightmares Americana</div> 
             <div className="newsText">Solo Exhibition</div>
-            <div className="newsText">Joseph Gross Gallery, University of Arizona</div>
-            <div className="newsText">January 30th - March 10th</div>
-            <div className="newsText">Artist Talk: Febuary 13th from 4:00pm - 5:00pm</div>
-            <div className="newsText">Reception: Febuary 13th from 5:00pm - 6:30pm</div>
+            <div className="newsText">Steven Zevitas Gallery, Boston, MA</div>
+            <div className="newsText">October 2nd, 2020 - November 28th, 2020</div>
           </div> 
         </div>
-
-        <div style={{marginTop: "30vh"}}></div>
+        
+        <div className="newsRow">
+          <div>
+            <div className="newsHeader">Viewpoints: How We Understand Art</div>
+            <div className="newsText">Center Space Gallery, Scottsdale Center for the Performing Arts</div>
+            <div className="newsText">October 29th, 2020 - February 21st, 2021</div>
+          </div> 
+        </div>
       </div>
 
     return <Base content={content} sectionHeader="Upcoming Events" navbarType={navbarTypes.DEFAULT}></Base>

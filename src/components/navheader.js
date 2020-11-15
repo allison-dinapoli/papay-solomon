@@ -188,9 +188,15 @@ export default class NavHeader extends React.Component {
             <Nav.Item eventKey={3}>
               <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/about'>ABOUT</Link>
             </Nav.Item>
-            <Nav.Item eventKey={4}>
-              <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/news'>NEWS</Link>
-            </Nav.Item>
+            <Dropdown as={Nav.Item}>
+              <Dropdown.Toggle as={Nav.Link} style={dropdownToggleStyle}>NEWS</Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item style={{textAlign: 'right', backgroundColor:'transparent'}}>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/upcomingexhibitions'>UPCOMING EXHIBITIONS</Link>
+                  <Link className={'nav-link'} onClick={this.resetScrollBar} style={dropdownNavLinkStyle} to='/news'>IN THE NEWS</Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
             <Nav.Item eventKey={5}>
               <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/cv'>CV</Link>
             </Nav.Item>

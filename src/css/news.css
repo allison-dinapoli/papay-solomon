@@ -2,36 +2,6 @@
     margin-top: 3vh;
 }
 
-.newsBlock {
-    margin-top: 15vh;
-    margin-bottom: 10px; 
-    align-content: center;
-    justify-content: center;
-    display: flex;
-    width: 100%;
-}
-.newsTypeHeader {
-    font-size: 2rem; 
-    margin-bottom: 10px;
-    margin-top: 40px;
-    letter-spacing: 0.1em;
-    align-content: flex-start;
-    display: flex;
-    width: 50%;
-    padding-left: 25%;
-}
-
-.newsHeader {
-    font-style: italic; 
-    font-weight: bold;
-    text-align: left; 
-}
-
-.newsText {
-    color: darkslategrey; 
-    text-align: left; 
-}
-
 .vimeoVideo {
     padding: 40% 0 0 0;
     position: relative; 
@@ -45,21 +15,4 @@
         max-width: 90%; 
         max-height: 90%; 
     }
-    .newsBlock {
-        align-content: center;
-        display: flex;
-        width: 100%;
-        padding-left: 15%;
-    }
-    .newsTypeHeader {
-        padding-left: 15%; 
-        width: 100%; 
-        font-size: 1.5rem!important;
-        display: flex; 
-        align-content: center;
-    }
-    .topDiv {
-        margin-top: 10px;
-    }
-
 }   

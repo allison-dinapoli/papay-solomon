@@ -1,0 +1,38 @@
+
+.parentDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    align-content: space-around;
+    margin-top: 50px;
+}
+
+.newsRow {
+    text-align: left;
+    margin-top: 60px;
+}
+
+.newsHeader {
+    font-style: italic; 
+    font-weight: bold;
+    text-align: left; 
+    letter-spacing: 0.05em;
+    margin-bottom: 5px
+}
+
+.newsText {
+    color: darkslategrey; 
+    text-align: left; 
+    margin-bottom: 3px;
+}
+
+@media only screen and (orientation: portrait) {
+    .parentDiv {
+        width: 75%;
+        margin-top: 30px
+    }
+}
