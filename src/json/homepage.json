@@ -15,13 +15,6 @@
             "orientation": "landscape" 
         }, 
         {
-            "src": "/img/homepage/heavyweight.jpg",
-            "lowRezSrc": "/img/homepage/heavyweight-low-rez.jpg",
-            "mobileSrc": "/img/homepage/heavyweight-mobile.jpg",
-            "mobileLowRezSrc": "/img/homepage/heavyweight-mobile-low-rez.jpg",
-            "orientation": "landscape" 
-        }, 
-        {
             "src": "/img/homepage/unapologetically-african.jpg",
             "lowRezSrc": "/img/homepage/unapologetically-african-low-rez.jpg",
             "mobileSrc": "/img/homepage/unapologetically-african-mobile.jpg",
@@ -40,6 +33,13 @@
             "lowRezSrc": "/img/homepage/the-black-boy-who-wears-white-skin-low-rez.jpg",
             "mobileSrc": "/img/homepage/the-black-boy-who-wears-white-skin-mobile.jpg",
             "mobileLowRezSrc": "/img/homepage/the-black-boy-who-wears-white-skin-mobile-low-rez.jpg",
+            "orientation": "landscape" 
+        }, 
+        {
+            "src": "/img/homepage/heavyweight.jpg",
+            "lowRezSrc": "/img/homepage/heavyweight-low-rez.jpg",
+            "mobileSrc": "/img/homepage/heavyweight-mobile.jpg",
+            "mobileLowRezSrc": "/img/homepage/heavyweight-mobile-low-rez.jpg",
             "orientation": "landscape" 
         }
     ]
