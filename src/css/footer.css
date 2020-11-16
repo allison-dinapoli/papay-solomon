@@ -1,0 +1,27 @@
+.aroundIcons {
+    width: 45%;
+}
+
+.betweenIcons {
+    width: 5%;
+}
+
+@media only screen and (max-width: 766px) {
+    .aroundIcons {
+        width: 40%;
+    }
+    
+    .betweenIcons {
+        width: 10%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .aroundIcons {
+        width: 35%;
+    }
+    
+    .betweenIcons {
+        width: 15%;
+    }
+}

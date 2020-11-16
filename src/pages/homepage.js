@@ -85,12 +85,12 @@ class HomePage extends React.Component {
     if (window.screen.height > window.screen.width) {
       let aspectRatio = window.screen.width / window.screen.height; 
       if (aspectRatio >= 0.5) {
-        return {objectFit: "contain", marginTop: "-40px", height: "auto", maxHeight: "5000px"}
+        return {objectFit: "cover", marginTop: "-40px", height: "auto", maxHeight: "5000px"}
       } else {
-        return {objectFit: "contain", marginTop: "-40px", width: "auto"}
+        return {objectFit: "cover", marginTop: "-40px", width: "auto"}
       }
     } else {
-      return {objectFit: "contain", maxHeight: "7000px"}
+      return {objectFit: "cover", maxHeight: "7000px"}
     }
   }
 
@@ -115,7 +115,7 @@ class HomePage extends React.Component {
       var altText = "One of Papay Solomon's Works"; 
       let image = <ImageWithLoading class="visibleImage" divId="homePageImage" useSpinner={false} customStyle={this.getCustomStyle()} height={this.getImageHeight()} width={this.getImageWidth()} highRezImageUrl={this.getImageSrc()} lowRezImageUrl={this.getLowRezImageSrc()} imageOrientation={this.images[this.state.currentImageIndex].orientation}  alt={altText} sizes='' />;
       return (
-        <div>
+        <div style={{height:"100vh"}}>
           {image}
         </div>
       );

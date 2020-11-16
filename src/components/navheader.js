@@ -173,7 +173,7 @@ export default class NavHeader extends React.Component {
         {navbarToggle}
         <Navbar.Collapse style={navbarCollapseStyle}>
           <Nav className="justify-content-end" defaultActiveKey="/">
-            <Nav.Item eventKey={1}>
+            <Nav.Item eventKey={1} style={{marginTop:"8px"}}>
               <Link className={'nav-link'} style={navLinkStyle} onClick={this.resetScrollBar} to='/work'>WORK</Link>
             </Nav.Item>
             <Dropdown as={Nav.Item}>

@@ -60,7 +60,7 @@ url('../fonts/GeosansLight.eot');
 a {
   color: darkslategrey; 
   font-family: Helvetica Neue,sans-serif !important; 
-  font-size: 0.99em; 
+  font-size: 16px; 
 }
 h1, h2, h3 {
   color: darkslategrey;
@@ -82,7 +82,7 @@ h3 {
 
 div {
   font-family: Helvetica Neue,sans-serif !important; 
-  font-size: 0.99em; 
+  font-size: 16px; 
   color: darkslategrey;
 }
 
@@ -206,14 +206,12 @@ div {
   .content {
     margin-top: 15px;
   }
-
 }
 
 @media only screen and (max-width: 350px) {
   .headerLink {
     font-size: 16px;
   }
-
 }
 
 @media only screen and (max-height: 799px) {

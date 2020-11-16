@@ -47,7 +47,7 @@ const Main = () => (
                 <Route path='/about' component={About}/>
                 <Route path='/exhibitions' component={PhoenixArtMuseumExhibition}/>
                 <Route path='/news' component={News}/>
-                <Route path="/upcomingevents" component={UpcomingEvents}/>
+                <Route path="/upcomingexhibitions" component={UpcomingEvents}/>
                 <Route path='/cv' component={PDFViewer}/>
                 <Route component={HomePage} />
             </Switch>

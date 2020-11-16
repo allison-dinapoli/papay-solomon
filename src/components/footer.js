@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/footer.css";
 
 var style = {
   textAlign: "center",
@@ -24,10 +25,10 @@ function Footer() {
         <div style={style}>
           <table width="100%" style={{textAlign: "center"}}>
             <tr>
-              <td width="45%"></td>
-              <td width="5%"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram_dark.svg" alt="instagram"/></a></td>
-              <td width="5%"><a className="quietLink" href="mailto://papaysolomon@gmail.com" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/email.svg" alt="email"/></a></td>
-              <td width="45%"></td>
+              <td className="aroundIcons"></td>
+              <td className="betweenIcons"><a className="quietLink" href="https://www.instagram.com/papaysolomon/" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}} src="/img/icons/instagram_dark.svg" alt="instagram"/></a></td>
+              <td className="betweenIcons"><a className="quietLink" href="mailto://papaysolomon@gmail.com" target="_blank" rel="noopener noreferrer">  <img style={{width: "2vw", minWidth: "25px"}}  src="/img/icons/email.svg" alt="email"/></a></td>
+              <td className="aroundIcons"></td>
             </tr>
           </table>
           

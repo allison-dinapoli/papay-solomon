@@ -34,6 +34,6 @@ export default class UpcomingEvents extends React.Component {
         </div>
       </div>
 
-    return <Base content={content} sectionHeader="Upcoming Events" navbarType={navbarTypes.DEFAULT}></Base>
+    return <Base content={content} sectionHeader="Upcoming Exhibitions" navbarType={navbarTypes.DEFAULT}></Base>
   }
 }

@@ -20,6 +20,9 @@ export default class Base extends React.Component {
     if (this.props.noTopMargin) {
       styles = {marginTop: "0px"};
     }
+    if (this.props.doNotIncludeFooter) {
+      styles = {height: "100vh", ...styles}
+    }
     var content = <div className="content" style={styles}>{this.props.content}</div>
     if (this.props.doNotIncludeContentClassName) {
       content = <div>{this.props.content}</div>
@@ -33,7 +36,7 @@ export default class Base extends React.Component {
       </div>;
 
     if (this.props.doNotIncludeFooter) {
-      elementsToReturn = <div style={{position: "absolute", width: "100vw", marginBottom: "100px"}}>
+      elementsToReturn = <div style={{position: "absolute", width: "100vw", height: "100vh"}}>
         {navbar}
         {content}
       </div>;
