@@ -87,7 +87,7 @@ class HomePage extends React.Component {
       if (aspectRatio >= 0.5) {
         return {objectFit: "cover", marginTop: "-40px", height: "auto", maxHeight: "5000px"}
       } else {
-        return {objectFit: "cover", marginTop: "-40px", width: "auto"}
+        return {objectFit: "cover", marginTop: "-10px", width: "auto"}
       }
     } else {
       return {objectFit: "cover", maxHeight: "7000px"}
