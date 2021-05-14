@@ -18,18 +18,10 @@ export default class UpcomingEvents extends React.Component {
 
         <div className="newsRow">
           <div>
-            <div className="newsHeader">Nightmares Americana</div> 
-            <div className="newsText">Solo Exhibition</div>
-            <div className="newsText">Steven Zevitas Gallery, Boston, MA</div>
-            <div className="newsText">October 2nd, 2020 - November 28th, 2020</div>
-          </div> 
-        </div>
-        
-        <div className="newsRow">
-          <div>
-            <div className="newsHeader">Viewpoints: How We Understand Art</div>
-            <div className="newsText">Center Space Gallery, Scottsdale Center for the Performing Arts</div>
-            <div className="newsText">October 29th, 2020 - February 21st, 2021</div>
+            <div className="newsHeader">As We Are</div>
+            <div className="newsText">The Something Machine</div>
+            <div className="newsText">May 15th, 2021 - June 26th, 2021</div>
+            <div className="newsText"><a href="https://www.hallsteinwater.com/partners/tsm">More info here</a></div>
           </div> 
         </div>
       </div>
